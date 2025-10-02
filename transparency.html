@@ -1,397 +1,455 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-  <head>
-    <title>heh heh look at the window</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jen Downs">
-    <meta name="description" content="weird web october 2025 - transparency">
-    <link rel="icon" href="./favicon.jpg" type="image/jpg" >
-    <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://weird.jen.dev/transparency">
-    <link rel="octo:octothorpes" href="weirdweboctober">
-    <link rel="octo:octothorpes" href="Transparency">
-    <style>
-      :root {
-        --background-color: #ececec;
-        --text-color: #282a36;
-        --link-color: #4e05eb;
-        --border-color: #444;
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
-      html {
-        font-size: 16px;
-      }
-      body {
-        background-color: var(--background-color);
-        background-image: url("./stucco.png");
-        background-repeat: repeat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        text-rendering: optimizeLegibility;
-        color: var(--text-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        justify-content: center;
-        font-family: "Times New Roman", Times, serif;
-        font-style: italic;
-        text-transform: lowercase;
-      }
-      h1 {
-        font-weight: 400;
-        text-align: center;
-      }
-      p {
-        text-align: center;
-      }
-      main {
-        width: 100%;
-      }
-      the-window {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-      }
-      window-frame {
-        display: grid;
-        background: url("./acnh.webp");
-        background-size: 300%;
-        background-position: center;
-        position: relative;
-        z-index: 9999;
-        grid-template-columns: 15px 1fr 8px 1fr 15px;
-        grid-template-rows: 15px 1fr 8px 1fr 15px;
-        width: 100%;
-        max-width: 600px;
-        height: 600px;
-        overflow: hidden;
-      }
-      @media (width <= 600px) {
-        window-frame {
-          height: 400px;
-        }
-      }
-      wood-pane {
-        background-color: #82634e;
-      }
-      wood-pane:nth-of-type(1) {
-        grid-row: 2 / span 1;
-        grid-column: 3 / span 1;
-      }
-      wood-pane:nth-of-type(2) {
-        grid-row: 3 / span 1;
-        grid-column: 2 / span 3;
-      }
-      wood-pane:nth-of-type(3) {
-        grid-row: 4 / span 1;
-        grid-column: 3 / span 1;
-      }
-      wood-pane:nth-of-type(4) {
-        grid-row: 1 / span 1;
-        grid-column: 1 / span 5;
-      }
-      wood-pane:nth-of-type(5) {
-        grid-row: 5 / span 1;
-        grid-column: 1 / span 5;
-      }
-      wood-pane:nth-of-type(6) {
-        grid-row: 2 / span 3;
-        grid-column: 1 / span 1;
-      }
-      wood-pane:nth-of-type(7) {
-        grid-row: 2 / span 3;
-        grid-column: 5 / span 1;
-      }
-      window-frame button:nth-of-type(1) {
-        grid-row: 2 / span 1;
-        grid-column: 2 / span 1;
-      }
-      window-frame button:nth-of-type(2) {
-        grid-row: 2 / span 1;
-        grid-column: 4 / span 1;
-        window-glass {
-          transform: rotate(-180deg);
-        }
-      }
-      window-frame button:nth-of-type(3) {
-        grid-row: 4 / span 1;
-        grid-column: 2 / span 1;
-        window-glass {
-          transform: rotate(180deg);
-        }
-      }
-      window-frame button:nth-of-type(4) {
-        grid-row: 4 / span 1;
-        grid-column: 4 / span 1;
-      }
-      window-glass {
-        display: block;
-        background-color: #dcdcdcff;
-        height: 100%;
-        width: 100%;
-        filter: url(#smudge);
-      }
-      window-middle {
-        display: flex;
-        position: relative;
-      }
-      .clean-window {
-        backdrop-filter: blur(0);
-        window-glass {
-          transition: opacity 600ms;
-          opacity: 0;
-        }
-      }
-      .dirty-window window-glass {
-        transition: opacity 600ms;
-        opacity: 1;
-      }
-      svg {
-        position: absolute;
-        width: 0;
-        height: 0;
-      }
-      window-frame button {
-        backdrop-filter: blur(3px);
-        background: none;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-        font-family: "Times New Roman";
-        font-size: 16px;
-        font-style: italic;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5em' height='5em' viewBox='0 0 36 36'%3E%3C!-- Icon from Twitter Emoji by Twitter - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F4900C' d='M35.676 18.625c.057.794.011 5.907.006 6.093a7 7 0 0 1-.026.422c-.618 6.445-5.937 10.342-12.187 9.375c-6.062-.938-8.938-5.5-11.938-8.5S1.656 22.827.641 19.312a7 7 0 0 1-.294-2.267c.011-.256-.141-5.031.035-6.169c.338-2.189 35.008 3.795 35.294 7.749'/%3E%3Cpath fill='%23FFCC4D' d='M4.718 4.856c3.5-2.125 8.964-2.286 12.5 1.25c3 3 4.243 3.843 9.243 4.843s9.632 3.532 9.194 8.094c-.618 6.445-5.937 10.342-12.187 9.375c-6.062-.938-8.938-5.5-11.938-8.5S1.655 16.73.64 13.215c-1.109-3.842.996-6.487 4.078-8.359'/%3E%3Cg fill='%23FFAC33'%3E%3Ccircle cx='12.513' cy='14.106' r='1.5'/%3E%3Ccircle cx='29.013' cy='25.794' r='1'/%3E%3Ccircle cx='17.013' cy='24.106' r='1'/%3E%3Ccircle cx='24.513' cy='24.794' r='1.5'/%3E%3Ccircle cx='31.825' cy='21.606' r='1.5'/%3E%3Ccircle cx='29.013' cy='18.419' r='1'/%3E%3Ccircle cx='25.013' cy='20.356' r='1'/%3E%3Ccircle cx='19.513' cy='21.356' r='1'/%3E%3Cpath d='M14.013 20.606a1.5 1.5 0 0 0-1.5-1.5c-.496 0-.933.244-1.206.616c.074.067.155.127.224.197c.598.598 1.192 1.258 1.806 1.939c.406-.268.676-.728.676-1.252'/%3E%3Ccircle cx='9.575' cy='16.419' r='1'/%3E%3Ccircle cx='16.013' cy='17.419' r='1'/%3E%3Ccircle cx='24.513' cy='13.606' r='1.5'/%3E%3Ccircle cx='21.013' cy='17.419' r='1.5'/%3E%3Ccircle cx='12.013' cy='10.106' r='1'/%3E%3Ccircle cx='20.513' cy='11.106' r='1'/%3E%3Ccircle cx='14.513' cy='7.856' r='1'/%3E%3Ccircle cx='7.575' cy='12.606' r='1'/%3E%3Ccircle cx='6.013' cy='6.856' r='1'/%3E%3Ccircle cx='28.575' cy='14.106' r='1'/%3E%3Ccircle cx='33.325' cy='17.419' r='1'/%3E%3Ccircle cx='3.263' cy='10.606' r='1.5'/%3E%3Ccircle cx='10.575' cy='5.856' r='1.5'/%3E%3Ccircle cx='16.513' cy='11.106' r='1.5'/%3E%3Cpath d='M19.513 26.106c-.408 0-.778.164-1.048.429c.77.486 1.61.908 2.531 1.243c.007-.057.017-.113.017-.172a1.5 1.5 0 0 0-1.5-1.5m-14.75-10.5a.996.996 0 0 0-1.994-.029c.491.288 1.034.549 1.615.795a.99.99 0 0 0 .379-.766'/%3E%3C/g%3E%3C/svg%3E")
-            48 48,
-          pointer;
-      }
-      speech-bubble {
-        display: inline-block;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        z-index: 2;
-        background-color: rgba(210, 202, 210, 1);
-        text-shadow: rgba(80, 1, 57, 0.2) 1px 0px;
-        width: 100%;
-        white-space: nowrap;
-        letter-spacing: 0.05rem;
-        padding: 4px 8px;
-        max-width: 14ch;
-        border-radius: 12px;
-        filter: url(#creepytext);
-        display: none;
-        animation: none;
-        overflow: hidden;
-        color: var(--text-color);
-      }
-      speech-squiggly {
-        border-width: 20px 5px 0;
-        border-style: solid;
-        border-color: rgba(210, 202, 210, 1) transparent;
-        position: absolute;
-        bottom: 10px;
-        right: 22px;
-        z-index: 1;
-        display: none;
-        filter: url(#creepytext);
-        transform: rotate(-40deg)
-      }
-      hint-text {
-        display: block;
-        text-align: center;
-        filter: url(#slightlylesscreepytext);
-        padding-bottom: 2rem;
-      }
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 16ch;
-        }
-      }
-      .clean-window speech-bubble {
-        display: block;
-        animation: typing 1s steps(14) forwards;
-      }
-      .clean-window speech-squiggly {
-        display: block;
-      }
-      footer {
-        padding: 0.5rem;
-        font-style: normal;
-        text-align: center;
-      }
-      .sr-only {
-        position:absolute;
-        left:-10000px;
-        top:auto;
-        width:1px;
-        height:1px;
-        overflow:hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Transparency</h1>
-      <hint-text>what's outside the window?<br>tap/click on the window to clean it <span class="sr-only">or swipe or tab</span><span aria-hidden="true">🧽 👀</span></hint-text>
-      <the-window>
-        <window-frame role="group" aria-label="a window with 4 glass panes." tabindex="-1">
-          <button id="first" class="dirty-window" onclick={cleanWindow(event)}>
-            <span class="sr-only description"></span>
-            <speech-bubble><span class="sr-only">a speech bubble appears and says: </span>heh heh heh...</speech-bubble>
-            <speech-squiggly></speech-squiggly>
-            <window-glass></window-glass>
-          </button>
-          <button id="second" class="dirty-window" onclick={cleanWindow(event)}>
-            <span class="sr-only description"></span>
-            <window-glass></window-glass>
-          </button>
-          <button id="third" class="dirty-window" onclick={cleanWindow(event)}>
-            <span class="sr-only description"></span>
-            <window-glass></window-glass>
-          </button>
-          <button id="fourth" class="dirty-window" onclick={cleanWindow(event)}>
-            <span class="sr-only description"></span>
-            <window-glass></window-glass>
-          </button>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-          <wood-pane></wood-pane>
-        </window-frame>
-      </the-window>
-      
-      <p>
-        <button onclick={reset()}>reset window</button>
-      </p>
-      
-      <footer><small>created by <a href="https://jendowns.com">jen</a> for <a href="https://weirdweboctober.website/">Weird Web October</a></small></footer>
+	<head>
+		<title>heh heh look at the window</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - transparency" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/transparency"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Transparency" />
+		<style>
+			:root {
+				--background-color: #ececec;
+				--text-color: #282a36;
+				--link-color: #4e05eb;
+				--border-color: #444;
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background-color: var(--background-color);
+				background-image: url("./images/stucco.png");
+				background-repeat: repeat;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 1rem;
+				line-height: 1.5rem;
+				text-rendering: optimizeLegibility;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0;
+				margin: 0;
+				justify-content: center;
+				font-family: "Times New Roman", Times, serif;
+				font-style: italic;
+				text-transform: lowercase;
+			}
+			h1 {
+				font-weight: 400;
+				text-align: center;
+			}
+			p {
+				text-align: center;
+			}
+			main {
+				width: 100%;
+			}
+			the-window {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+			}
+			window-frame {
+				display: grid;
+				background: url("./images/acnh.webp");
+				background-size: 300%;
+				background-position: center;
+				position: relative;
+				z-index: 9999;
+				grid-template-columns: 15px 1fr 8px 1fr 15px;
+				grid-template-rows: 15px 1fr 8px 1fr 15px;
+				width: 100%;
+				max-width: 600px;
+				height: 600px;
+				overflow: hidden;
+			}
+			@media (width <= 600px) {
+				window-frame {
+					height: 400px;
+				}
+			}
+			wood-pane {
+				background-color: #82634e;
+			}
+			wood-pane:nth-of-type(1) {
+				grid-row: 2 / span 1;
+				grid-column: 3 / span 1;
+			}
+			wood-pane:nth-of-type(2) {
+				grid-row: 3 / span 1;
+				grid-column: 2 / span 3;
+			}
+			wood-pane:nth-of-type(3) {
+				grid-row: 4 / span 1;
+				grid-column: 3 / span 1;
+			}
+			wood-pane:nth-of-type(4) {
+				grid-row: 1 / span 1;
+				grid-column: 1 / span 5;
+			}
+			wood-pane:nth-of-type(5) {
+				grid-row: 5 / span 1;
+				grid-column: 1 / span 5;
+			}
+			wood-pane:nth-of-type(6) {
+				grid-row: 2 / span 3;
+				grid-column: 1 / span 1;
+			}
+			wood-pane:nth-of-type(7) {
+				grid-row: 2 / span 3;
+				grid-column: 5 / span 1;
+			}
+			window-frame button:nth-of-type(1) {
+				grid-row: 2 / span 1;
+				grid-column: 2 / span 1;
+			}
+			window-frame button:nth-of-type(2) {
+				grid-row: 2 / span 1;
+				grid-column: 4 / span 1;
+				window-glass {
+					transform: rotate(-180deg);
+				}
+			}
+			window-frame button:nth-of-type(3) {
+				grid-row: 4 / span 1;
+				grid-column: 2 / span 1;
+				window-glass {
+					transform: rotate(180deg);
+				}
+			}
+			window-frame button:nth-of-type(4) {
+				grid-row: 4 / span 1;
+				grid-column: 4 / span 1;
+			}
+			window-glass {
+				display: block;
+				background-color: #dcdcdcff;
+				height: 100%;
+				width: 100%;
+				filter: url(#smudge);
+			}
+			window-middle {
+				display: flex;
+				position: relative;
+			}
+			.clean-window {
+				backdrop-filter: blur(0);
+				window-glass {
+					transition: opacity 600ms;
+					opacity: 0;
+				}
+			}
+			.dirty-window window-glass {
+				transition: opacity 600ms;
+				opacity: 1;
+			}
+			svg {
+				position: absolute;
+				width: 0;
+				height: 0;
+			}
+			window-frame button {
+				backdrop-filter: blur(3px);
+				background: none;
+				border: none;
+				box-shadow: none;
+				padding: 0;
+				margin: 0;
+				font-family: "Times New Roman";
+				font-size: 16px;
+				font-style: italic;
+				cursor:
+					url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5em' height='5em' viewBox='0 0 36 36'%3E%3C!-- Icon from Twitter Emoji by Twitter - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F4900C' d='M35.676 18.625c.057.794.011 5.907.006 6.093a7 7 0 0 1-.026.422c-.618 6.445-5.937 10.342-12.187 9.375c-6.062-.938-8.938-5.5-11.938-8.5S1.656 22.827.641 19.312a7 7 0 0 1-.294-2.267c.011-.256-.141-5.031.035-6.169c.338-2.189 35.008 3.795 35.294 7.749'/%3E%3Cpath fill='%23FFCC4D' d='M4.718 4.856c3.5-2.125 8.964-2.286 12.5 1.25c3 3 4.243 3.843 9.243 4.843s9.632 3.532 9.194 8.094c-.618 6.445-5.937 10.342-12.187 9.375c-6.062-.938-8.938-5.5-11.938-8.5S1.655 16.73.64 13.215c-1.109-3.842.996-6.487 4.078-8.359'/%3E%3Cg fill='%23FFAC33'%3E%3Ccircle cx='12.513' cy='14.106' r='1.5'/%3E%3Ccircle cx='29.013' cy='25.794' r='1'/%3E%3Ccircle cx='17.013' cy='24.106' r='1'/%3E%3Ccircle cx='24.513' cy='24.794' r='1.5'/%3E%3Ccircle cx='31.825' cy='21.606' r='1.5'/%3E%3Ccircle cx='29.013' cy='18.419' r='1'/%3E%3Ccircle cx='25.013' cy='20.356' r='1'/%3E%3Ccircle cx='19.513' cy='21.356' r='1'/%3E%3Cpath d='M14.013 20.606a1.5 1.5 0 0 0-1.5-1.5c-.496 0-.933.244-1.206.616c.074.067.155.127.224.197c.598.598 1.192 1.258 1.806 1.939c.406-.268.676-.728.676-1.252'/%3E%3Ccircle cx='9.575' cy='16.419' r='1'/%3E%3Ccircle cx='16.013' cy='17.419' r='1'/%3E%3Ccircle cx='24.513' cy='13.606' r='1.5'/%3E%3Ccircle cx='21.013' cy='17.419' r='1.5'/%3E%3Ccircle cx='12.013' cy='10.106' r='1'/%3E%3Ccircle cx='20.513' cy='11.106' r='1'/%3E%3Ccircle cx='14.513' cy='7.856' r='1'/%3E%3Ccircle cx='7.575' cy='12.606' r='1'/%3E%3Ccircle cx='6.013' cy='6.856' r='1'/%3E%3Ccircle cx='28.575' cy='14.106' r='1'/%3E%3Ccircle cx='33.325' cy='17.419' r='1'/%3E%3Ccircle cx='3.263' cy='10.606' r='1.5'/%3E%3Ccircle cx='10.575' cy='5.856' r='1.5'/%3E%3Ccircle cx='16.513' cy='11.106' r='1.5'/%3E%3Cpath d='M19.513 26.106c-.408 0-.778.164-1.048.429c.77.486 1.61.908 2.531 1.243c.007-.057.017-.113.017-.172a1.5 1.5 0 0 0-1.5-1.5m-14.75-10.5a.996.996 0 0 0-1.994-.029c.491.288 1.034.549 1.615.795a.99.99 0 0 0 .379-.766'/%3E%3C/g%3E%3C/svg%3E")
+						48 48,
+					pointer;
+			}
+			speech-bubble {
+				display: inline-block;
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+				z-index: 2;
+				background-color: rgba(210, 202, 210, 1);
+				text-shadow: rgba(80, 1, 57, 0.2) 1px 0px;
+				width: 100%;
+				white-space: nowrap;
+				letter-spacing: 0.05rem;
+				padding: 4px 8px;
+				max-width: 14ch;
+				border-radius: 12px;
+				filter: url(#creepytext);
+				display: none;
+				animation: none;
+				overflow: hidden;
+				color: var(--text-color);
+			}
+			speech-squiggly {
+				border-width: 20px 5px 0;
+				border-style: solid;
+				border-color: rgba(210, 202, 210, 1) transparent;
+				position: absolute;
+				bottom: 10px;
+				right: 22px;
+				z-index: 1;
+				display: none;
+				filter: url(#creepytext);
+				transform: rotate(-40deg);
+			}
+			hint-text {
+				display: block;
+				text-align: center;
+				filter: url(#slightlylesscreepytext);
+				padding-bottom: 2rem;
+			}
+			@keyframes typing {
+				from {
+					width: 0;
+				}
+				to {
+					width: 16ch;
+				}
+			}
+			.clean-window speech-bubble {
+				display: block;
+				animation: typing 1s steps(14) forwards;
+			}
+			.clean-window speech-squiggly {
+				display: block;
+			}
+			footer {
+				padding: 0.5rem;
+				font-style: normal;
+				text-align: center;
+			}
+			.sr-only {
+				position: absolute;
+				left: -10000px;
+				top: auto;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Transparency</h1>
+			<hint-text
+				>what's outside the window?<br />tap/click on the window to clean it
+				<span class="sr-only">or swipe or tab</span
+				><span aria-hidden="true">🧽 👀</span></hint-text
+			>
+			<the-window>
+				<window-frame
+					role="group"
+					aria-label="a window with 4 glass panes."
+					tabindex="-1"
+				>
+					<button
+						id="first"
+						class="dirty-window"
+						onclick="{cleanWindow(event)}"
+					>
+						<span class="sr-only description"></span>
+						<speech-bubble
+							><span class="sr-only">a speech bubble appears and says: </span
+							>heh heh heh...</speech-bubble
+						>
+						<speech-squiggly></speech-squiggly>
+						<window-glass></window-glass>
+					</button>
+					<button
+						id="second"
+						class="dirty-window"
+						onclick="{cleanWindow(event)}"
+					>
+						<span class="sr-only description"></span>
+						<window-glass></window-glass>
+					</button>
+					<button
+						id="third"
+						class="dirty-window"
+						onclick="{cleanWindow(event)}"
+					>
+						<span class="sr-only description"></span>
+						<window-glass></window-glass>
+					</button>
+					<button
+						id="fourth"
+						class="dirty-window"
+						onclick="{cleanWindow(event)}"
+					>
+						<span class="sr-only description"></span>
+						<window-glass></window-glass>
+					</button>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+					<wood-pane></wood-pane>
+				</window-frame>
+			</the-window>
 
-      <svg aria-hidden="true">
-        <filter id="smudge">
-          <feTurbulence
-            id="feTurbulence"
-            type="turbulence"
-            baseFrequency="0.005"
-            numOctaves="2"
-            result="turbulence"
-          />
-          <feFlood flood-color="white" result="flood" />
-          <feComposite
-            in="flood"
-            in2="turbulence"
-            operator="in"
-            result="composite2"
-          />
-          <feComposite
-            in="composite2"
-            in2="SourceAlpha"
-            operator="in"
-            result="composite3"
-          />
-        </filter>
-      </svg>
-      
-      <svg aria-hidden="true">
-        <filter id="creepytext">
-          <feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="12"></feDisplacementMap>
-        </filter>
-      </svg>
-      
-      <svg aria-hidden="true">
-        <filter id="slightlylesscreepytext">
-          <feTurbulence baseFrequency="0.01" numOctaves="6"></feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2"></feDisplacementMap>
-        </filter>
-      </svg>
-    </main>
-    <script>
-      const theWindow = document.querySelector("window-frame");
-      const panes = document.querySelectorAll("window-frame button");
-      
-      let hasTouchScreen = false;
-      
-      if ("maxTouchPoints" in navigator) {
-        hasTouchScreen = navigator.maxTouchPoints > 0;
-      }
-      
-      const directions = hasTouchScreen ? 'double tap to clean the glass.' : 'activate to clean the glass.';
+			<p>
+				<button onclick="{reset()}">reset window</button>
+			</p>
 
-      const dirtyWindowDesc = `the glass is foggy and a blurry image is barely visible. ${directions}`;
-      const firstDesc = "clean glass reveals top left quadrant of a picture, showing a cartoony street in a video game. there's a magazine stand to the left and the sun casts a long shadow across the cobblestone street. a person is obscured to the right.";
-      const secondDesc = "clean glass reveals top right quadrant of a picture, showing a smirking girl wearing a hat with white cat ears, standing on a cobblestone street in a video game. she's got a mischievous look on her face. to her right is a book stand, and the sunny blue sky is off in the distance."
-      const thirdDesc = "clean glass reveals bottom left quadrant of a picture, showing part of a cobblestone street in a video game. this quadrant is mostly obscured by the shadow of a building to the left, but a foldable store sign, a succulent plant, and part of a magazine stand are all visible.";
-      const fourthDesc = "clean glass reveals bottom right quadrant of a picture, showing the lower half of a girl standing on a cobblestone street in a video game. she's wearing a traditional miko clothing worn by shrine maiden's in Japan. the top of the clothing is white, and the bottom portion is red. to the right is a vase of white flowers and a folding chair."
+			<footer>
+				<small
+					>created by <a href="https://jendowns.com">jen</a> for
+					<a href="https://weirdweboctober.website/"
+						>Weird Web October</a
+					></small
+				>
+			</footer>
 
-      const cleanWindow = (event) => {
-        const glass = event.target;
-        const whichGlass = glass.getAttribute('id');
-        if (glass.classList.contains("dirty-window")) {
-          glass.classList.remove("dirty-window");
-          glass.classList.add("clean-window");
-          glass.setAttribute('aria-disabled', true);
-          
-          switch (whichGlass) {
-            case 'first':
-              glass.querySelector('.sr-only.description').textContent = firstDesc;
-              break;
-            case 'second':
-              glass.querySelector('.sr-only.description').textContent = secondDesc;
-              break;
-            case 'third':
-              glass.querySelector('.sr-only.description').textContent = thirdDesc;
-              break;
-            case 'fourth':
-              glass.querySelector('.sr-only.description').textContent = fourthDesc;
-              break;
-            default:
-              break;
-          }
-        }
-      };
+			<svg aria-hidden="true">
+				<filter id="smudge">
+					<feTurbulence
+						id="feTurbulence"
+						type="turbulence"
+						baseFrequency="0.005"
+						numOctaves="2"
+						result="turbulence"
+					/>
+					<feFlood flood-color="white" result="flood" />
+					<feComposite
+						in="flood"
+						in2="turbulence"
+						operator="in"
+						result="composite2"
+					/>
+					<feComposite
+						in="composite2"
+						in2="SourceAlpha"
+						operator="in"
+						result="composite3"
+					/>
+				</filter>
+			</svg>
 
-      const dirtyWindow = (glass) => {
-        if (glass.classList.contains("clean-window")) {
-          glass.classList.remove("clean-window");
-          glass.classList.add("dirty-window");
-          glass.removeAttribute('aria-disabled');
-          glass.querySelector('.sr-only.description').textContent = dirtyWindowDesc;
-        }
-      };
-      
-      const reset = () => {
-        panes.forEach((pane) => {
-         dirtyWindow(pane);
-        });
-      }
+			<svg aria-hidden="true">
+				<filter id="creepytext">
+					<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="turbulence"
+						scale="12"
+					></feDisplacementMap>
+				</filter>
+			</svg>
 
-      panes.forEach((pane) => {
-        pane.querySelector('.sr-only.description').textContent = dirtyWindowDesc;
-        pane.addEventListener("pointerenter", (event) => {
-          cleanWindow(event);
-        });
-      });
-      
-      window.addEventListener("load", (event) => {
-        theWindow.focus();
-      });
+			<svg aria-hidden="true">
+				<filter id="slightlylesscreepytext">
+					<feTurbulence baseFrequency="0.01" numOctaves="6"></feTurbulence>
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="turbulence"
+						scale="2"
+					></feDisplacementMap>
+				</filter>
+			</svg>
+		</main>
+		<script>
+			const theWindow = document.querySelector("window-frame");
+			const panes = document.querySelectorAll("window-frame button");
 
-    </script>
-  </body>
+			let hasTouchScreen = false;
+
+			if ("maxTouchPoints" in navigator) {
+				hasTouchScreen = navigator.maxTouchPoints > 0;
+			}
+
+			const directions = hasTouchScreen
+				? "double tap to clean the glass."
+				: "activate to clean the glass.";
+
+			const dirtyWindowDesc = `the glass is foggy and a blurry image is barely visible. ${directions}`;
+			const firstDesc =
+				"clean glass reveals top left quadrant of a picture, showing a cartoony street in a video game. there's a magazine stand to the left and the sun casts a long shadow across the cobblestone street. a person is obscured to the right.";
+			const secondDesc =
+				"clean glass reveals top right quadrant of a picture, showing a smirking girl wearing a hat with white cat ears, standing on a cobblestone street in a video game. she's got a mischievous look on her face. to her right is a book stand, and the sunny blue sky is off in the distance.";
+			const thirdDesc =
+				"clean glass reveals bottom left quadrant of a picture, showing part of a cobblestone street in a video game. this quadrant is mostly obscured by the shadow of a building to the left, but a foldable store sign, a succulent plant, and part of a magazine stand are all visible.";
+			const fourthDesc =
+				"clean glass reveals bottom right quadrant of a picture, showing the lower half of a girl standing on a cobblestone street in a video game. she's wearing a traditional miko clothing worn by shrine maiden's in Japan. the top of the clothing is white, and the bottom portion is red. to the right is a vase of white flowers and a folding chair.";
+
+			const cleanWindow = (event) => {
+				const glass = event.target;
+				const whichGlass = glass.getAttribute("id");
+				if (glass.classList.contains("dirty-window")) {
+					glass.classList.remove("dirty-window");
+					glass.classList.add("clean-window");
+					glass.setAttribute("aria-disabled", true);
+
+					switch (whichGlass) {
+						case "first":
+							glass.querySelector(".sr-only.description").textContent =
+								firstDesc;
+							break;
+						case "second":
+							glass.querySelector(".sr-only.description").textContent =
+								secondDesc;
+							break;
+						case "third":
+							glass.querySelector(".sr-only.description").textContent =
+								thirdDesc;
+							break;
+						case "fourth":
+							glass.querySelector(".sr-only.description").textContent =
+								fourthDesc;
+							break;
+						default:
+							break;
+					}
+				}
+			};
+
+			const dirtyWindow = (glass) => {
+				if (glass.classList.contains("clean-window")) {
+					glass.classList.remove("clean-window");
+					glass.classList.add("dirty-window");
+					glass.removeAttribute("aria-disabled");
+					glass.querySelector(".sr-only.description").textContent =
+						dirtyWindowDesc;
+				}
+			};
+
+			const reset = () => {
+				panes.forEach((pane) => {
+					dirtyWindow(pane);
+				});
+			};
+
+			panes.forEach((pane) => {
+				pane.querySelector(".sr-only.description").textContent =
+					dirtyWindowDesc;
+				pane.addEventListener("pointerenter", (event) => {
+					cleanWindow(event);
+				});
+			});
+
+			window.addEventListener("load", (event) => {
+				theWindow.focus();
+			});
+		</script>
+	</body>
 </html>
