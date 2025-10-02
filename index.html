@@ -55,52 +55,126 @@
 			}
 			html,
 			body {
-				display: flex;
-				flex-direction: column;
+				display: grid;
 				height: 100%;
 			}
 			site-container {
 				display: grid;
-				height: 100vh;
-				min-height: 60vh;
 				place-self: center;
+				align-items: center;
 				gap: 16px;
 				margin: 0 auto;
 			}
+			html,
+			body,
+			p {
+				margin: 0;
+			}
 			main {
 				display: grid;
-				max-width: 500px;
 				place-self: center;
-				gap: 16px;
-				background-color: var(--background-color);
-				padding: 2rem 1rem;
-				border: 1px dotted var(--text-color);
+				gap: 8px;
 			}
 			h1 {
 				margin: 0;
+				color: var(--background-color);
+				place-self: center;
+				font-size: 3rem;
+				text-shadow:
+					1px 1px red,
+					rgba(65, 1, 46, 0.07) 2px 2px;
 			}
 			small {
 				font-size: 12px;
-				color: #666;
 			}
 			footer {
 				text-align: right;
+
+				small {
+					background-color: #dccbee;
+					line-height: 2.25rem;
+					border-radius: 0 0 125px 3px/3px 85px 5px 55px;
+					-webkit-box-decoration-break: clone;
+					box-decoration-break: clone;
+					box-shadow:
+						-8px 0 #dccbee,
+						8px 0 #dccbee;
+					padding: 3px 0;
+				}
+			}
+			calendar-view {
+				display: grid;
+				grid-template-columns: repeat(7, 1fr);
+				border-top: 1px dotted var(--text-color);
+				border-left: 1px dotted var(--text-color);
+				background-color: var(--background-color);
+			}
+			week-day {
+				background-color: #dccbee;
+			}
+			week-day,
+			calendar-day {
+				padding: 1rem;
+				display: grid;
+				place-items: center;
+				border-bottom: 1px dotted var(--text-color);
+				border-right: 1px dotted var(--text-color);
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<site-container>
+			<h1>weird web october</h1>
 			<main>
-				<h1>weird web october</h1>
-				<div style="place-self: center">
-					<p>i'm working on this page right now.</p>
-					<p>in the meantime, check my entries:</p>
-					<ul>
-						<li>
-							<a href="./transparency">day 1: transparency</a>
-						</li>
-					</ul>
-				</div>
+				<calendar-view>
+					<week-day>sun</week-day>
+					<week-day>mon</week-day>
+					<week-day>tue</week-day>
+					<week-day>wed</week-day>
+					<week-day>thu</week-day>
+					<week-day>fri</week-day>
+					<week-day>sat</week-day>
+					<calendar-day></calendar-day>
+					<calendar-day></calendar-day>
+					<calendar-day></calendar-day>
+					<calendar-day
+						><a href="./transparency"
+							><span>1</span><br /><small><em>transparency</em></small></a
+						></calendar-day
+					>
+					<calendar-day>2</calendar-day>
+					<calendar-day>3</calendar-day>
+					<calendar-day>4</calendar-day>
+					<calendar-day>5</calendar-day>
+					<calendar-day>6</calendar-day>
+					<calendar-day>7</calendar-day>
+					<calendar-day>8</calendar-day>
+					<calendar-day>9</calendar-day>
+					<calendar-day>10</calendar-day>
+					<calendar-day>11</calendar-day>
+					<calendar-day>12</calendar-day>
+					<calendar-day>13</calendar-day>
+					<calendar-day>14</calendar-day>
+					<calendar-day>15</calendar-day>
+					<calendar-day>16</calendar-day>
+					<calendar-day>17</calendar-day>
+					<calendar-day>18</calendar-day>
+					<calendar-day>19</calendar-day>
+					<calendar-day>20</calendar-day>
+					<calendar-day>21</calendar-day>
+					<calendar-day>22</calendar-day>
+					<calendar-day>23</calendar-day>
+					<calendar-day>24</calendar-day>
+					<calendar-day>25</calendar-day>
+					<calendar-day>26</calendar-day>
+					<calendar-day>27</calendar-day>
+					<calendar-day>28</calendar-day>
+					<calendar-day>29</calendar-day>
+					<calendar-day>30</calendar-day>
+					<calendar-day>31</calendar-day>
+					<calendar-day></calendar-day>
+				</calendar-view>
 				<footer>
 					<small>
 						** bg image
