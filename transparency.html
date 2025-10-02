@@ -229,7 +229,7 @@
         display: block;
       }
       footer {
-        padding: 1rem;
+        padding: 0.5rem;
         font-style: normal;
         text-align: center;
       }
@@ -277,7 +277,9 @@
         </window-frame>
       </the-window>
       
-      <p><button onclick={reset()}>reset window</button></p>
+      <p>
+        <button onclick={reset()}>reset window</button>
+      </p>
       
       <footer><small>created by <a href="https://jendowns.com">jen</a> for <a href="https://weirdweboctober.website/">Weird Web October</a></small></footer>
 
@@ -333,7 +335,7 @@
       const directions = hasTouchScreen ? 'double tap to clean the glass.' : 'activate to clean the glass.';
 
       const dirtyWindowDesc = `the glass is foggy and a blurry image is barely visible. ${directions}`;
-      const firstDesc = "clean glass reveals top left quadrant of a picture, showing a cartoony street in a video game. there's a magazine stand to the left and the sun casts a long shadow across the cobblestone street. a person is obscured to the right, and a speech bubble pops up saying 'heh heh heh'";
+      const firstDesc = "clean glass reveals top left quadrant of a picture, showing a cartoony street in a video game. there's a magazine stand to the left and the sun casts a long shadow across the cobblestone street. a person is obscured to the right.";
       const secondDesc = "clean glass reveals top right quadrant of a picture, showing a smirking girl wearing a hat with white cat ears, standing on a cobblestone street in a video game. she's got a mischievous look on her face. to her right is a book stand, and the sunny blue sky is off in the distance."
       const thirdDesc = "clean glass reveals bottom left quadrant of a picture, showing part of a cobblestone street in a video game. this quadrant is mostly obscured by the shadow of a building to the left, but a foldable store sign, a succulent plant, and part of a magazine stand are all visible.";
       const fourthDesc = "clean glass reveals bottom right quadrant of a picture, showing the lower half of a girl standing on a cobblestone street in a video game. she's wearing a traditional miko clothing worn by shrine maiden's in Japan. the top of the clothing is white, and the bottom portion is red. to the right is a vase of white flowers and a folding chair."
