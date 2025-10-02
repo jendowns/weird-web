@@ -45,7 +45,9 @@
 			}
 			body {
 				background-color: var(--background-color);
-				background-image: url("./images/dithered-field.png");
+				background-image:
+					linear-gradient(to right, rgba(100, 76, 158, 0.711), #9551c447),
+					url("./images/skelly.png");
 				background-size: cover;
 				color: var(--text-color);
 				font-family: var(--font);
@@ -77,6 +79,13 @@
 			h1 {
 				margin: 0;
 			}
+			small {
+				font-size: 12px;
+				color: #666;
+			}
+			footer {
+				text-align: right;
+			}
 		</style>
 	</head>
 	<body>
@@ -92,6 +101,18 @@
 						</li>
 					</ul>
 				</div>
+				<footer>
+					<small>
+						** bg image
+						<a
+							href="https://unsplash.com/photos/two-skeleton-near-white-concrete-building-with-string-lights-at-daytime-A59lWOrZVnw"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="source (opens new window)"
+							>source</a
+						></small
+					>
+				</footer>
 			</main>
 		</site-container>
 	</body>
