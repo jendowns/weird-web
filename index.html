@@ -46,8 +46,8 @@
 			body {
 				background-color: var(--background-color);
 				background-image:
-					linear-gradient(to right, rgba(100, 76, 158, 0.711), #9551c447),
-					url("./images/skelly.png");
+					linear-gradient(to right, rgba(63, 48, 100, 0.657), #9451c48a),
+					url("./images/skelly.webp");
 				background-size: cover;
 				color: var(--text-color);
 				font-family: var(--font);
@@ -76,118 +76,277 @@
 				gap: 8px;
 			}
 			h1 {
+				font-size: 3rem;
+			}
+			h2 {
+				font-size: 2.2rem;
+			}
+			h1,
+			h2 {
 				margin: 0;
 				color: var(--background-color);
 				place-self: center;
-				font-size: 3rem;
 				text-shadow:
 					1px 1px red,
 					rgba(65, 1, 46, 0.07) 2px 2px;
+				filter: url(#creepytext);
+			}
+			a {
+				color: var(--link-color);
 			}
 			small {
 				font-size: 12px;
 			}
 			footer {
 				text-align: right;
+				white-space: nowrap;
 
 				small {
-					background-color: #dccbee;
-					line-height: 2.25rem;
-					border-radius: 0 0 125px 3px/3px 85px 5px 55px;
-					-webkit-box-decoration-break: clone;
-					box-decoration-break: clone;
-					box-shadow:
-						-8px 0 #dccbee,
-						8px 0 #dccbee;
-					padding: 3px 0;
+					color: white;
+				}
+				a {
+					color: rgb(249, 189, 189);
 				}
 			}
-			calendar-view {
+			ol {
 				display: grid;
+				padding: 0;
+				margin: 0;
+				list-style: none;
 				grid-template-columns: repeat(7, 1fr);
-				border-top: 1px dotted var(--text-color);
-				border-left: 1px dotted var(--text-color);
+				border-top: 1px solid red;
+				border-left: 1px solid red;
 				background-color: var(--background-color);
+
+				small {
+					filter: url(#slightlylesscreepytext);
+				}
 			}
-			week-day {
-				background-color: #dccbee;
+			.day {
+				background-color: #eecbcf;
+				font-style: italic;
+				span {
+					filter: url(#slightlylesscreepytext);
+				}
 			}
-			week-day,
-			calendar-day {
+			.empty {
+				background-color: #ddd;
+			}
+			li a,
+			li {
+				display: flex;
+				flex-direction: column;
+			}
+			li {
 				padding: 1rem;
-				display: grid;
-				place-items: center;
-				border-bottom: 1px dotted var(--text-color);
-				border-right: 1px dotted var(--text-color);
+				border-bottom: 1px solid red;
+				border-right: 1px solid red;
 				text-align: center;
+			}
+			svg {
+				position: absolute;
+				width: 0;
+				height: 0;
+			}
+
+			@media (width <= 750px) {
+				ol {
+					grid-template-columns: repeat(2, 1fr);
+					background: none;
+					row-gap: 8px;
+					column-gap: 36px;
+				}
+				ol,
+				li {
+					border: none;
+					padding: 0;
+				}
+				li {
+					background-color: rgba(249, 227, 235, 0.832);
+					line-height: 2rem;
+					border-radius: 0 0 125px 3px/3px 85px 5px 55px;
+					text-shadow: rgba(65, 1, 46, 0.07) 1px 1px;
+					box-decoration-break: clone;
+					box-shadow:
+						-8px 0 rgba(249, 227, 235, 0.832),
+						8px 0 rgba(249, 227, 235, 0.832);
+					padding: 3px 0;
+					small,
+					span {
+						font-size: 14px;
+					}
+				}
+				li,
+				li a {
+					display: flex;
+					flex-direction: row;
+					gap: 5px;
+					justify-content: start;
+				}
+				.day,
+				.empty {
+					display: none;
+				}
+				footer {
+					text-align: center;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<site-container>
 			<h1>weird web october</h1>
+			<h2>~ 2025 ~</h2>
 			<main>
-				<calendar-view>
-					<week-day>sun</week-day>
-					<week-day>mon</week-day>
-					<week-day>tue</week-day>
-					<week-day>wed</week-day>
-					<week-day>thu</week-day>
-					<week-day>fri</week-day>
-					<week-day>sat</week-day>
-					<calendar-day></calendar-day>
-					<calendar-day></calendar-day>
-					<calendar-day></calendar-day>
-					<calendar-day
-						><a href="./transparency"
-							><span>1</span><br /><small><em>transparency</em></small></a
-						></calendar-day
-					>
-					<calendar-day>2</calendar-day>
-					<calendar-day>3</calendar-day>
-					<calendar-day>4</calendar-day>
-					<calendar-day>5</calendar-day>
-					<calendar-day>6</calendar-day>
-					<calendar-day>7</calendar-day>
-					<calendar-day>8</calendar-day>
-					<calendar-day>9</calendar-day>
-					<calendar-day>10</calendar-day>
-					<calendar-day>11</calendar-day>
-					<calendar-day>12</calendar-day>
-					<calendar-day>13</calendar-day>
-					<calendar-day>14</calendar-day>
-					<calendar-day>15</calendar-day>
-					<calendar-day>16</calendar-day>
-					<calendar-day>17</calendar-day>
-					<calendar-day>18</calendar-day>
-					<calendar-day>19</calendar-day>
-					<calendar-day>20</calendar-day>
-					<calendar-day>21</calendar-day>
-					<calendar-day>22</calendar-day>
-					<calendar-day>23</calendar-day>
-					<calendar-day>24</calendar-day>
-					<calendar-day>25</calendar-day>
-					<calendar-day>26</calendar-day>
-					<calendar-day>27</calendar-day>
-					<calendar-day>28</calendar-day>
-					<calendar-day>29</calendar-day>
-					<calendar-day>30</calendar-day>
-					<calendar-day>31</calendar-day>
-					<calendar-day></calendar-day>
-				</calendar-view>
-				<footer>
-					<small>
-						** bg image
-						<a
-							href="https://unsplash.com/photos/two-skeleton-near-white-concrete-building-with-string-lights-at-daytime-A59lWOrZVnw"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="source (opens new window)"
-							>source</a
-						></small
-					>
-				</footer>
+				<ol>
+					<li class="day"><span>sun</span></li>
+					<li class="day"><span>mon</span></li>
+					<li class="day"><span>tue</span></li>
+					<li class="day"><span>wed</span></li>
+					<li class="day"><span>thu</span></li>
+					<li class="day"><span>fri</span></li>
+					<li class="day"><span>sat</span></li>
+					<li class="empty"></li>
+					<li class="empty"></li>
+					<li class="empty"></li>
+					<li>
+						<a href="./transparency"
+							><span>1.</span><small><em>transparency</em></small></a
+						>
+					</li>
+					<li>
+						<span>2.</span><small><em>maps</em></small>
+					</li>
+					<li>
+						<span>3.</span><small><em>scramble</em></small>
+					</li>
+					<li>
+						<span>4.</span><small><em>filters</em></small>
+					</li>
+					<li>
+						<span>5.</span><small><em>remix</em></small>
+					</li>
+					<li>
+						<span>6.</span><small><em>solids</em></small>
+					</li>
+					<li>
+						<span>7.</span><small><em>sub-optimal</em></small>
+					</li>
+					<li>
+						<span>8.</span><small><em>containers</em></small>
+					</li>
+					<li>
+						<span>9.</span><small><em>blink</em></small>
+					</li>
+					<li>
+						<span>10.</span><small><em>warning</em></small>
+					</li>
+					<li>
+						<span>11.</span><small><em>camera</em></small>
+					</li>
+					<li>
+						<span>12.</span><small><em>battle</em></small>
+					</li>
+					<li>
+						<span>13.</span><small><em>upside-down</em></small>
+					</li>
+					<li>
+						<span>14.</span><small><em>doubles</em></small>
+					</li>
+					<li>
+						<span>15.</span><small><em>unicode</em></small>
+					</li>
+					<li>
+						<span>16.</span><small><em>transition</em></small>
+					</li>
+					<li>
+						<span>17.</span><small><em>illumination</em></small>
+					</li>
+					<li>
+						<span>18.</span><small><em>trading</em></small>
+					</li>
+					<li>
+						<span>19.</span><small><em>bounce</em></small>
+					</li>
+					<li>
+						<span>20.</span><small><em>hidden</em></small>
+					</li>
+					<li>
+						<span>21.</span><small><em>language</em></small>
+					</li>
+					<li>
+						<span>22.</span><small><em>memory</em></small>
+					</li>
+					<li>
+						<span>23.</span><small><em>style</em></small>
+					</li>
+					<li>
+						<span>24.</span><small><em>counter</em></small>
+					</li>
+					<li>
+						<span>25.</span><small><em>empty</em></small>
+					</li>
+					<li>
+						<span>26.</span><small><em>texture</em></small>
+					</li>
+					<li>
+						<span>27.</span><small><em>spell</em></small>
+					</li>
+					<li>
+						<span>28.</span><small><em>tables</em></small>
+					</li>
+					<li>
+						<span>29.</span><small><em>surprise</em></small>
+					</li>
+					<li>
+						<span>30.</span><small><em>deprecated</em></small>
+					</li>
+					<li>
+						<span>31.</span><small><em>spooky</em></small>
+					</li>
+					<li class="empty"><span></span></li>
+				</ol>
 			</main>
+			<footer>
+				<small
+					>created by <a href="https://jendowns.com">jen</a> for
+					<a href="https://weirdweboctober.website/">weird web october</a>
+					👻</small
+				>
+				<small>&nbsp;&nbsp;//&nbsp;&nbsp;</small>
+				<small>
+					bg image
+					<a
+						href="https://unsplash.com/photos/two-skeleton-near-white-concrete-building-with-string-lights-at-daytime-A59lWOrZVnw"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="source (opens new window)"
+						>source</a
+					></small
+				>
+			</footer>
 		</site-container>
+
+		<svg aria-hidden="true">
+			<filter id="creepytext">
+				<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
+				<feDisplacementMap
+					in="SourceGraphic"
+					in2="turbulence"
+					scale="12"
+				></feDisplacementMap>
+			</filter>
+		</svg>
+
+		<svg aria-hidden="true">
+			<filter id="slightlylesscreepytext">
+				<feTurbulence baseFrequency="0.01" numOctaves="6"></feTurbulence>
+				<feDisplacementMap
+					in="SourceGraphic"
+					in2="turbulence"
+					scale="2"
+				></feDisplacementMap>
+			</filter>
+		</svg>
 	</body>
 </html>
