@@ -5,19 +5,25 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Jen Downs" />
-		<meta name="description" content="weird web october 2025 - scramble" />
+		<meta name="description" content="weird web october 2025 - filters" />
 		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
 		<link
 			rel="preload"
 			as="fetch"
-			href="https://octothorp.es/?uri=https://weird.jen.dev/scramble"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/filters"
 		/>
 		<link rel="octo:octothorpes" href="weirdweboctober" />
-		<link rel="octo:octothorpes" href="Scramble" />
+		<link rel="octo:octothorpes" href="Filters" />
 		<style>
+			/*
+	  The FontStruction “MS Sans Serif”
+	  (https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+	  under a Creative Commons Attribution Share Alike license
+	  (http://creativecommons.org/licenses/by-sa/3.0/).
+	*/
 			@font-face {
-				font-family: "comic neue";
-				src: url("./fonts/comic_neue.woff2") format("woff2");
+				font-family: "MS Serif";
+				src: url("./fonts/ms_sans_serif.woff2") format("woff2");
 				font-weight: normal;
 				font-display: swap;
 			}
@@ -26,7 +32,7 @@
 				--text-color: #282a36;
 				--link-color: #00629d;
 				--font:
-					"comic neue", "Lucida Console", Monaco, -apple-system,
+					"MS Serif", "Lucida Console", Monaco, -apple-system,
 					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
 					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 			}
@@ -70,7 +76,6 @@
 				font-weight: 400;
 				text-align: center;
 				font-style: italic;
-				margin: 0;
 			}
 			main {
 				width: 100%;
@@ -78,83 +83,9 @@
 				place-self: center;
 			}
 			footer {
+				padding: 0.5rem;
 				font-style: normal;
 				text-align: center;
-			}
-			scrambled-eggs-recipe {
-				background-color: #e9f0f4;
-				max-width: 450px;
-				width: 100%;
-				min-height: 300px;
-				place-self: center;
-				display: flex;
-				justify-content: space-between;
-				flex-direction: column;
-				padding: 1.5rem 0;
-				border: 1px dotted #0689d8;
-			}
-			recipe-header,
-			recipe-footer {
-				background-color: #e9f0f4;
-				background-image:
-					linear-gradient(
-						45deg,
-						#0689d8 25%,
-						transparent 25%,
-						transparent 75%,
-						#0689d8 75%,
-						#0689d8
-					),
-					linear-gradient(
-						45deg,
-						#0689d8 25%,
-						transparent 25%,
-						transparent 75%,
-						#0689d8 75%,
-						#0689d8
-					);
-				background-size: 30px 30px;
-				background-position:
-					0 0,
-					15px 15px;
-				height: 45px;
-				width: 100%;
-				display: block;
-			}
-			recipe-contents {
-				display: flex;
-				flex-direction: column;
-				flex-grow: 1;
-				height: 100%;
-				padding: 1.5rem 1rem;
-				gap: 1rem;
-			}
-			recipe-title {
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				gap: 1rem;
-			}
-			ol,
-			li {
-				margin: 0;
-				padding: 0 0 0 1rem;
-			}
-
-			@media (width <= 500px) {
-				body {
-					background-image: none;
-					background-color: #9dc4dc;
-					place-content: start;
-				}
-				scrambled-eggs-recipe {
-					height: 100%;
-					justify-content: start;
-				}
-				recipe-contents {
-					height: auto;
-					flex-grow: 0;
-				}
 			}
 		</style>
 	</head>
