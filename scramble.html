@@ -85,7 +85,7 @@
 				background-color: #e9f0f4;
 				max-width: 450px;
 				width: 100%;
-				min-height: 300px;
+				min-height: 645px;
 				place-self: center;
 				display: flex;
 				justify-content: space-between;
@@ -135,8 +135,7 @@
 				text-align: center;
 				gap: 1rem;
 			}
-			ol,
-			li {
+			ol {
 				margin: 0;
 				padding: 0 0 0 1rem;
 			}
@@ -154,6 +153,9 @@
 				recipe-contents {
 					height: auto;
 					flex-grow: 0;
+				}
+				.hide-mobile {
+					display: none;
 				}
 			}
 		</style>
@@ -196,8 +198,8 @@
 							more
 							<a href="https://weird.jen.dev/">weird web october</a> 👻</small
 						>
-						<small>&nbsp;&nbsp;//&nbsp;&nbsp;</small>
-						<small>
+						<small class="hide-mobile">&nbsp;&nbsp;//&nbsp;&nbsp;</small>
+						<small class="hide-mobile">
 							bg image
 							<a
 								href="https://unsplash.com/photos/a-dozen-eggs-with-googly-eyes-in-a-cardboard-box-AHgrIDBtKZM"
