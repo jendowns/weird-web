@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>scrambled eggs recipe</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - maps" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/scramble"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Scramble" />
+		<style>
+			/*
+      The FontStruction “MS Sans Serif”
+      (https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+      under a Creative Commons Attribution Share Alike license
+      (http://creativecommons.org/licenses/by-sa/3.0/).
+    */
+			@font-face {
+				font-family: "MS Serif";
+				src: url("./fonts/ms_sans_serif.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--background-color: #f5e8e8;
+				--text-color: #282a36;
+				--link-color: #4e05eb;
+				--border-color: #444;
+				--font:
+					"MS Serif", "Lucida Console", Monaco, -apple-system,
+					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				background-color: var(--background-color);
+				background-image: url("./images/eggs.webp");
+				background-size: cover;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 1rem;
+				line-height: 1.5rem;
+				text-rendering: optimizeLegibility;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0;
+				margin: 0;
+				justify-content: center;
+				font-family: var(--font);
+				text-transform: lowercase;
+			}
+			h1 {
+				font-weight: 400;
+				text-align: center;
+				font-style: italic;
+			}
+			main {
+				width: 100%;
+				display: grid;
+				place-self: center;
+			}
+			footer {
+				padding: 0.5rem;
+				font-style: normal;
+				text-align: center;
+			}
+			scrambled-eggs-recipe {
+				background-color: white;
+				max-width: 450px;
+				width: 100%;
+				min-height: 300px;
+				place-self: center;
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+				padding: 1.5rem 0;
+				border: 1px dotted #333;
+			}
+			recipe-header,
+			recipe-footer {
+				background-color: white;
+				background-image:
+					linear-gradient(
+						45deg,
+						#0689d8 25%,
+						transparent 25%,
+						transparent 75%,
+						#0689d8 75%,
+						#0689d8
+					),
+					linear-gradient(
+						45deg,
+						#0689d8 25%,
+						transparent 25%,
+						transparent 75%,
+						#0689d8 75%,
+						#0689d8
+					);
+				background-size: 30px 30px;
+				background-position:
+					0 0,
+					15px 15px;
+				height: 45px;
+				width: 100%;
+				display: block;
+			}
+			recipe-contents {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				flex-grow: 1;
+				background-color: white;
+				height: 100%;
+				padding: 1rem;
+			}
+			recipe-title {
+				text-align: center;
+			}
+			ol,
+			li {
+				margin-left: 0;
+				padding-left: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<scrambled-eggs-recipe>
+				<recipe-header></recipe-header>
+				<recipe-contents>
+					<recipe-title
+						><h1><u>scrambled eggs recipe</u></h1>
+						<small>*by my husband, David</small></recipe-title
+					>
+
+					<ol>
+						<li>Add 2 tablespoons of butter in med high skillet</li>
+						<li>Crack eggs into bowl, scramble</li>
+						<li>
+							Pour eggs into melted butter, don’t disturb butter layer for a
+							minute or so.
+						</li>
+						<li>
+							Eggs should be setting in a thin layer on the bottom. Using a
+							wooden spoon start folding starting from the center of the pan
+							out.
+						</li>
+						<li>
+							Keep folding wet areas into the set areas. Rest for just a few
+							seconds between folds, especially as it gets close to done.
+						</li>
+						<li>
+							Eggs are done when there are no wet / shiny areas left. Not
+							overcooking is key if you want the eggs spreadable on toast -
+							remember they keep cooking even after the heat turns off.
+						</li>
+					</ol>
+
+					<footer>
+						<small
+							>site created by <a href="https://jendowns.com">jen</a> for
+							<a href="https://weirdweboctober.website/">weird web october</a>
+							👻</small
+						>
+						<small>&nbsp;&nbsp;//&nbsp;&nbsp;</small>
+						<small>
+							bg image
+							<a
+								href="https://unsplash.com/photos/a-dozen-eggs-with-googly-eyes-in-a-cardboard-box-AHgrIDBtKZM"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="source (opens new window)"
+								>source</a
+							></small
+						>
+					</footer>
+				</recipe-contents>
+				<recipe-footer></recipe-footer>
+			</scrambled-eggs-recipe>
+		</main>
+	</body>
+</html>
