@@ -21,7 +21,7 @@
     */
 			@font-face {
 				font-family: "MS Serif";
-				src: url("./fonts/ms_sans_serif.woff2") format("woff2");
+				src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
 				font-weight: normal;
 				font-display: swap;
 			}
@@ -191,6 +191,9 @@
 					text-align: center;
 				}
 			}
+			.pass {
+				text-decoration: line-through;
+			}
 		</style>
 	</head>
 	<body>
@@ -215,7 +218,7 @@
 						>
 					</li>
 					<li>
-						<span>2.</span><small><em>maps</em></small>
+						<span>2.</span><small class="pass"><em>maps</em></small>
 					</li>
 					<li>
 						<a href="./scramble"
@@ -223,7 +226,9 @@
 						>
 					</li>
 					<li>
-						<span>4.</span><small><em>filters</em></small>
+						<a href="./filters"
+							><span>4.</span><small><em>filters</em></small></a
+						>
 					</li>
 					<li>
 						<span>5.</span><small><em>remix</em></small>
