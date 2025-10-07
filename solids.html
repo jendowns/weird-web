@@ -61,9 +61,15 @@
 			}
 
 			#solid {
+				display: block;
 				position: absolute;
 				left: 0px;
 				top: 0px;
+				pointer-events: none;
+			}
+
+			#solid.freeze {
+				position: relative;
 			}
 
 			big-flames {
@@ -103,18 +109,22 @@
 				width: 100%;
 				max-width: 220px;
 				gap: 8px;
-
-				h1,
-				p {
-					width: 100%;
-					text-align: left;
-					margin: 0;
-					padding: 0;
-				}
+			}
+			h1,
+			p {
+				width: 100%;
+				text-align: left;
+				margin: 0;
+				padding: 0;
 			}
 			a,
 			a:visited {
 				color: #f1d2d2;
+			}
+			@media (prefers-reduced-motion: reduce) {
+				big-flames {
+					background-image: url("./images/flames.png");
+				}
 			}
 		</style>
 	</head>
@@ -123,7 +133,7 @@
 			<info-box
 				><h1>Theme: Solids</h1>
 				<p>
-					Get it? "Solids"? "Metal Gear Solid" + "Solid Snake"? looks like i got
+					Get it? "Metal Gear Solid" + "Solid Snake" = Solids? looks like i got
 					this theme down... solid 😏
 				</p>
 				<p>
@@ -150,9 +160,9 @@
 							>flames</a
 						></small
 					>
-				</p></info-box
-			>
-			<solid-snake id="solid">
+				</p>
+			</info-box>
+			<solid-snake id="solid" class="freeze">
 				<img
 					src="./images/solid.gif"
 					alt="a 3D image of Solid Snake from the game Metal Gear Solid is spinning and moving all over the page. the bottom of the page is lined with an animated flame. in the background is a screenshot from Metal Gear Solid 2, where Solid Snake looks intense & the subtitle reads 'NO! That is NOT Solid Snake!'"
@@ -165,43 +175,91 @@
 			let x = 0,
 				y = 0,
 				dirX = 1,
-				dirY = 1;
+				dirY = 1,
+				snake = undefined;
 			const speed = 1;
 
 			const solid = document.getElementById("solid");
 			let solidWidth = 119,
 				solidHeight = 200;
 
-			function animate() {
-				const screenHeight = document.body.clientHeight;
-				const screenWidth = document.body.clientWidth;
+			const QUERY = "(prefers-reduced-motion: no-preference)";
+			const mediaQueryList = window.matchMedia(QUERY);
 
-				if (y + solidHeight >= screenHeight || y < 0) {
-					solid.classList.add("ouch");
-					setTimeout(() => {
-						solid.classList.remove("ouch");
-					}, 500);
-					dirY *= -1;
-				}
-				if (x + solidWidth >= screenWidth || x < 0) {
-					solid.classList.add("ouch");
-					setTimeout(() => {
-						solid.classList.remove("ouch");
-					}, 500);
-					dirX *= -1;
-				}
-				x += dirX * speed;
-				y += dirY * speed;
-				solid.style.left = x + "px";
-				solid.style.top = y + "px";
-				window.requestAnimationFrame(animate);
-			}
-
-			solid.querySelector("img").onload = function () {
-				solidWidth = solid.clientWidth;
-				solidHeight = solid.clientHeight;
-				window.requestAnimationFrame(animate);
+			prefersReducedMotion = () => {
+				const prefersReducedMotion = !mediaQueryList.matches;
+				return prefersReducedMotion;
 			};
+
+			animate = () => {
+				if (!prefersReducedMotion()) {
+					const screenHeight = document.body.clientHeight;
+					const screenWidth = document.body.clientWidth;
+
+					if (y + solidHeight >= screenHeight || y < 0) {
+						solid.classList.add("ouch");
+						setTimeout(() => {
+							solid.classList.remove("ouch");
+						}, 500);
+						dirY *= -1;
+					}
+					if (x + solidWidth >= screenWidth || x < 0) {
+						solid.classList.add("ouch");
+						setTimeout(() => {
+							solid.classList.remove("ouch");
+						}, 500);
+						dirX *= -1;
+					}
+					x += dirX * speed;
+					y += dirY * speed;
+					solid.style.left = x + "px";
+					solid.style.top = y + "px";
+					window.requestAnimationFrame(animate);
+				}
+			};
+
+			stopEverything = () => {
+				// freeze the gif
+				solid.firstElementChild.setAttribute("src", "./images/solid.png");
+				solid.firstElementChild.setAttribute(
+					"alt",
+					"a 3D image of Solid Snake in the fetal position from the game Metal Gear Solid. the bottom of the page is lined with a flame image. in the background is a screenshot from Metal Gear Solid 2, where Solid Snake looks intense & the subtitle reads 'NO! That is NOT Solid Snake!'",
+				);
+				solid.classList.add("freeze");
+				// cancel the animation frames
+				if (snake !== undefined) {
+					window.cancelAnimationFrame(animate);
+					snake = undefined;
+				}
+			};
+
+			startEverything = () => {
+				// unfreeze the gif
+				solid.firstElementChild.setAttribute("src", "./images/solid.gif");
+				solid.firstElementChild.setAttribute(
+					"alt",
+					"a 3D image of Solid Snake from the game Metal Gear Solid is spinning and moving all over the page. the bottom of the page is lined with an animated flame. in the background is a screenshot from Metal Gear Solid 2, where Solid Snake looks intense & the subtitle reads 'NO! That is NOT Solid Snake!'",
+				);
+				solid.classList.remove("freeze");
+				// start the animation
+				if (!snake) {
+					snake = window.requestAnimationFrame(animate);
+				}
+			};
+			yeehaw = () => {
+				// only check motion setting
+				if (prefersReducedMotion()) {
+					stopEverything();
+				} else {
+					startEverything();
+				}
+			};
+
+			mediaQueryList.addEventListener("change", (event) => {
+				yeehaw();
+			});
+
+			yeehaw();
 		</script>
 	</body>
 </html>
