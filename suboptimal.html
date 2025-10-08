@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>suboptimal subscripts</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - suboptimal" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/suboptimal"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Sub-optimal" />
+		<style>
+			@font-face {
+				font-family: "comic neue";
+				src: url("./fonts/comic_neue.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--font:
+					"comic neue", "Lucida Console", Monaco, -apple-system,
+					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background-image: url("./images/waves.png");
+				background-size: cover;
+				background-position: bottom;
+				color: black;
+				font-family: var(--font);
+				scrollbar-gutter: stable;
+				overflow: hidden;
+			}
+			html,
+			body {
+				display: grid;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			main {
+				display: grid;
+				place-self: center;
+				gap: 2.5rem;
+				width: 100%;
+				padding: 1rem;
+			}
+			h1 {
+				margin: 0;
+			}
+			button-container {
+				display: flex;
+				gap: 48px;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+			button {
+				border: 0;
+				box-shadow: none;
+				background-color: transparent;
+				position: relative;
+				font-size: 2.5rem;
+				font-family: var(--font);
+				text-decoration: underline;
+
+				&:nth-of-type(odd) sub {
+					transform: rotate(45deg);
+				}
+				&:nth-of-type(even) sub {
+					transform: rotate(-45deg);
+				}
+			}
+			sub {
+				position: absolute;
+				font-style: italic;
+				top: -5px;
+				z-index: 99;
+				padding: 5px;
+			}
+			footer {
+				padding: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1><em>suboptimal subscripts</em></h1>
+			<button-container
+				role="group"
+				aria-label="button row. click on buttons repeatedly to add nested subscript elements"
+			>
+				<button>click</button> <button>on</button> <button>these</button>
+				<button>words</button> <button>repeatedly</button> <button>to</button>
+				<button>add</button>
+				<button>subscripts</button>
+			</button-container>
+		</main>
+
+		<footer>
+			<small>
+				* more
+				<a href="https://weird.jen.dev/">weird web october</a> 👻</small
+			>
+			<br />
+			<small class="hide-mobile">
+				* bg image
+				<a
+					href="https://unsplash.com/photos/clear-body-of-watter-iUmoREuqGbo"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="source (opens new window)"
+					>source</a
+				></small
+			>
+		</footer>
+
+		<script>
+			const buttons = document.querySelectorAll("button");
+
+			buttons.forEach((button) => {
+				let list;
+				button.addEventListener("click", (event) => {
+					const sub = document.createElement("sub");
+					if (!button.querySelector("sub")) {
+						button.appendChild(sub);
+						sub.textContent = "w";
+						document.querySelector("extra-text").classList.add("show");
+					} else {
+						list = button.querySelectorAll("sub");
+						list[list.length - 1].appendChild(sub);
+						sub.textContent = "e";
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
