@@ -313,7 +313,7 @@
 									alt="Light pink blinkie that says 'EEVEE' with a cute picture of the pokemon, Eevee"
 								/>
 								<img
-									src="./images/blinkies/n64.webp"
+									src="./images/blinkies/n64.gif"
 									alt="gray blink with blue and red text that reads 'NINTENDO 64' followed by the 3D N64 logo"
 								/>
 								<img
@@ -336,7 +336,7 @@
 								/>
 								<img
 									src="./images/blinkies/katebush.gif"
-									alt="Pictue of Kate Bush and her name on a blinkie"
+									alt="Picture of Kate Bush and her name on a blinkie"
 								/>
 								<img
 									src="./images/blinkies/needcoffee.gif"
@@ -347,6 +347,11 @@
 									alt="light green blinkie that says 'Bookworm'"
 								/>
 							</da-blinkies>
+							<p>
+								<input id="freeze" type="checkbox" /><label for="freeze"
+									>freeze blinkies</label
+								>
+							</p>
 						</window-contents>
 					</window-inner-frame>
 				</window-frame>
@@ -472,5 +477,30 @@
 		</site-container>
 
 		<noise-image></noise-image>
+
+		<script>
+			const freeze = document.getElementById("freeze");
+			const blinkies = document.querySelectorAll("img");
+
+			freezeBlinkies = (element) => {
+				if (element.checked) {
+					blinkies.forEach((blinkie) => {
+						const src = blinkie.getAttribute("src").replace("gif", "png");
+						blinkie.setAttribute("src", src);
+					});
+				} else {
+					blinkies.forEach((blinkie) => {
+						const src = blinkie.getAttribute("src").replace("png", "gif");
+						blinkie.setAttribute("src", src);
+					});
+				}
+			};
+
+			freeze.addEventListener("change", (event) => {
+				freezeBlinkies(event.target);
+			});
+
+			freezeBlinkies(freeze);
+		</script>
 	</body>
 </html>
