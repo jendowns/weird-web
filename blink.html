@@ -221,6 +221,14 @@
 				background: linear-gradient(180deg, #fff, #ecebe5 86%, #d8d0c4);
 				box-shadow: none;
 				border-radius: 3px;
+			}
+
+			.fake-button-link {
+				color: inherit;
+				text-decoration: none;
+				width: 100%;
+				height: 100%;
+				display: block;
 				min-width: 100px;
 				padding-left: 20px;
 				padding-right: 20px;
@@ -229,6 +237,21 @@
 				font-size: 12px;
 				text-align: center;
 				flex-shrink: 0;
+			}
+
+			.fake-button-link:hover {
+				box-shadow:
+					inset -1px 1px #fff0cf,
+					inset 1px 2px #fdd889,
+					inset -2px 2px #fbc761,
+					inset 2px -2px #e5a01a;
+			}
+
+			h2 {
+				margin: 0;
+				padding: 0;
+				font-size: 16px;
+				font-weight: normal;
 			}
 
 			@media (width <= 610px) {
@@ -252,7 +275,7 @@
 				<window-frame>
 					<window-inner-frame>
 						<window-header-wrapper>
-							<window-header aria-hidden="true"> da blinkies</window-header>
+							<window-header><h2>da blinkies</h2></window-header>
 							<fake-button>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -273,24 +296,60 @@
 								ever distill your essence into a collection of blinking images?
 							</p>
 							<da-blinkies>
-								<img src="./images/blinkies/goldenage.gif" alt="" />
-								<img src="./images/blinkies/y2k-compliant.gif" alt="" />
-								<img src="./images/blinkies/bellionaire.gif" alt="" />
-								<img src="./images/blinkies/fruit.gif" alt="" />
-								<img src="./images/blinkies/eevee.gif" alt="" />
-								<img src="./images/blinkies/bookworm.gif" alt="" />
-								<img src="./images/blinkies/n64.webp" alt="" />
-								<img src="./images/blinkies/playstation.gif" alt="" />
-								<img src="./images/blinkies/pretty.gif" alt="" />
-								<img src="./images/blinkies/dream.gif" alt="" />
+								<img
+									src="./images/blinkies/goldenage.gif"
+									alt="gray blinkie with animated text that shows an old Windows OS logo, followed by the text 'Windows 9x/2000/XP. The Golden Age.'"
+								/>
+								<img
+									src="./images/blinkies/y2k-compliant.gif"
+									alt="pink blinkie that says 'Y2k Compliant'"
+								/>
+								<img
+									src="./images/blinkies/bellionaire.gif"
+									alt="Animal Crossing themed blinkie that says 'Bellionaire'"
+								/>
+								<img
+									src="./images/blinkies/fruit.gif"
+									alt="Animal Crossing theme blinkie featuring Tangy the Cat with flashing text that reads 'FRUIT 4 THE FRUIT GOD"
+								/>
+								<img
+									src="./images/blinkies/eevee.gif"
+									alt="Light pink blinkie that says 'EEVEE' with a cute picture of the pokemon, Eevee"
+								/>
+								<img
+									src="./images/blinkies/bookworm.gif"
+									alt="light green blinkie that says 'Bookworm'"
+								/>
+								<img
+									src="./images/blinkies/n64.webp"
+									alt="gray blink with blue and red text that reads 'NINTENDO 64' followed by the 3D N64 logo"
+								/>
+								<img
+									src="./images/blinkies/playstation.gif"
+									alt="'Playstation girl' blinkie followed by the playstation logo"
+								/>
+								<img
+									src="./images/blinkies/pretty.gif"
+									alt="Blinkie with a glittery nature scene and a rainbow"
+								/>
+								<img
+									src="./images/blinkies/dream.gif"
+									alt="'I dream in pixels' blinkie"
+								/>
 								<img
 									src="./images/blinkies/forest.gif"
 									width="150"
 									height="20"
-									alt=""
+									alt="Green blinkie reads 'Forest Walker'"
 								/>
-								<img src="./images/blinkies/katebush.gif" alt="" />
-								<img src="./images/blinkies/needcoffee.gif" alt="" />
+								<img
+									src="./images/blinkies/katebush.gif"
+									alt="Pictue of Kate Bush and her name on a blinkie"
+								/>
+								<img
+									src="./images/blinkies/needcoffee.gif"
+									alt="Blinkie with a picture of coffee and the text 'I NEED Coffee'"
+								/>
 							</da-blinkies>
 						</window-contents>
 					</window-inner-frame>
@@ -298,8 +357,8 @@
 				<window-frame>
 					<window-inner-frame>
 						<window-header-wrapper>
-							<window-header aria-hidden="true">
-								An unexpected error occurred
+							<window-header>
+								<h2>An unexpected error occurred</h2>
 							</window-header>
 							<fake-button>
 								<svg
@@ -344,7 +403,14 @@
 									Where is it now, the glory and the dream?
 								</em>
 								<fake-ok-button style="align-self: end"
-									>UMM... YOU OK?</fake-ok-button
+									><a
+										class="fake-button-link"
+										href="https://en.wikisource.org/wiki/Poems,_in_Two_Volumes_(Wordsworth,_1807)/Volume_2/Ode:_Intimations_of_Immortality_from_Recollections_of_Early_Childhood"
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label="UMM... YOU OK? Read the rest of this poem. (opens new tab)"
+										>UMM... YOU OK?</a
+									></fake-ok-button
 								>
 							</window-text>
 						</window-contents>
@@ -353,7 +419,7 @@
 				<window-frame>
 					<window-inner-frame>
 						<window-header-wrapper>
-							<window-header aria-hidden="true">so long ~</window-header>
+							<window-header><h2>so long ~</h2></window-header>
 							<fake-button>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -396,7 +462,12 @@
 										>1</a
 									>
 								</small>
-								<p><img src="./images/blinkies/halloween.gif" alt="" /></p>
+								<p>
+									<img
+										src="./images/blinkies/halloween.gif"
+										alt="Blinkie with skulls that says 'Happy Halloween!"
+									/>
+								</p>
 							</footer>
 						</window-contents>
 					</window-inner-frame>
