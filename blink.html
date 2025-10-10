@@ -88,6 +88,15 @@
 				font-size: 3rem;
 				text-align: center;
 				text-shadow: 1px 1px #d7eeff;
+				margin-bottom: 1rem;
+				padding: 0;
+			}
+			freeze-blinkies {
+				padding: 0.5rem;
+				background-color: #ece9d8;
+				border: 1px dotted #333;
+				display: flex;
+				gap: 8px;
 			}
 			noise-image {
 				background: var(--noise);
@@ -271,6 +280,11 @@
 	<body>
 		<site-container>
 			<h1>ode to blinkies</h1>
+			<freeze-blinkies
+				><input id="freeze" type="checkbox" /><label for="freeze"
+					>freeze all blinkies</label
+				></freeze-blinkies
+			>
 			<main>
 				<window-frame>
 					<window-inner-frame>
@@ -347,11 +361,6 @@
 									alt="light green blinkie that says 'Bookworm'"
 								/>
 							</da-blinkies>
-							<p>
-								<input id="freeze" type="checkbox" /><label for="freeze"
-									>freeze blinkies</label
-								>
-							</p>
 						</window-contents>
 					</window-inner-frame>
 				</window-frame>
