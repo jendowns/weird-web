@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Jen Downs" />
 		<meta name="description" content="weird web october 2025 - solids" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
 		<link
 			rel="preload"
 			as="fetch"
@@ -29,6 +30,7 @@
 				font-size: 16px;
 			}
 			body {
+				background-color: black;
 				background:
 					linear-gradient(to right, rgba(57, 57, 57, 0.551), #415344ad),
 					url("./images/not-solid.jpg");
@@ -41,7 +43,6 @@
 			}
 			html,
 			body {
-				display: grid;
 				height: 100%;
 				padding: 0;
 				margin: 0;
@@ -120,6 +121,7 @@
 			a,
 			a:visited {
 				color: #f1d2d2;
+				font-weight: 400;
 			}
 			@media (prefers-reduced-motion: reduce) {
 				big-flames {
@@ -129,18 +131,85 @@
 		</style>
 	</head>
 	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				background-color: black;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				border-bottom: 1px dotted rgb(253, 143, 143);
+				width: 100%;
+				z-index: 99999;
+			"
+			aria-label="site navigation"
+		>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/filters"
+				aria-label="filters (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>filters
+			</a>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/suboptimal"
+				aria-label="suboptimal (next theme day)"
+				>suboptimal<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+					/></svg
+			></a>
+		</nav>
 		<main>
 			<info-box
 				><h1>Theme: Solids</h1>
 				<p>
 					Get it? "Metal Gear Solid" + "Solid Snake" = Solids? looks like i got
 					this theme down... solid 😏
-				</p>
-				<p>
-					<small>
-						more
-						<a href="https://weird.jen.dev/">weird web october</a> 👻</small
-					>
 				</p>
 				<p>
 					<small

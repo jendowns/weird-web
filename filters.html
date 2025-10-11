@@ -54,11 +54,9 @@
 				color: var(--text-color);
 				font-family: var(--font);
 				scrollbar-gutter: stable;
-				padding: 1rem 0;
 			}
 			html,
 			body {
-				display: grid;
 				height: 100%;
 			}
 			site-container {
@@ -77,6 +75,7 @@
 				display: grid;
 				place-self: center;
 				max-width: 250px;
+				padding: 1rem 0;
 			}
 			h1 {
 				font-size: 1.35rem;
@@ -188,12 +187,10 @@
 					background-color: rgba(241, 230, 230, 0.573);
 				}
 			}
-
 			bingo-message-wrapper[open] {
 				display: block;
 				z-index: 999;
 			}
-
 			bingo-message {
 				z-index: 9999;
 				position: absolute;
@@ -242,6 +239,79 @@
 		</style>
 	</head>
 	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				background-color: rgb(245, 216, 216);
+				border-bottom: 1px dotted rgb(253, 143, 143);
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+			"
+			aria-label="site navigation"
+		>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/scramble"
+				aria-label="scramble (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>scramble
+			</a>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/solids"
+				aria-label="solids (next theme day)"
+				>solids<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+					/></svg
+			></a>
+		</nav>
 		<site-container>
 			<main>
 				<which-emoji
@@ -359,10 +429,6 @@
 						rel="noopener noreferrer"
 						>backdrop filters<span class="sr-only"> (opens a new tab)</span></a
 					>)</small
-				><br />
-				<small>
-					check out more
-					<a href="https://weird.jen.dev/">weird web october</a> 👻</small
 				>
 			</footer>
 		</site-container>

@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Jen Downs" />
 		<meta name="description" content="weird web october 2025 - warning" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
 		<link
 			rel="preload"
 			as="fetch"
@@ -31,8 +32,6 @@
 				background-color: #252a25;
 				color: var(--text-color);
 				font-family: var(--font);
-				scrollbar-gutter: stable;
-				padding: 1rem 0;
 				font-style: italic;
 			}
 			html,
@@ -45,7 +44,7 @@
 			p,
 			h1 {
 				margin: 0;
-				padidng: 0;
+				padding: 0;
 			}
 			h1 {
 				color: white;
@@ -58,6 +57,7 @@
 			a:visited {
 				color: rgb(253, 143, 143);
 				text-decoration-style: wavy;
+				font-weight: 400;
 			}
 			main {
 				display: grid;
@@ -124,10 +124,10 @@
 				color: red;
 			}
 			trash-text {
-				width: 150px;
+				width: 50px;
 				position: absolute;
 				top: 50px;
-				right: -20px;
+				right: 50px;
 				font-size: 1.4rem;
 			}
 			.trash-arrow {
@@ -153,6 +153,7 @@
 					display: flex;
 					flex-direction: column;
 					gap: 24px;
+					overflow: hidden;
 				}
 				ritz-wrapper,
 				trash-wrapper {
@@ -172,6 +173,57 @@
 		</style>
 	</head>
 	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				background-color: black;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				border-bottom: 1px dotted rgb(253, 143, 143);
+				width: 100%;
+				z-index: 99999;
+			"
+			aria-label="site navigation"
+		>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/blink"
+				aria-label="blink (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>blink
+			</a>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<span style="width: 50px"></span>
+		</nav>
 		<main>
 			<h1>
 				Beware the Trash Bird
@@ -254,25 +306,6 @@
 					</svg>
 				</trash-wrapper>
 			</image-wrapper>
-			<footer>
-				<small>
-					check out more
-					<a href="https://weird.jen.dev/">weird web october</a>
-				</small>
-				<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="16"
-					height="16"
-					viewBox="0 0 32 32"
-				>
-					<!-- Icon from Pixel free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M29.71 19.81h1.53v4.57h-1.53Zm0-19.81h-1.52v1.52h-1.53v1.53h1.53v1.52h1.52V3.05h1.53V1.52h-1.53zm-1.52 10.67h1.52v9.14h-1.52Zm-1.53 13.71h3.05v1.52h-3.05Zm0-16.76h1.53v3.05h-1.53ZM25.14 25.9h1.52v1.53h-1.52Zm0-4.57h1.52v3.05h-1.52Zm0-15.23h1.52v1.52h-1.52Zm-1.52 21.33h1.52v1.52h-1.52Zm1.52-16.76h-1.52v1.52h-1.53v1.52h1.53v1.53h1.52v-1.53h1.52v-1.52h-1.52zm-3.05-6.1h3.05V6.1h-3.05Zm-1.52 24.38h3.05v1.53h-3.05Zm-3.05-13.71v4.57h4.57v-4.57Zm3.05 3.05h-1.53v-1.53h1.53ZM9.9 30.48h10.67V32H9.9Zm6.1-9.15h1.52v3.05H16ZM14.47 3.05h7.62v1.52h-7.62Zm0 12.19H16v-1.53h1.52v-1.52H16v-1.52h-1.53v1.52h-1.52v1.52h1.52zm-1.52 9.14H16v1.52h-3.05ZM11.43 4.57h3.04V6.1h-3.04Zm0 16.76h1.52v3.05h-1.52ZM9.9 6.1h1.53v1.52H9.9Zm0-6.1h1.53v1.52H9.9ZM6.85 28.95H9.9v1.53H6.85ZM8.38 7.62H9.9v3.05H8.38Zm-1.53 3.05h1.53v9.14H6.85ZM5.33 27.43h1.52v1.52H5.33Zm0-22.86h1.52v4.57H5.33ZM3.81 25.9h1.52v1.53H3.81Zm0-6.09h3.04v1.52H3.81ZM2.28 3.05h3.05v1.52H2.28Zm0 21.33h1.53v1.52H2.28Zm0-6.09h1.53v1.52H2.28ZM.76 9.14h4.57v1.53H.76ZM2.28 6.1h1.53v1.52H2.28ZM.76 19.81h1.52v4.57H.76Zm0-6.1h1.52v1.53H.76Zm0-9.14h1.52V6.1H.76Z"
-					/>
-				</svg>
-			</footer>
 		</main>
 		<svg aria-hidden="true">
 			<filter id="creepytext">
