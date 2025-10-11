@@ -56,6 +56,11 @@
 			p {
 				text-align: center;
 			}
+			a,
+			a:visited {
+				color: var(--link-color);
+				font-weight: 400;
+			}
 			main {
 				width: 100%;
 			}
@@ -159,7 +164,7 @@
 				transition: opacity 600ms;
 				opacity: 1;
 			}
-			svg {
+			main > svg {
 				position: absolute;
 				width: 0;
 				height: 0;
@@ -248,6 +253,54 @@
 		</style>
 	</head>
 	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				background-color: #ebebeb;
+				border-bottom: 1px dotted rgb(120, 123, 124);
+				font-size: 0.8rem;
+				color: currentColor;
+				width: 100%;
+				z-index: 99999;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			"
+			aria-label="site navigation"
+		>
+			<span style="width: 50px"></span>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/scramble"
+				aria-label="scramble (next theme day)"
+				>scramble<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+					/></svg
+			></a>
+		</nav>
 		<main>
 			<h1>Transparency</h1>
 			<hint-text
@@ -311,12 +364,6 @@
 			<p>
 				<button onclick="{reset()}">reset window</button>
 			</p>
-
-			<footer>
-				<small>
-					more <a href="https://weird.jen.dev/">weird web october</a> 👻</small
-				>
-			</footer>
 
 			<svg aria-hidden="true">
 				<filter id="smudge">

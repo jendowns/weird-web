@@ -45,7 +45,7 @@
 			a,
 			a:visited {
 				color: var(--link-color);
-				font-weight: 600;
+				font-weight: 400;
 			}
 			body {
 				background-color: var(--background-color);
@@ -62,9 +62,9 @@
 				align-items: center;
 				padding: 0;
 				margin: 0;
-				justify-content: center;
 				font-family: var(--font);
 				text-transform: lowercase;
+				gap: 24px;
 			}
 			h1 {
 				font-weight: 400;
@@ -161,6 +161,79 @@
 		</style>
 	</head>
 	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				background-color: #ebebeb;
+				border-bottom: 1px dotted rgb(120, 123, 124);
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+			"
+			aria-label="site navigation"
+		>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/transparency"
+				aria-label="transparency (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>transparency
+			</a>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/filters"
+				aria-label="filters (next theme day)"
+				>filters<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+					/></svg
+			></a>
+		</nav>
 		<main>
 			<scrambled-eggs-recipe>
 				<recipe-header></recipe-header>
@@ -193,13 +266,8 @@
 						</li>
 					</ol>
 
-					<footer>
+					<footer class="hide-mobile">
 						<small>
-							more
-							<a href="https://weird.jen.dev/">weird web october</a> 👻</small
-						>
-						<small class="hide-mobile">&nbsp;&nbsp;//&nbsp;&nbsp;</small>
-						<small class="hide-mobile">
 							bg image
 							<a
 								href="https://unsplash.com/photos/a-dozen-eggs-with-googly-eyes-in-a-cardboard-box-AHgrIDBtKZM"
