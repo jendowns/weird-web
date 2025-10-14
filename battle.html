@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Violent Cartoon Battles</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - camera" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/battle"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Battle" />
+		<style>
+			/*
+			The FontStruction “MS Sans Serif”
+			(https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+			under a Creative Commons Attribution Share Alike license
+			(http://creativecommons.org/licenses/by-sa/3.0/).
+			*/
+			@font-face {
+				font-family: "MS Serif";
+				src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--text-color: #282a36;
+				--font: "MS Serif", serif;
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background: radial-gradient(white, rgb(255, 223, 191));
+				color: var(--text-color);
+				font-family: var(--font);
+				align-content: start;
+				background: url("./images/capsule.png");
+				background-size: cover;
+			}
+			html,
+			body {
+				display: grid;
+				height: 100%;
+			}
+			html,
+			body,
+			p,
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				font-size: 2.5rem;
+				font-weight: normal;
+				margin-top: 2rem;
+			}
+			a,
+			a:visited {
+				color: rgb(6, 71, 47);
+				text-decoration-style: wavy;
+				font-weight: 400;
+			}
+			main {
+				display: grid;
+				place-items: center;
+				align-self: flex-start;
+				gap: 16px;
+				z-index: 99;
+				width: 100%;
+				padding: 1rem;
+			}
+			nav {
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+				background-color: rgb(128, 213, 213);
+			}
+			nav a {
+				display: flex;
+				gap: 4px;
+				align-self: center;
+				align-items: center;
+				text-decoration-style: wavy;
+			}
+			image-wrapper {
+				display: block;
+				position: relative;
+			}
+			img {
+				display: block;
+				border: 1px dotted black;
+				transform: rotate(-1deg);
+				width: 100%;
+				max-width: 900px;
+			}
+			h1,
+			p {
+				background-color: rgb(177, 235, 222);
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav aria-label="site navigation">
+			<a
+				href="https://weird.jen.dev/warning"
+				aria-label="warning (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>warning
+			</a>
+			<a href="https://weird.jen.dev/">weird web october</a>
+			<span style="width: 50px"></span>
+		</nav>
+
+		<main>
+			<h1>Violent Cartoon Battles</h1>
+			<p>(from the Wall Street Journal in 1999)</p>
+			<img class="newspaper" src="./images/battle.webp" alt="" />
+		</main>
+		<script>
+			const newspaper = document.querySelector(".newspaper");
+			newspaper.setAttribute(
+				"alt",
+				`Picture of a newspaper with the headline "Kids Are Glued to a Violent Japanese Cartoon Show", subtitle:
+      'Dragon Ball Z' Is Bringing Impalement, Strangulation To the After-School Crowd
+      By SALLY BEATTY
+      Stay Reporter - THE WALL STREET JOURNAL
+      The article reads:
+      As many a young child already knows, "Dragon Ball Z," a violent animated series imported from Japan, is a huge cartoon hit.
+      A sort of Pokemon meets "Pulp Fiction," the show is much darker than the average kiddie cartoon.
+      Every weekday afternoon on Time Warner Inc.'s Cartoon Network. characters age, die and get vapor-ized-suffering far worse fates than Wile E. Coyote ever did.
+      Brutality is a staple, In one recent episode, beads of sweat form on the brow of a character named Vegeta as he is nearly strangled to death by an evil foe named Frieza. In another. Frieza uses the horns on his head to impale a good guy named Krillin through the chest.
+      Mesmerized, kids are tuning in to the Cartoon Network in record numbers.
+      "Dragon Ball Z" at-
+      tracted an audience of 1.7 million
+      households on Sept. 30, the largest number in the network's history. The show's ratings among six-to 11-year-olds-the demographic group most coveted by children's advertisers-leapt 95% In the fourth quarter through Now, 30 from a year ear-lier. Nearly one million kids in that age group tuned in to watch the show Oct. I, another
+      record for the network.
+      Advertisers are lining up, too, including Hasbro Inc. and Mattel Inc. Even the U.S. Navy is running macho recruitment ads at the end of the show.
+      "Dragon Ball Z" is also crackling on the Web. On the Cartoon Network's Internet site, it generates among the most inquiries of any of its shows. Last week, "Dragon Ball ranked as the fifth-most-requested tople on the Lycos search site, behind mon cartoon, but ahead of the World Wrestling Federation and Pamela An-derson.
+      Based on the success of "Dragon Ball Z," the network plans to boost its programming time devoted to Japanese animation to three hours from two, adding two new shows next year. "Gundam" is a tale of bad guys from outer space, and "Tenchi Muyo!" is the story of a lady's man caught up in an interstellar war.
+      The Cartoon Network says it hasn't had complaints from parents or advertisers about the show's violent content. In fact, the U.S. distributor land licensing agent of "Dragon Ball Z, Funima-tion Productions Inc., says the show is toned down for U.S. sensibilities--blood is often edited out and frames are erased to soften the blows in certain battle scenes.
+      The Cartoon Network also runs "anger man-agement" spots that appear during "Dragon Ball
+      Z" and other shows. "There's nothing wrong with being angry," counsels a bubble-headed host in a space suit. "It's all in how you deal with it. Anger can be a motivational tool." The network says there is no connection between the spot and the show's content.
+      Betty Cohen, president for the Cartoon Network, says "Dragon Ball 2" is no worse than other popular Japanese programs like "The Power Rangers" or "Digimon," a show about mechanized monsters currently airing on News Corp.'s Fox Kids.
+      "People are attracted to action and people in battles with certain forces and unusual characters, but it's not about real-life human stuff," says Ms. Co-hen. Young boys tune in to "Dragon Ball Z" for some of the same reasons people go to sports events, she... (Please Turn to Page By. Column 5)`,
+			);
+		</script>
+	</body>
+</html>
