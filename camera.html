@@ -83,7 +83,7 @@
 				place-items: center;
 				gap: 16px;
 				width: 100%;
-				max-width: 999px;
+				max-width: 1200px;
 				padding: 3rem 1rem;
 				margin: 0 auto;
 				z-index: 999;
@@ -130,8 +130,9 @@
 				font-weight: normal;
 			}
 			photo-gallery {
-				display: grid;
-				place-items: center;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 				width: 100%;
 				gap: 2rem;
 				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
