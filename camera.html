@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>from my camera roll</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - camera" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/camera"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Camera" />
+		<style>
+			/*
+			The FontStruction “MS Sans Serif”
+			(https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+			under a Creative Commons Attribution Share Alike license
+			(http://creativecommons.org/licenses/by-sa/3.0/).
+			*/
+			@font-face {
+				font-family: "MS Serif";
+				src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "scribble";
+				src: url("./fonts/mansalva.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--text-color: #48494a;
+				--font: "MS Serif", serif;
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background: radial-gradient(
+					circle,
+					rgba(213, 244, 244, 1) 0%,
+					rgba(176, 239, 242, 1) 100%
+				);
+				background-attachment: scroll;
+				background-attachment: fixed;
+				color: var(--text-color);
+				font-family: var(--font);
+				align-content: start;
+				background-size: cover;
+			}
+			html,
+			body {
+				display: grid;
+				height: 100%;
+			}
+			html,
+			body,
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			a,
+			a:visited {
+				color: rgb(6, 71, 47);
+				text-decoration-style: wavy;
+				font-weight: 400;
+			}
+			main {
+				display: grid;
+				place-items: center;
+				gap: 16px;
+				width: 100%;
+				max-width: 999px;
+				padding: 3rem 1rem;
+				margin: 0 auto;
+				z-index: 999;
+			}
+			nav {
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+				background-color: transparent;
+			}
+			nav a {
+				display: flex;
+				gap: 4px;
+				align-self: center;
+				align-items: center;
+				text-decoration-style: wavy;
+			}
+			image-wrapper {
+				display: block;
+				position: relative;
+			}
+			img {
+				display: block;
+				border: 1px solid rgba(48, 48, 48, 0.739);
+				width: 100%;
+				border-radius: 2px;
+			}
+			h1 {
+				font-family: "scribble";
+				font-size: 2rem;
+				padding: 5px;
+				font-weight: normal;
+			}
+			photo-gallery {
+				display: grid;
+				place-items: center;
+				width: 100%;
+				gap: 2rem;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+				polaroid-photo:nth-of-type(1) {
+					transform: rotate(-1deg);
+				}
+				polaroid-photo:nth-of-type(2) {
+					transform: rotate(2deg);
+				}
+				polaroid-photo:nth-of-type(3) {
+					transform: rotate(-1deg);
+				}
+				polaroid-photo:nth-of-type(4) {
+					transform: rotate(1deg);
+				}
+				polaroid-photo:nth-of-type(5) {
+					transform: rotate(-2deg);
+				}
+
+				polaroid-photo:nth-of-type(6) {
+					transform: rotate(1deg);
+				}
+			}
+			polaroid-photo {
+				background-color: white;
+				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 3px 3px 12px #7775;
+				border: 1px solid rgba(77, 88, 90, 0.594);
+				border-radius: 2px;
+				max-width: 300px;
+			}
+			photo-caption {
+				display: block;
+				padding: 1rem;
+				font-family: "scribble";
+				min-height: 50px;
+				font-size: 1.2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<nav aria-label="site navigation">
+			<a
+				href="https://weird.jen.dev/warning"
+				aria-label="warning (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>warning
+			</a>
+			<a href="https://weird.jen.dev/">weird web october</a>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/battle"
+				aria-label="battle (next theme day)"
+				>battle<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+					/></svg
+			></a>
+		</nav>
+
+		<main>
+			<h1>*from my camera roll*</h1>
+
+			<photo-gallery>
+				<polaroid-photo>
+					<img
+						src="./images/camera/bread.png"
+						alt="closeup photo of freshly baked buns still in the pan. the texture looks perfect. you can almost smell them through the camera."
+						aria-describedby="bun-id"
+					/>
+					<photo-caption id="bun-id">freshly baked buns</photo-caption>
+				</polaroid-photo>
+				<polaroid-photo>
+					<img
+						src="./images/camera/snowball.png"
+						alt="a pembroke welsh corgi in a little blue dog jacket and black dog boots is jumping in the air trying to catch a snowball, but it's just fell apart in his face. (he looks surprised)"
+						aria-describedby="snowball-id"
+					/>
+					<photo-caption id="snowball-id">catching a snowball</photo-caption>
+				</polaroid-photo>
+				<polaroid-photo>
+					<img
+						src="./images/camera/milkfoam.png"
+						alt="closeup shot of a latte in a clear transparent glass mug with foamy milk"
+						aria-describedby="milk-id"
+					/>
+					<photo-caption id="milk-id">foamy milk</photo-caption>
+				</polaroid-photo>
+				<polaroid-photo>
+					<img
+						src="./images/camera/river.png"
+						alt="a picture of a river taken from a bridge, where the sky is reflected in the water below. the photo is taken through a spider web on the bridge and there is a colorful lens flare from the sunlight. the area around the river is very lush."
+						aria-describedby="web-id"
+					/>
+					<photo-caption id="web-id">through a spider web</photo-caption>
+				</polaroid-photo>
+				<polaroid-photo>
+					<img
+						src="./images/camera/noodles.png"
+						alt="big steamy noodles being slowly pulled out of a bowl"
+						aria-describedby="noodle-id"
+					/>
+					<photo-caption id="noodle-id">messy noodles</photo-caption>
+				</polaroid-photo>
+				<polaroid-photo>
+					<img
+						src="./images/camera/converse.png"
+						alt="photo taken looking down the ground, showing the photographer's converse high top shoes standing in green grass with patches of melting snow. the grass is very bright green under the clumps of snow."
+						aria-describedby="snow-id"
+					/>
+					<photo-caption id="snow-id">snow melt</photo-caption>
+				</polaroid-photo>
+			</photo-gallery>
+		</main>
+	</body>
+</html>
