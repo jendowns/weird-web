@@ -46,17 +46,20 @@
 				font-size: 16px;
 			}
 			body {
-				background: radial-gradient(
-					circle,
-					rgba(213, 244, 244, 1) 0%,
-					rgba(176, 239, 242, 1) 100%
-				);
-				background-attachment: scroll;
-				background-attachment: fixed;
+				background-color: lightyellow;
+				background-image:
+					linear-gradient(
+						90deg,
+						transparent 79px,
+						#abced4 79px,
+						#abced4 81px,
+						transparent 81px
+					),
+					linear-gradient(rgba(194, 221, 226, 0.662) 0.1em, transparent 0.1em);
+				background-size: 100% 1.2em;
 				color: var(--text-color);
 				font-family: var(--font);
 				align-content: start;
-				background-size: cover;
 			}
 			html,
 			body {
@@ -158,16 +161,42 @@
 				padding: 10px;
 				display: flex;
 				flex-direction: column;
-				box-shadow: 3px 3px 12px #7775;
+				box-shadow:
+					3px 3px 12px #7776,
+					rgba(254, 254, 254, 0.46) 1px 1px 0px 1px inset,
+					rgba(205, 204, 204, 0.88) -1px -1px 0px 0px inset;
 				border: 1px solid rgba(77, 88, 90, 0.594);
 				border-radius: 2px;
 			}
 			photo-caption {
-				display: block;
+				display: flex;
 				padding: 1rem;
 				font-family: "scribble";
 				min-height: 50px;
 				font-size: 1.2rem;
+				gap: 0.5rem;
+				justify-content: center;
+			}
+			.highlight {
+				position: relative;
+			}
+			.highlight:before {
+				position: absolute;
+				content: "";
+				background-color: rgba(255, 228, 109, 0.852);
+				width: 100%;
+				height: 1.2em;
+				z-index: -1;
+				filter: url(#highlighter);
+				left: -0.25em;
+				top: 0.1em;
+				padding: 0.25em;
+				transform: rotate(2deg);
+			}
+			.highlighter-filter {
+				width: 0;
+				height: 0;
+				position: absolute;
 			}
 		</style>
 	</head>
@@ -227,7 +256,9 @@
 						alt="closeup photo of freshly baked buns still in the pan. the texture looks perfect. you can almost smell them through the camera."
 						aria-describedby="bun-id"
 					/>
-					<photo-caption id="bun-id">freshly baked buns</photo-caption>
+					<photo-caption id="bun-id"
+						><span class="highlight">freshly baked buns</span>
+					</photo-caption>
 				</polaroid-photo>
 				<polaroid-photo>
 					<img
@@ -235,7 +266,9 @@
 						alt="a pembroke welsh corgi in a little blue dog jacket and black dog boots is jumping in the air trying to catch a snowball, but it's just fell apart in his face. (he looks surprised)"
 						aria-describedby="snowball-id"
 					/>
-					<photo-caption id="snowball-id">catching a snowball</photo-caption>
+					<photo-caption id="snowball-id"
+						><span>catching a snowball</span></photo-caption
+					>
 				</polaroid-photo>
 				<polaroid-photo>
 					<img
@@ -243,7 +276,21 @@
 						alt="closeup shot of a latte in a clear transparent glass mug with foamy milk"
 						aria-describedby="milk-id"
 					/>
-					<photo-caption id="milk-id">foamy milk</photo-caption>
+					<photo-caption id="milk-id"
+						><span>foamy milk</span
+						><svg
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+							width="32"
+							height="32"
+							viewBox="0 0 512 512"
+						>
+							<!-- Icon from Firefox OS Emoji by Mozilla - https://mozilla.github.io/fxemoji/LICENSE.md -->
+							<path
+								fill="#FF473E"
+								d="M475.49 110.836c-53.955-62.686-148.515-64.905-205.331-7.275l-.16.163c-7.852 7.996-20.332 8.088-28.293.2l-.204-.201C180.34 43.426 77.622 51.148 27.098 126.192c-31.533 46.836-30.61 107.597.701 154.582c11.27 16.912 23.288 26.685 40.837 39.924c66.859 50.44 101.038 112.801 99.274 136.217c-1.218 16.162 6.664 19.394 16.303 17.969c8.717-1.288 263.335-157.68 263.335-157.68c13.016-8.796 24.903-19.955 34.898-33.715c34.87-48.003 31.75-127.684-6.956-172.653"
+							/></svg
+					></photo-caption>
 				</polaroid-photo>
 				<polaroid-photo>
 					<img
@@ -251,7 +298,9 @@
 						alt="a picture of a river taken from a bridge, where the sky is reflected in the water below. the photo is taken through a spider web on the bridge and there is a colorful lens flare from the sunlight. the area around the river is very lush."
 						aria-describedby="web-id"
 					/>
-					<photo-caption id="web-id">through a spider web</photo-caption>
+					<photo-caption id="web-id"
+						><span>through a spider web</span></photo-caption
+					>
 				</polaroid-photo>
 				<polaroid-photo>
 					<img
@@ -259,7 +308,49 @@
 						alt="big steamy noodles being slowly pulled out of a bowl"
 						aria-describedby="noodle-id"
 					/>
-					<photo-caption id="noodle-id">messy noodles</photo-caption>
+					<photo-caption id="noodle-id">
+						<span style="display: flex; gap: 2px">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true"
+								width="32"
+								height="32"
+								viewBox="0 0 24 24"
+							>
+								<!-- Icon from Freehand free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+								<path
+									fill="currentColor"
+									d="M6.015 17.988a8.16 8.16 0 0 0 5.995 2.528a9.26 9.26 0 0 0 6.055-2.598a8 8 0 0 0 1.998-3.187c.3-.765.397-1.595.28-2.408a.8.8 0 0 0-.46-.55a7 7 0 0 0-1.119 0c-1.608 0-5.066.2-8.173.37s-6.205.5-6.205.5a.82.82 0 0 0-.33.619c-.02.62.082 1.238.3 1.818a7.8 7.8 0 0 0 1.659 2.908m3.127-4.996c3.317-.07 7.564-.1 9.512-.1h.66a5.9 5.9 0 0 1-.74 2.508a6.6 6.6 0 0 1-1.269 1.729a8.3 8.3 0 0 1-5.295 2.358a7.34 7.34 0 0 1-5.416-2.118a6.5 6.5 0 0 1-1.329-2.089a6 6 0 0 1-.48-1.678a4 4 0 0 1 0-.47a40 40 0 0 1 4.397-.14z"
+								/>
+								<path
+									fill="currentColor"
+									d="M23.87 9.995a13.2 13.2 0 0 0-.69-2.998a9.9 9.9 0 0 0-3.377-4.496A10.73 10.73 0 0 0 14.637.433a.36.36 0 0 0-.39.3a.35.35 0 0 0 .3.38a9.9 9.9 0 0 1 4.787 2.047a9.1 9.1 0 0 1 2.997 4.177c.327.901.551 1.836.67 2.788c.085.954.085 1.913 0 2.867c-.092.941-.31 1.865-.65 2.748a12.2 12.2 0 0 1-1.289 2.528a9.63 9.63 0 0 1-4.506 3.497a12.56 12.56 0 0 1-5.735.85a12 12 0 0 1-3.158-.71a9.4 9.4 0 0 1-2.767-1.599a11.52 11.52 0 0 1-3.777-7.114a10.62 10.62 0 0 1 1.778-7.863A11.6 11.6 0 0 1 6.015 2.36a9.3 9.3 0 0 1 4.066-1.359c.71-.07 1.41-.13 2.119-.13q.701 0 1.398.09a.3.3 0 1 0 .09-.59a11 11 0 0 0-1.478-.18c-.73 0-1.46 0-2.189.09a10.2 10.2 0 0 0-4.386 1.44a12.6 12.6 0 0 0-3.417 3.097A11.48 11.48 0 0 0 .13 13.322a12.55 12.55 0 0 0 4.046 7.843a10.5 10.5 0 0 0 3.098 1.819c1.116.41 2.282.672 3.467.78c2.134.17 4.279-.159 6.265-.96a10.57 10.57 0 0 0 4.945-3.997a13.2 13.2 0 0 0 1.37-2.757c.348-.966.566-1.974.649-2.998c.062-1.02.028-2.044-.1-3.057"
+								/>
+								<path
+									fill="currentColor"
+									d="M5.365 9.715a3.3 3.3 0 0 0 1.699.35a3.6 3.6 0 0 0 1.619-.51A4 4 0 0 0 10.6 6.997a.34.34 0 0 0-.373-.43a.34.34 0 0 0-.287.25a3.32 3.32 0 0 1-1.768 1.779a3.3 3.3 0 0 1-1.16.32a2.4 2.4 0 0 1-1.178-.14a2.6 2.6 0 0 1-.89-.6a5.7 5.7 0 0 1-.749-.919a.3.3 0 0 0-.4-.14a.31.31 0 0 0-.14.4c.218.506.504.98.85 1.409c.236.313.527.58.86.789m14.638-3.427a.36.36 0 0 0-.39.29a3.6 3.6 0 0 1-.23.789a1.8 1.8 0 0 1-.41.59c-.314.304-.71.512-1.138.599c-.41.095-.84.075-1.24-.06a2.5 2.5 0 0 1-1.788-1.918a.302.302 0 0 0-.6.07a3.2 3.2 0 0 0 2 2.907c.605.253 1.28.288 1.908.1a3.1 3.1 0 0 0 1.538-1.08c.158-.228.276-.481.35-.749a4.5 4.5 0 0 0 .22-1.149a.34.34 0 0 0-.22-.39"
+								/></svg
+							><svg
+								aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								style="transform: rotate(10deg)"
+							>
+								<!-- Icon from Akar Icons by Arturo Wibawa - https://github.com/artcoholic/akar-icons/blob/master/LICENSE -->
+								<path
+									fill="none"
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1"
+									d="m5 2l.19.94a4 4 0 0 0 2.57 2.974L8 6l-.24.086A4 4 0 0 0 5.19 9.06L5 10l-.19-.94a4 4 0 0 0-2.57-2.974L2 6l.24-.086A4 4 0 0 0 4.81 2.94zm3 14l.23 1.276a2 2 0 0 0 1.219 1.501L10 19l-.551.223a2 2 0 0 0-1.22 1.5L8 22l-.23-1.276a2 2 0 0 0-1.219-1.501L6 19l.551-.223a2 2 0 0 0 1.22-1.5zm8-13l.556 2.654a8 8 0 0 0 5.213 5.92L23 12l-1.231.426a8 8 0 0 0-5.213 5.92L16 21l-.556-2.654a8 8 0 0 0-5.213-5.92L9 12l1.231-.426a8 8 0 0 0 5.213-5.92z"
+								/>
+							</svg>
+						</span>
+						<span>messy noodles</span>
+					</photo-caption>
 				</polaroid-photo>
 				<polaroid-photo>
 					<img
@@ -267,9 +358,34 @@
 						alt="photo taken looking down the ground, showing the photographer's converse high top shoes standing in green grass with patches of melting snow. the grass is very bright green under the clumps of snow."
 						aria-describedby="snow-id"
 					/>
-					<photo-caption id="snow-id">snow melt</photo-caption>
+					<photo-caption id="snow-id"><span>snow melt</span></photo-caption>
 				</polaroid-photo>
 			</photo-gallery>
 		</main>
+
+		<svg
+			xmlns="//www.w3.org/2000/svg"
+			version="1.1"
+			class="highlighter-filter"
+			aria-hidden="true"
+		>
+			<defs>
+				<filter id="highlighter">
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0 0.15"
+						numOctaves="1"
+						result="warp"
+					/>
+					<feDisplacementMap
+						xChannelSelector="R"
+						yChannelSelector="G"
+						scale="30"
+						in="SourceGraphic"
+						in2="warp"
+					/>
+				</filter>
+			</defs>
+		</svg>
 	</body>
 </html>
