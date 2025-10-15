@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Double, double, toil and troubled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - warning" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/doubles"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Doubles" />
+		<style>
+			@font-face {
+				font-family: "fell";
+				src: url("./fonts/fell.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--text-color: #e7ded4;
+				--font: "Fell", serif;
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background-color: rgb(37, 37, 37);
+				color: var(--text-color);
+				font-family: var(--font);
+				font-style: italic;
+			}
+			html,
+			body {
+				display: grid;
+				height: 100%;
+			}
+			html,
+			body,
+			p,
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				font-size: 3rem;
+				font-weight: normal;
+				text-shadow: 2px 1px #4e7a8d;
+				filter: url(#creepytext);
+			}
+			a,
+			a:visited {
+				color: #68a6c1;
+				text-decoration-style: wavy;
+				font-weight: 400;
+			}
+			main {
+				display: grid;
+				place-items: center;
+				gap: 2rem;
+				margin: 0 auto;
+				z-index: 99;
+				width: 100%;
+				padding: 2rem 1rem;
+			}
+			footer {
+				display: flex;
+				gap: 8px;
+				justify-content: center;
+				width: 100%;
+				max-width: 600px;
+			}
+			img {
+				/* border: 1px dotted #999; */
+				width: 100%;
+			}
+			image-wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				text-align: end;
+				position: relative;
+				background-image: url("./images/The_Three_Witches_from_Shakespeares_Macbeth_by_Daniel_Gardner,_1775.jpg");
+				background-size: 80%;
+				background-repeat: no-repeat;
+				background-position-x: 20%;
+				background-position-y: 40%;
+			}
+			.frame {
+				z-index: 99;
+				width: 100%;
+				max-width: 450px;
+			}
+			.painting {
+				width: 90%;
+				max-width: 350px;
+				position: absolute;
+				top: 70px;
+				left: 40px;
+			}
+			#creepytext {
+				position: absolute;
+				width: 0;
+				height: 0;
+			}
+			site-container {
+				display: flex;
+			     justify-content: center;
+				gap: 2rem;
+			}
+			text-wrapper {
+				display: flex;
+				gap: 1.25rem;
+				flex-direction: column;
+				justify-content: end;
+			}
+			text-wrapper span {
+				display: block;
+				font-size: 1.1rem;
+				line-height: 1.35rem;
+			}
+			chorus-text {
+				display: flex;
+				flex-direction: column;
+				gap: 0.15rem;
+			}
+			creepy-text {
+				gap: 0.25rem;
+				filter: url(#creepytext);
+				font-size: 1.35rem;
+			}
+			credit-text {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+			}
+			credit-text span {
+				display: block;
+				font-size: 0.8rem;
+				text-align: end;
+				font-style: normal;
+			}
+			big-letter {
+				font-size: 2rem;
+				line-height: 1.5rem;
+			}
+			@media (width <= 700px) {
+			       site-container {
+			         flex-wrap: wrap;
+			   }
+		</style>
+	</head>
+	<body>
+		<nav
+			style="
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+			"
+			aria-label="site navigation"
+		>
+			<a
+				style="
+					display: flex;
+					gap: 4px;
+					align-self: center;
+					align-items: center;
+					text-decoration-style: wavy;
+				"
+				href="https://weird.jen.dev/battle"
+				aria-label="battle (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/></svg
+				>battle
+			</a>
+			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
+				>weird web october</a
+			>
+			<span style="width: 50px"></span>
+		</nav>
+		<main>
+			<h1>Double, double</h1>
+			<site-container>
+				<text-wrapper>
+					<span>
+						<span><big-letter>R</big-letter>ound about the cauldron go;</span>
+						<span>In the poison'd entrails throw.</span>
+						<span>Toad, that under cold stone</span>
+						<span>Days and nights has thirty-one</span>
+						<span>Swelter'd venom sleeping got,</span>
+						<span>Boil thou first i' the charmed pot.</span>
+					</span>
+					<chorus-text>
+						<creepy-text>Double, double, toil and trouble;</creepy-text>
+						<creepy-text>Fire burn, and cauldron bubble.</creepy-text>
+					</chorus-text>
+					<span>
+						<span>Fillet of a fenny snake,</span>
+						<span>In the cauldron boil and bake;</span>
+						<span>Eye of newt and toe of frog,</span>
+						<span>Wool of bat and tongue of dog,</span>
+						<span>Adder's fork and blind-worm's sting,</span>
+						<span>Lizard's leg and howlet's wing,</span>
+						<span>For a charm of powerful trouble,</span>
+						<span>Like a hell-broth boil and bubble.</span>
+					</span>
+					<chorus-text>
+						<creepy-text>Double, double, toil and trouble;</creepy-text>
+						<creepy-text>Fire burn, and cauldron bubble.</creepy-text>
+					</chorus-text>
+					<credit-text>
+						<span
+							><span
+								>Excerpt of the
+								<a
+									href="https://www.shakespeare-online.com/plays/witcheschants.html"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Witches Chant (opens a new tab)"
+									>Witches Chant</a
+								></span
+							>
+							<span
+								>from
+								<a
+									href="https://en.wikipedia.org/wiki/Macbeth"
+									rel="noopener noreferrer"
+									target="_blank"
+									aria-label="Macbeth (opens a new tab)"
+									><em>Macbeth</em></a
+								>
+								by
+								<a
+									href="https://en.wikipedia.org/wiki/William_Shakespeare"
+									rel="noopener noreferrer"
+									target="_blank"
+									aria-label="William Shakespeare (opens a new tab)"
+									><em>William Shakespeare</em></a
+								>
+							</span></span
+						>
+					</credit-text>
+				</text-wrapper>
+				<right-column>
+					<image-wrapper>
+						<img
+							class="frame"
+							src="./images/frame.png"
+							alt="Portrait in gouache of the Three Witches from Macbeth brewing over a cauldron. But unlike other artistic representations of the witches, this painting shows them as beautiful and youthful. That's because the artist Daniel Gardner painted real-life women: Elizabeth Lamb, Viscountess Melbourne with Georgiana Cavendish Duchess of Devonshire and Anne Seymour Damer."
+							aria-describedby="portrait-credit frame-credit"
+						/>
+						<credit-text>
+							<span id="portrait-credit"
+								><a
+									href="https://www.npg.org.uk/whatson/display/2011/the-three-witches-from-macbeth.php"
+									aria-label="The Three Witches from Macbeth (opens a new tab)"
+									rel="noopener noreferrer"
+									target="_blank"
+									><em>The Three Witches from Macbeth</em></a
+								>
+								by
+								<a
+									href="https://en.wikipedia.org/wiki/Daniel_Gardner"
+									rel="noopener noreferrer"
+									target="_blank"
+									aria-label="Daniel Gardner (opens a new tab)"
+									>Daniel Gardner</a
+								>
+							</span>
+							<span id="frame-credit">
+								Frame:
+								<a
+									href="https://commons.wikimedia.org/wiki/File:Louis_XIII_style_Ovolo_frame_(for_Ingres%27s_Portrait_of_the_Princesse_de_Broglie)_MET_86AG_288R4_p_(transparent).png"
+									aria-label="Louis XIII style Ovolo frame (opens new tab"
+									target="_blank"
+									rel="noopener noreferrer"
+									>Louis XIII style Ovolo frame</a
+								>
+							</span>
+						</credit-text>
+					</image-wrapper>
+				</right-column>
+			</site-container>
+		</main>
+		<svg aria-hidden="true">
+			<filter id="creepytext">
+				<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
+				<feDisplacementMap
+					in="SourceGraphic"
+					in2="turbulence"
+					scale="12"
+				></feDisplacementMap>
+			</filter>
+		</svg>
+		<script></script>
+	</body>
+</html>
