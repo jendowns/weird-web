@@ -55,10 +55,14 @@
 			h1 {
 				font-size: 3rem;
 				font-weight: normal;
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+				justify-content: center;
 			}
 			h1,
 			h2 {
-				line-height: 1.7rem;
+				line-height: normal;
 			}
 			a,
 			a:visited {
@@ -148,7 +152,9 @@
 			<span style="width: 50px"></span>
 		</nav>
 		<main>
-			<h1 aria-describedby="def">Mojibake (<span lang="ja">文字化け</span>)</h1>
+			<h1 aria-describedby="def">
+				<span>Mojibake</span><span lang="ja">文字化け</span>
+			</h1>
 			<span id="def" style="max-width: 300px; text-align: center"
 				>gibberish text caused by the wrong character encoding [<a
 					href="https://en.wikipedia.org/wiki/Mojibake"
