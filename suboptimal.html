@@ -98,8 +98,8 @@
 				color: rgb(213, 208, 231);
 			}
 			img {
-				width: 100%;
-				max-width: 300px;
+				height: 224.95px;
+				width: 300px;
 				border: 1px solid white;
 			}
 			quote-wrapper {
@@ -121,8 +121,24 @@
 				background-image: url("./images/garth.jpg");
 				background-size: cover;
 				background-position: center bottom;
-
 				border: 1px solid white;
+			}
+			.static {
+				display: none;
+			}
+			.animated {
+				display: block;
+			}
+			@media (prefers-reduced-motion: reduce) {
+				body {
+					background-image: url("https://jen.dev/assets/images/stars-cinni_static.webp");
+				}
+				.static {
+					display: block;
+				}
+				.animated {
+					display: none;
+				}
 			}
 		</style>
 	</head>
@@ -202,7 +218,13 @@
 			<h1><em>suboptimal subtext subscript</em></h1>
 			<site-container>
 				<img
+					class="animated"
 					src="./images/darkplace.webp"
+					alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
+				/>
+				<img
+					class="static"
+					src="./images/darkplace.jpg"
 					alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
 				/>
 				<quote-wrapper>
