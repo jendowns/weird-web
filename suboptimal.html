@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-US">
 	<head>
-		<title>suboptimal subscripts</title>
+		<title>suboptimal subscript subtext</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Jen Downs" />
@@ -16,16 +16,13 @@
 		<link rel="octo:octothorpes" href="Sub-optimal" />
 		<style>
 			@font-face {
-				font-family: "comic neue";
-				src: url("./fonts/comic_neue.woff2") format("woff2");
+				font-family: "fell";
+				src: url("./fonts/fell.woff2") format("woff2");
 				font-weight: normal;
 				font-display: swap;
 			}
 			:root {
-				--font:
-					"comic neue", "Lucida Console", Monaco, -apple-system,
-					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+				--font: "fell", serif;
 			}
 			*,
 			*:before,
@@ -36,13 +33,10 @@
 				font-size: 16px;
 			}
 			body {
-				background-color: #ebebeb;
-				background-image:
-					linear-gradient(to right, rgba(119, 237, 244, 0.464), #68b7eb8a),
-					url("./images/waves.png");
-				background-size: cover;
-				background-position: bottom;
-				color: black;
+				background-color: #111;
+				background-image: url("https://jen.dev/assets/images/stars-cinni.gif");
+				background-repeat: repeat;
+				color: white;
 				font-family: var(--font);
 				scrollbar-gutter: stable;
 			}
@@ -57,55 +51,78 @@
 			main {
 				display: grid;
 				place-self: center;
+				align-content: start;
 				gap: 2.5rem;
 				width: 100%;
 				padding: 1rem;
 				overflow-x: hidden;
+				height: 100%;
 			}
 			a,
 			a:visited {
-				color: rgb(54, 0, 116);
+				color: #f7df87;
+				text-decoration-style: wavy;
 				font-weight: 400;
 			}
 			h1 {
 				margin: 0;
+				text-align: center;
 			}
-			button-container {
+			site-container {
 				display: flex;
-				gap: 48px;
-				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				gap: 3rem;
+				font-size: 1.75rem;
+				line-height: 2rem;
+				max-width: 900px;
 				width: 100%;
 			}
-			button {
-				border: 0;
-				box-shadow: none;
-				background-color: rgba(255, 255, 255, 0.697);
+			span {
 				position: relative;
-				font-size: 2.5rem;
-				font-family: var(--font);
-				color: var(--text-color);
-				text-decoration: underline;
-				touch-action: manipulation;
-				padding: 1rem;
-				border-radius: 1rem;
-				border: 1px dotted #333;
-
-				&:nth-of-type(odd) sub {
-					transform: rotate(45deg);
-				}
-				&:nth-of-type(even) sub {
-					transform: rotate(-45deg);
-				}
+				z-index: 99;
 			}
 			sub {
 				position: absolute;
+				z-index: 22;
+				width: 100%;
+				min-width: 150px;
+				font-size: 0.8rem;
+				line-height: 1.1rem;
+				bottom: -30px;
+				left: -10px;
 				font-style: italic;
-				top: -5px;
-				z-index: 99;
-				padding: 5px;
+				height: 100%;
+				color: rgb(213, 208, 231);
 			}
-			footer {
-				padding: 1rem;
+			img {
+				width: 100%;
+				max-width: 300px;
+				border: 1px solid white;
+			}
+			quote-wrapper {
+				display: inline-block;
+				text-align: center;
+				line-height: 3.5rem;
+			}
+			author-wrapper {
+				text-align: right;
+				display: flex;
+				gap: 1rem;
+				align-self: end;
+			}
+
+			image-wrapper {
+				border-radius: 100%;
+				width: 100px;
+				height: 100px;
+				background-image: url("./images/garth.jpg");
+				background-size: cover;
+				background-position: center bottom;
+
+				border: 1px solid white;
 			}
 		</style>
 	</head>
@@ -118,8 +135,6 @@
 				right: 0;
 				height: 36px;
 				padding: 6px;
-				background-color: #ebebeb;
-				border-bottom: 1px dotted rgb(120, 123, 124);
 				display: flex;
 				justify-content: space-between;
 				text-decoration-style: wavy;
@@ -184,49 +199,47 @@
 			></a>
 		</nav>
 		<main>
-			<h1><em>suboptimal subscripts</em></h1>
-			<button-container
-				role="group"
-				aria-label="button row. click on buttons repeatedly to add nested subscript elements"
-			>
-				<button>click</button> <button>on</button> <button>these</button>
-				<button>words</button> <button>repeatedly</button> <button>to</button>
-				<button>add</button>
-				<button>subscripts</button>
-			</button-container>
+			<h1><em>suboptimal subtext subscript</em></h1>
+			<site-container>
+				<img
+					src="./images/darkplace.webp"
+					alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
+				/>
+				<quote-wrapper>
+					<span
+						>“I know
+						<span><span>writers</span><sub>(re: talentless hacks)</sub></span>
+						who use
+						<span><span>subtext</span>,<sub>(poor fools)</sub></span></span
+					>
+					<span>
+						and they're all
+						<span
+							><span>cowards<sub>(COWARDS!!)</sub></span></span
+						>"
+					</span>
+				</quote-wrapper>
+				<author-wrapper>
+					<span>
+						-
+						<span>Garth Marenghi</span>
+						<sub
+							>(author, dreamweaver, <em>visionary</em>... plus actor, staring
+							in the critically acclaimed & aptly-named
+							<a
+								href="https://www.rollingstone.co.uk/tv/garth-marenghi-terrortome-darkplace-matthew-holness-interview-24223/"
+								target="_blank"
+								rel="noopener noreferrer"
+								>Garth Marenghi's Darkplace</a
+							>)</sub
+						>
+					</span>
+					<image-wrapper
+						role="img"
+						aria-label="portrait of Garth Marenghi"
+					></image-wrapper>
+				</author-wrapper>
+			</site-container>
 		</main>
-
-		<footer>
-			<small>
-				* bg image
-				<a
-					href="https://unsplash.com/photos/clear-body-of-watter-iUmoREuqGbo"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="source (opens new window)"
-					>source</a
-				></small
-			>
-		</footer>
-
-		<script>
-			const buttons = document.querySelectorAll("button");
-
-			buttons.forEach((button) => {
-				let list;
-				button.addEventListener("click", (event) => {
-					const sub = document.createElement("sub");
-					if (!button.querySelector("sub")) {
-						button.appendChild(sub);
-						sub.textContent = "w";
-						document.querySelector("extra-text").classList.add("show");
-					} else {
-						list = button.querySelectorAll("sub");
-						list[list.length - 1].appendChild(sub);
-						sub.textContent = "e";
-					}
-				});
-			});
-		</script>
 	</body>
 </html>

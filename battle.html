@@ -15,21 +15,9 @@
 		<link rel="octo:octothorpes" href="weirdweboctober" />
 		<link rel="octo:octothorpes" href="Battle" />
 		<style>
-			/*
-			The FontStruction “MS Sans Serif”
-			(https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
-			under a Creative Commons Attribution Share Alike license
-			(http://creativecommons.org/licenses/by-sa/3.0/).
-			*/
-			@font-face {
-				font-family: "MS Serif";
-				src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
 			:root {
 				--text-color: #c6c7d1;
-				--font: "MS Serif", serif;
+				--font: "Tahoma", sans-serif;
 			}
 			*,
 			*:before,
@@ -40,11 +28,12 @@
 				font-size: 16px;
 			}
 			body {
-				background-color: rgb(43, 44, 43);
+				background-color: #444349;
 				background-image: url("./images/stardust.png");
 				color: var(--text-color);
 				font-family: var(--font);
 				align-content: start;
+				font-weight: 500;
 			}
 			html,
 			body {
@@ -60,7 +49,6 @@
 			}
 			h1 {
 				font-size: 2.5rem;
-				font-weight: normal;
 				margin-top: 2rem;
 			}
 			a,
@@ -73,7 +61,7 @@
 				display: grid;
 				place-items: center;
 				align-content: start;
-				gap: 2rem;
+				gap: 1rem;
 				margin: 0 auto;
 				z-index: 99;
 				width: 100%;
@@ -103,7 +91,7 @@
 				text-decoration-style: wavy;
 			}
 			img {
-				border: 1px dotted #204297;
+				border: 1px dotted rgb(34, 34, 34);
 				width: 100%;
 				max-width: 600px;
 				align-self: center;
@@ -122,7 +110,8 @@
 				align-self: center;
 			}
 			p {
-				font-size: 1.25rem;
+				font-size: 1.1rem;
+				line-height: 1.5rem;
 			}
 		</style>
 	</head>
@@ -180,17 +169,24 @@
 				<text-container>
 					<p>Ever catch Dragon Ball Z reruns on Toonami after school?</p>
 					<p>
-						Sadly, I never got to see much of the Android Saga. But I must have
-						seen the Freiza and Majin Buu battles a half dozen times.
+						I never got to see much of the Android Saga's battles, but I must
+						have seen the Freiza and Majin Buu battles a half dozen times.
 					</p>
 					<p>
-						In 1999, the Wall Street Journal described DBZ as "a sort of Pokemon
-						meets Pulp Fiction." And this line kills me: "Dragon Ball Z is also
-						crackling on the Web." <em>Crackling?</em>
+						In 1999, the Wall Street Journal described DBZ as "Pokemon meets
+						Pulp Fiction." And this line kills me: "Dragon Ball Z is also
+						crackling on the Web." <em>Crackling?</em> (By the way, RIP to the
+						<a
+							href="https://variety.com/2024/digital/news/cartoon-network-shuts-down-warner-bros-discovery-max-signup-1236101422/"
+							alt="Cartoon Network website shutdown (opens a new tab)"
+							rel="noopener noreferrer"
+							target="_blank"
+							>Cartoon Network website</a
+						>... another gem destroyed by capitalist ghouls.)
 					</p>
 					<p>
-						If you are having trouble reading the image, the image alt text has
-						the full text.
+						If you are having trouble reading article text on the photo, the
+						image's alt text has the full text.
 					</p></text-container
 				>
 			</site-container>
