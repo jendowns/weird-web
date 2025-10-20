@@ -32,10 +32,12 @@
 				color: var(--text-color);
 				font-family: var(--font);
 				font-style: italic;
+				display: grid;
+				gap: 2rem;
+				align-content: start;
 			}
 			html,
 			body {
-				display: grid;
 				height: 100%;
 			}
 			html,
@@ -79,7 +81,7 @@
 				border: 1px dotted #999;
 				width: 100%;
 			}
-			#creepytext {
+			.hidden {
 				position: absolute;
 				width: 0;
 				height: 0;
@@ -326,7 +328,7 @@
 				</trash-wrapper>
 			</image-wrapper>
 		</main>
-		<svg aria-hidden="true">
+		<svg class="hidden" aria-hidden="true">
 			<filter id="creepytext">
 				<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
 				<feDisplacementMap
