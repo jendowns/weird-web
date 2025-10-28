@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Spell Emporium</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Jen Downs" />
+		<meta name="description" content="weird web october 2025 - hidden" />
+		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
+		<link
+			rel="preload"
+			as="fetch"
+			href="https://octothorp.es/?uri=https://weird.jen.dev/spell"
+		/>
+		<link rel="octo:octothorpes" href="weirdweboctober" />
+		<link rel="octo:octothorpes" href="Spell" />
+		<style>
+			@font-face {
+				font-family: "fell";
+				src: url("./fonts/fell.woff2") format("woff2");
+				font-weight: normal;
+				font-display: swap;
+			}
+			:root {
+				--text-color: rgb(224, 205, 181);
+				--font: "Fell", serif;
+			}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+			html {
+				font-size: 16px;
+			}
+			body {
+				background-color: #3c2421;
+				background:
+					linear-gradient(to right, rgba(6, 6, 6, 0.224), #30303096),
+					url("./images/spell/apothecary.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				color: var(--text-color);
+				font-family: var(--font);
+				overflow: hidden;
+			}
+			html,
+			body {
+				display: grid;
+				height: 100%;
+			}
+			html,
+			body,
+			p,
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				font-size: 4rem;
+				font-weight: normal;
+				filter: url(#creepytext);
+				text-align: center;
+
+				span {
+					text-decoration: line-through;
+				}
+			}
+			a,
+			a:visited {
+				color: #f89200;
+				text-decoration-style: wavy;
+				font-weight: 400;
+			}
+			main {
+				display: grid;
+				align-self: start;
+				place-items: center;
+				gap: 2rem;
+				margin: 0 auto;
+				z-index: 99;
+				padding: 3rem 1.25rem;
+				width: 100%;
+				height: 100%;
+				overflow-y: auto;
+			}
+			heading-wrapper {
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+			}
+			h1 {
+				text-shadow: 2px 2px rgba(78, 45, 1, 1);
+			}
+			.hidden {
+				position: absolute;
+				width: 0;
+				height: 0;
+			}
+			spell-emporium {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				justify-content: center;
+				gap: 0.35rem;
+				max-width: 720px;
+				width: 100%;
+				padding: 1rem;
+				background: linear-gradient(
+					to bottom,
+					#1b1a19bc,
+					#1b1a19bc,
+					#1b1a19bc,
+					#120b04d7
+				);
+				border: 0.15rem solid rgba(159, 94, 3, 0.6);
+				border-radius: 10px;
+
+				img {
+					max-width: 100px;
+				}
+			}
+			spell-cell {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5rem;
+				button {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					background: transparent;
+					border: none;
+					padding: 1rem;
+					margin: 0;
+					font-family: var(--font);
+					color: var(--text-color);
+					font-size: inherit;
+					gap: 0.35rem;
+					border-radius: 10px;
+				}
+				button:hover {
+					cursor: pointer;
+					background-color: rgba(0, 0, 0, 0.867);
+				}
+			}
+			nav {
+				position: relative;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 36px;
+				padding: 6px;
+				display: flex;
+				justify-content: space-between;
+				text-decoration-style: wavy;
+				font-size: 0.8rem;
+				color: currentColor;
+				align-items: center;
+				width: 100%;
+				z-index: 99999;
+			}
+			nav a {
+				display: flex;
+				gap: 4px;
+				align-self: center;
+				align-items: center;
+				text-decoration-style: wavy;
+			}
+			wizard-frog-wrapper {
+				position: fixed;
+				bottom: 10px;
+				right: 50px;
+				display: inline-flex;
+				flex-direction: column;
+
+				img {
+					width: 120px;
+					height: auto;
+					transform: scaleX(-1);
+				}
+			}
+			speech-bubble-wrapper {
+				position: relative;
+				top: 20px;
+				left: -10px;
+				align-self: start;
+			}
+			speech-text {
+				position: relative;
+				display: inline-block;
+				z-index: 99;
+				width: 100%;
+				letter-spacing: 0.05rem;
+				padding: 4px 8px;
+				max-width: 18ch;
+				animation: none;
+				overflow: hidden;
+				color: black;
+			}
+			speech-bubble {
+				position: absolute;
+				top: -8px;
+				left: -8px;
+				right: -8px;
+				bottom: 5px;
+				display: inline-block;
+				z-index: 2;
+				background-color: #e8dddd;
+				width: 100%;
+				letter-spacing: 0.05rem;
+				padding: 4px 8px;
+				max-width: 18ch;
+				border-radius: 12px;
+				filter: url(#creepytext);
+				color: black;
+			}
+			speech-squiggly {
+				border-width: 20px 5px 0;
+				border-style: solid;
+				border-color: #e8dddd transparent;
+				position: absolute;
+				bottom: -5px;
+				right: 50px;
+				z-index: 1;
+				/* display: none; */
+				filter: url(#creepytext);
+				transform: rotate(40deg);
+			}
+			page-wrapper {
+				display: flex;
+				flex-wrap: nowrap;
+				padding-bottom: 100px;
+			}
+			credit-text {
+				justify-self: start;
+				font-style: italic;
+			}
+			@media (width <= 1100px) {
+				spell-emporium {
+					max-width: 500px;
+				}
+				wizard-frog-wrapper img {
+					max-width: 250px;
+				}
+				spell-cell span {
+					font-size: 0.8rem;
+				}
+			}
+			@media (width <= 700px) {
+				page-wrapper {
+					flex-direction: column;
+					padding-bottom: 130px;
+				}
+				wizard-frog-wrapper img {
+					max-width: 200px;
+				}
+				h1 {
+					font-size: 3rem;
+				}
+				spell-cell img {
+					max-width: 75px;
+				}
+				speech-bubble-wrapper {
+					left: -160px;
+					top: unset;
+					bottom: -120px;
+				}
+				speech-squiggly {
+					transform: rotate(-40deg);
+					bottom: -10px;
+				}
+				speech-bubble span {
+					font-size: 0.6rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav aria-label="site navigation">
+			<a
+				href="https://weird.jen.dev/hidden"
+				aria-label="hidden (previous theme day)"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+				>
+					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+					<path
+						fill="currentColor"
+						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+					/>
+				</svg>
+				hidden
+			</a>
+			<a href="https://weird.jen.dev/">weird web october</a>
+			<span style="width: 50px"></span>
+		</nav>
+		<main>
+			<heading-wrapper>
+				<h1>Spell Emporium</h1>
+			</heading-wrapper>
+			<page-wrapper>
+				<spell-emporium tabindex="-1">
+					<spell-cell>
+						<button id="grease">
+							<img
+								src="./images/spell/grease.png"
+								alt=""
+								aria-labelledby="grease-text"
+							/>
+							<span id="grease-text">Grease</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="tasha">
+							<img
+								src="./images/spell/tashas-hideous-laughter.png"
+								alt=""
+								aria-labelledby="tasha-text"
+							/>
+							<span id="tasha-text">Tasha's Hideous Laughter</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="door">
+							<img
+								src="./images/spell/dimension-door.png"
+								alt=""
+								aria-labelledby="door-text"
+							/>
+							<span id="door-text">Dimension Door</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="tentacles">
+							<img
+								src="./images/spell/evards-black-tentacles.png"
+								alt=""
+								aria-labelledby="tentacles-text"
+							/>
+							<span id="tentacles-text">Evard's Black Tentacles</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="invisibility">
+							<img
+								src="./images/spell/greater-invisibility.png"
+								alt=""
+								aria-labelledby="invisible-text"
+							/>
+							<span id="invisible-text">Greater Invisibility</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="counterspell">
+							<img
+								src="./images/spell/counterspell.png"
+								alt=""
+								aria-labelledby="counterspell-text"
+							/>
+							<span id="counterspell-text">Counterspell</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="globe">
+							<img
+								src="./images/spell/globe.png"
+								alt=""
+								aria-labelledby="globe-text"
+							/>
+							<span id="globe-text">Globe of Invulnerability</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="chain">
+							<img
+								src="./images/spell/chain.png"
+								alt=""
+								aria-labelledby="chain-text"
+							/>
+							<span id="chain-text">Chain Lightning</span>
+						</button>
+					</spell-cell>
+					<spell-cell>
+						<button id="dance">
+							<img
+								src="./images/spell/irresistable-dance.png"
+								alt=""
+								aria-labelledby="dance-text"
+							/>
+							<span id="dance-text">Otto's Irresistible Dance</span>
+						</button>
+					</spell-cell>
+				</spell-emporium>
+				<wizard-frog-wrapper>
+					<speech-bubble-wrapper>
+						<speech-text>
+							<span aria-live="polite">
+								these are my favorite spells. which one are you interested in?
+							</span>
+						</speech-text>
+						<speech-bubble></speech-bubble>
+						<speech-squiggly></speech-squiggly
+					></speech-bubble-wrapper>
+					<img src="./images/spell/wizard-frog.gif" alt="" class="wizard-frog"
+				/></wizard-frog-wrapper>
+			</page-wrapper>
+			<credit-text
+				><small>
+					*image sources:
+					<a
+						href="https://bg3.wiki/wiki/List_of_all_spells"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="1. Baldur's Gate Wiki (spells, background)"
+						>1</a
+					>,
+					<a
+						href="https://giphy.com/elmrealm"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="2. Wizard Frog"
+						>2</a
+					>
+				</small></credit-text
+			>
+		</main>
+		<svg class="hidden" aria-hidden="true">
+			<filter id="creepytext">
+				<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
+				<feDisplacementMap
+					in="SourceGraphic"
+					in2="turbulence"
+					scale="12"
+				></feDisplacementMap>
+			</filter>
+		</svg>
+		<script>
+			const grease = "grease wow";
+			const tasha = "tasha wow";
+
+			const speech = {
+				grease: "cover the ground in flammable gas & watch them slip and fall",
+				tasha: "leave a creature prone with laughter, unable to get up",
+				door: "teleport yourself and one adjacent ally to a place you can see",
+				globe: "create a barrier where everyone inside are immune to damage",
+				dance:
+					"cause a creature to start dancing, making them unable to move or take any action",
+				chain: "shoot lightning and bounces between enemies",
+				counterspell: "interrupt another spellcaster's spell instantly!",
+				invisibility: "turn invisible heh heh heh",
+				tentacles:
+					"tentacles sprout from the ground, attacking and smothering all who pass through them",
+			};
+
+			const emporium = document.querySelector("spell-emporium");
+			const spells = document.querySelectorAll("spell-cell button");
+			const speechbubble = document.querySelector("speech-text > span");
+
+			speak = (event, id) => {
+				speechbubble.textContent = speech[id];
+			};
+
+			spells.forEach((spell) => {
+				spell.addEventListener("click", (event) => {
+					speak(event, event.currentTarget.id);
+				});
+			});
+
+			window.addEventListener("load", (event) => {
+				emporium.focus();
+			});
+		</script>
+	</body>
+</html>
