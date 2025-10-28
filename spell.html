@@ -312,10 +312,10 @@
 		</nav>
 		<main>
 			<heading-wrapper>
-				<h1>Spell Emporium</h1>
+				<h1 id="title">Spell Emporium</h1>
 			</heading-wrapper>
 			<page-wrapper>
-				<spell-emporium tabindex="-1">
+				<spell-emporium tabindex="-1" role="group" aria-labelledby="title">
 					<spell-cell>
 						<button id="grease">
 							<img
@@ -472,8 +472,24 @@
 			const spells = document.querySelectorAll("spell-cell button");
 			const speechbubble = document.querySelector("speech-text > span");
 
+			removeActive = () => {
+				const current = emporium.querySelector("[aria-selected=true]");
+				if (current) {
+					current.setAttribute("aria-selected", false);
+				}
+			};
+
+			setActive = (id) => {
+				const current = document.getElementById(id);
+				if (current) {
+					current.setAttribute("aria-selected", true);
+				}
+			};
+
 			speak = (event, id) => {
 				speechbubble.textContent = speech[id];
+				removeActive();
+				setActive(id);
 			};
 
 			spells.forEach((spell) => {
