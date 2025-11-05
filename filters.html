@@ -1,555 +1,543 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<title>bingo</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Jen Downs" />
-		<meta name="description" content="weird web october 2025 - filters" />
-		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
-		<link
-			rel="preload"
-			as="fetch"
-			href="https://octothorp.es/?uri=https://weird.jen.dev/filters"
-		/>
-		<link rel="octo:octothorpes" href="weirdweboctober" />
-		<link rel="octo:octothorpes" href="Filters" />
-		<style>
-			@font-face {
-				font-family: "maru";
-				src: url("./fonts/gt_maru_emoji_color.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
-			@font-face {
-				font-family: "dela gothic";
-				src: url("./fonts/dela_gothic.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
-			:root {
-				--background-color: #f1e6e6;
-				--text-color: #ca222b;
-				--accent-color: #b7decc;
-				--link-color: #4e05eb;
-				--border-color: #444;
-				--font:
-					"Times New Roman", "Lucida Console", Monaco, -apple-system,
-					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-				--emoji-font: "maru";
-				--accept-font: "dela gothic";
-			}
-			*,
-			*:before,
-			*:after {
-				box-sizing: border-box;
-			}
-			html {
-				font-size: 16px;
-			}
-			body {
-				background-color: var(--background-color);
-				background-size: cover;
-				color: var(--text-color);
-				font-family: var(--font);
-				scrollbar-gutter: stable;
-			}
-			html,
-			body {
-				height: 100%;
-			}
-			site-container {
-				display: grid;
-				place-self: center;
-				align-items: center;
-				gap: 16px;
-				margin: 0 auto;
-			}
-			html,
-			body,
-			p {
-				margin: 0;
-			}
-			main {
-				display: grid;
-				place-self: center;
-				max-width: 250px;
-				padding: 1rem 0;
-			}
-			h1 {
-				font-size: 1.35rem;
-				color: var(--text-color);
-				background-color: var(--accent-color);
-				padding: 0.5rem;
-				margin: 0;
-				text-align: center;
-				border-top: 1px solid var(--text-color);
-				border-right: 1px solid var(--text-color);
-				border-left: 1px solid var(--text-color);
-				font-family: var(--accept-font);
-			}
-			h2 {
-				font-family: var(--accept-font);
-				font-size: 1rem;
-				margin: 0;
-				padding: 0;
-			}
-			a {
-				color: var(--link-color);
-			}
-			ol {
-				display: grid;
-				padding: 0;
-				margin: 0;
-				list-style: none;
-				grid-template-columns: repeat(5, 1fr);
-				border-top: 1px solid var(--text-color);
-				border-left: 1px solid var(--text-color);
-			}
-			li {
-				position: relative;
-				display: flex;
-				flex-direction: column;
-				height: 50px;
-				width: 50px;
-				border-bottom: 1px solid var(--text-color);
-				border-right: 1px solid var(--text-color);
-				text-align: center;
-				justify-content: center;
-			}
-			li button {
-				border: none;
-				background: transparent;
-				padding: 0;
-				margin: 0;
-				border-radius: 0;
-				font-family: var(--emoji-font);
-				font-size: 24px;
-				color: var(--text-color);
-				height: 100%;
-				width: 100%;
-				z-index: 2;
-			}
-			footer {
-				text-align: center;
-			}
-			.marker {
-				position: absolute;
-				top: 5px;
-				left: 5px;
-				height: 40px;
-				width: 40px;
-				border-radius: 100%;
-				z-index: 3;
-				outline: 1px solid rgb(6, 137, 216);
-				box-shadow:
-					1px 1px 3px rgba(34, 34, 34, 0.624),
-					inset 2px -2px 0 white;
-				overflow: hidden;
+  <head>
+    <title>bingo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jen Downs" />
+    <meta name="description" content="weird web october 2025 - filters" />
+    <link rel="icon" href="./favicon.jpg" type="image/jpg" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird.jen.dev/filters"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Filters" />
+    <style>
+      @font-face {
+        font-family: "maru";
+        src: url("./fonts/gt_maru_emoji_color.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "dela gothic";
+        src: url("./fonts/dela_gothic.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      :root {
+        --background-color: #f1e6e6;
+        --text-color: #ca222b;
+        --accent-color: #b7decc;
+        --link-color: #4e05eb;
+        --border-color: #444;
+        --font: "Times New Roman", "Lucida Console", Monaco, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        --emoji-font: "maru";
+        --accept-font: "dela gothic";
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        background-color: var(--background-color);
+        background-size: cover;
+        color: var(--text-color);
+        font-family: var(--font);
+        scrollbar-gutter: stable;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      site-container {
+        display: grid;
+        place-self: center;
+        align-items: center;
+        gap: 16px;
+        margin: 0 auto;
+      }
+      html,
+      body,
+      p {
+        margin: 0;
+      }
+      main {
+        display: grid;
+        place-self: center;
+        max-width: 250px;
+        padding: 1rem 0;
+      }
+      h1 {
+        font-size: 1.35rem;
+        color: var(--text-color);
+        background-color: var(--accent-color);
+        padding: 0.5rem;
+        margin: 0;
+        text-align: center;
+        border-top: 1px solid var(--text-color);
+        border-right: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
+        font-family: var(--accept-font);
+      }
+      h2 {
+        font-family: var(--accept-font);
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: var(--link-color);
+      }
+      ol {
+        display: grid;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
+      }
+      li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        width: 50px;
+        border-bottom: 1px solid var(--text-color);
+        border-right: 1px solid var(--text-color);
+        text-align: center;
+        justify-content: center;
+      }
+      li button {
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        font-family: var(--emoji-font);
+        font-size: 24px;
+        color: var(--text-color);
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+      }
+      footer {
+        text-align: center;
+      }
+      .marker {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        z-index: 3;
+        outline: 1px solid rgb(6, 137, 216);
+        box-shadow: 1px 1px 3px rgba(34, 34, 34, 0.624), inset 2px -2px 0 white;
+        overflow: hidden;
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          height: 100%;
+          width: 100%;
+          filter: blur(16px);
+          background-color: rgb(6, 137, 216);
+        }
+      }
+      bingo-wrapper {
+        position: relative;
+      }
+      bingo-message-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+        border: 1px dotted var(--text-color);
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          height: 100%;
+          width: 100%;
+          backdrop-filter: blur(10px);
+          background-color: rgba(241, 230, 230, 0.573);
+        }
+      }
+      bingo-message-wrapper[open] {
+        display: block;
+        z-index: 999;
+      }
+      bingo-message {
+        z-index: 9999;
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+        color: var(--text-color);
+        font-family: var(--accept-font);
+        text-align: center;
+        align-content: center;
+        span {
+          font-family: Times New Roman;
+          font-style: italic;
+        }
+      }
+      which-emoji {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 1rem;
+        margin: 0 auto;
+      }
+      which-emoji button {
+        background-color: #dadada;
+        font-family: var(--emoji-font);
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border-radius: 100%;
+      }
+      .sr-only {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        padding: 6px;
+        background-color: rgb(245, 216, 216);
+        border-bottom: 1px dotted rgb(253, 143, 143);
+        display: flex;
+        justify-content: space-between;
+        text-decoration-style: wavy;
+        font-size: 0.8rem;
+        color: currentColor;
+        align-items: center;
+        width: 100%;
+        z-index: 99999;
+      }
+      nav a {
+        display: flex;
+        gap: 4px;
+        align-self: center;
+        align-items: center;
+        text-decoration-style: wavy;
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="site navigation">
+      <a
+        href="https://weird.jen.dev/scramble"
+        aria-label="scramble (previous theme day)"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+          />
+        </svg>
+        scramble
+      </a>
+      <a href="https://weird.jen.dev/"> weird web october </a>
+      <a
+        href="https://weird.jen.dev/solids"
+        aria-label="solids (next theme day)"
+        >solids<svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+          />
+        </svg>
+      </a>
+    </nav>
+    <site-container>
+      <main>
+        <which-emoji>
+          <small style="font-style: italic" id="directions">
+            click to get random emoji:
+          </small>
+          <button aria-describedby="directions" onclick="{pickEmoji()}">
+            <span class="sr-only">no emoji yet</span>
+          </button>
+          <small style="font-style: italic" id="directions">
+            and then mark it below:
+          </small>
+        </which-emoji>
+        <h1>BINGO</h1>
+        <bingo-wrapper>
+          <ol>
+            <li>
+              <button id="a1" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="a2" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="a3" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="a4" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="a5" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="b1" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="b2" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="b3" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="b4" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="b5" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="c1" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="c2" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="c3" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="c4" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="c5" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="d1" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="d2" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="d3" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="d4" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="d5" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="e1" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="e2" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="e3" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="e4" type="button" aria-pressed="false"></button>
+            </li>
+            <li>
+              <button id="e5" type="button" aria-pressed="false"></button>
+            </li>
+          </ol>
+          <bingo-message-wrapper>
+            <bingo-message>
+              <h2 id="bingo-heading">you got a bingo</h2>
+              <span>i hope you didn't cheat...</span>
+              <button
+                id="continue"
+                onclick="{hideMessage()}"
+                aria-describedby="bingo-heading"
+                style="margin-top: 20px"
+              >
+                continue
+              </button>
+            </bingo-message>
+          </bingo-message-wrapper>
+        </bingo-wrapper>
+      </main>
+      <footer>
+        <small>
+          today's theme is "filters"
+          <br />
+          (the bingo markers & bingo message use
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >backdrop filters
+            <span class="sr-only"> (opens a new tab)</span>
+          </a>
+          )
+        </small>
+      </footer>
+    </site-container>
+    <script>
+      const buttons = document.querySelectorAll("ol button");
+      let firstBingo = false;
+      const icons = [
+        "💻",
+        "💀",
+        "🍕",
+        "🍌",
+        "🍩",
+        "🌈",
+        "🔥",
+        "🐌",
+        "🎱",
+        "🌸",
+        "🍉",
+        "💫",
+        "☠",
+        "💌",
+        "🍎",
+        "🐙",
+        "🍄",
+        "🐛",
+        "🥚",
+        "🙍",
+        "💥",
+        "💰",
+        "🍀",
+        "🎀",
+        "✨",
+      ];
 
-				&::after {
-					position: absolute;
-					top: 0;
-					left: 0;
-					content: "";
-					height: 100%;
-					width: 100%;
-					filter: blur(16px);
-					background-color: rgb(6, 137, 216);
-				}
-			}
+      let iconsToPick = [...icons];
 
-			bingo-wrapper {
-				position: relative;
-			}
+      function pickEmoji() {
+        if (iconsToPick.length > 0) {
+          const random = Math.floor(Math.random() * iconsToPick.length);
+          const iconWrapper = document.querySelector("which-emoji button");
+          iconWrapper.innerHTML = iconsToPick[random];
 
-			bingo-message-wrapper {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				display: none;
-				border: 1px dotted var(--text-color);
-				overflow: hidden;
-				height: 100%;
-				width: 100%;
-				&::after {
-					position: absolute;
-					top: 0;
-					left: 0;
-					content: "";
-					height: 100%;
-					width: 100%;
-					backdrop-filter: blur(10px);
-					background-color: rgba(241, 230, 230, 0.573);
-				}
-			}
-			bingo-message-wrapper[open] {
-				display: block;
-				z-index: 999;
-			}
-			bingo-message {
-				z-index: 9999;
-				position: absolute;
-				display: block;
-				height: 100%;
-				width: 100%;
-				padding: 1rem;
-				color: var(--text-color);
-				font-family: var(--accept-font);
-				text-align: center;
-				align-content: center;
+          let temp = iconsToPick.filter((a) => a !== iconsToPick[random]);
+          iconsToPick = temp;
+        } else {
+          const button = document.querySelector("which-emoji button");
+          button.setAttribute("disabled", true);
+        }
+      }
 
-				span {
-					font-family: Times New Roman;
-					font-style: italic;
-				}
-			}
-			which-emoji {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 8px;
-				padding: 1rem;
-				margin: 0 auto;
-			}
-			which-emoji button {
-				background-color: #dadada;
-				font-family: var(--emoji-font);
-				height: 50px;
-				width: 50px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				font-size: 24px;
-				border-radius: 100%;
-			}
-			.sr-only {
-				position: absolute;
-				left: -10000px;
-				top: auto;
-				width: 1px;
-				height: 1px;
-				overflow: hidden;
-			}
-		</style>
-	</head>
-	<body>
-		<nav
-			style="
-				position: sticky;
-				top: 0;
-				left: 0;
-				right: 0;
-				height: 36px;
-				padding: 6px;
-				background-color: rgb(245, 216, 216);
-				border-bottom: 1px dotted rgb(253, 143, 143);
-				display: flex;
-				justify-content: space-between;
-				text-decoration-style: wavy;
-				font-size: 0.8rem;
-				color: currentColor;
-				align-items: center;
-				width: 100%;
-				z-index: 99999;
-			"
-			aria-label="site navigation"
-		>
-			<a
-				style="
-					display: flex;
-					gap: 4px;
-					align-self: center;
-					align-items: center;
-					text-decoration-style: wavy;
-				"
-				href="https://weird.jen.dev/scramble"
-				aria-label="scramble (previous theme day)"
-			>
-				<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
-					/></svg
-				>scramble
-			</a>
-			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
-				>weird web october</a
-			>
-			<a
-				style="
-					display: flex;
-					gap: 4px;
-					align-self: center;
-					align-items: center;
-					text-decoration-style: wavy;
-				"
-				href="https://weird.jen.dev/solids"
-				aria-label="solids (next theme day)"
-				>solids<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
-					/></svg
-			></a>
-		</nav>
-		<site-container>
-			<main>
-				<which-emoji
-					><small style="font-style: italic" id="directions"
-						>click to get random emoji:</small
-					><button aria-describedby="directions" onclick="{pickEmoji()}">
-						<span class="sr-only">no emoji yet</span>
-					</button>
-					<small style="font-style: italic" id="directions"
-						>and then mark it below:</small
-					>
-				</which-emoji>
-				<h1>BINGO</h1>
-				<bingo-wrapper>
-					<ol>
-						<li>
-							<button id="a1" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="a2" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="a3" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="a4" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="a5" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="b1" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="b2" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="b3" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="b4" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="b5" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="c1" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="c2" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="c3" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="c4" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="c5" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="d1" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="d2" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="d3" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="d4" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="d5" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="e1" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="e2" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="e3" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="e4" type="button" aria-pressed="false"></button>
-						</li>
-						<li>
-							<button id="e5" type="button" aria-pressed="false"></button>
-						</li>
-					</ol>
-					<bingo-message-wrapper>
-						<bingo-message>
-							<h2 id="bingo-heading">you got a bingo</h2>
-							<span>i hope you didn't cheat...</span>
-							<button
-								id="continue"
-								onclick="{hideMessage()}"
-								aria-describedby="bingo-heading"
-								style="margin-top: 20px"
-							>
-								continue
-							</button>
-						</bingo-message>
-					</bingo-message-wrapper>
-				</bingo-wrapper>
-			</main>
-			<footer>
-				<small
-					>today's theme is "filters"<br />(the bingo markers & bingo message
-					use
-					<a
-						href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter"
-						target="_blank"
-						rel="noopener noreferrer"
-						>backdrop filters<span class="sr-only"> (opens a new tab)</span></a
-					>)</small
-				>
-			</footer>
-		</site-container>
-		<script>
-			const buttons = document.querySelectorAll("ol button");
-			let firstBingo = false;
-			const icons = [
-				"💻",
-				"💀",
-				"🍕",
-				"🍌",
-				"🍩",
-				"🌈",
-				"🔥",
-				"🐌",
-				"🎱",
-				"🌸",
-				"🍉",
-				"💫",
-				"☠",
-				"💌",
-				"🍎",
-				"🐙",
-				"🍄",
-				"🐛",
-				"🥚",
-				"🙍",
-				"💥",
-				"💰",
-				"🍀",
-				"🎀",
-				"✨",
-			];
+      const showMessage = (text, smallText, theEnd) => {
+        const message = document.querySelector("bingo-message-wrapper");
+        const button = message.querySelector("button");
+        if (theEnd) {
+          button.remove();
+        }
+        message.querySelector("h2").innerHTML = text;
+        message.querySelector("span").innerHTML = smallText;
+        message.setAttribute("open", "");
+        if (!theEnd) {
+          button.focus();
+        }
+      };
 
-			let iconsToPick = [...icons];
+      const hideMessage = () => {
+        const message = document.querySelector("bingo-message-wrapper");
+        message.removeAttribute("open");
+      };
 
-			function pickEmoji() {
-				if (iconsToPick.length > 0) {
-					const random = Math.floor(Math.random() * iconsToPick.length);
-					const iconWrapper = document.querySelector("which-emoji button");
-					iconWrapper.innerHTML = iconsToPick[random];
+      const checkWin = (space) => {
+        const allMarked = document.querySelectorAll('[aria-pressed="true"]');
+        const lastMarkedId = space.getAttribute("id");
+        let ids = [];
+        let win = false;
+        allMarked.forEach((elem) => ids.push(elem.getAttribute("id")));
 
-					let temp = iconsToPick.filter((a) => a !== iconsToPick[random]);
-					iconsToPick = temp;
-				} else {
-					const button = document.querySelector("which-emoji button");
-					button.setAttribute("disabled", true);
-				}
-			}
+        const starters = ["a", "b", "c", "d", "e"];
+        const enders = ["1", "2", "3", "4", "5"];
 
-			const showMessage = (text, smallText, theEnd) => {
-				const message = document.querySelector("bingo-message-wrapper");
-				const button = message.querySelector("button");
-				if (theEnd) {
-					button.remove();
-				}
-				message.querySelector("h2").innerHTML = text;
-				message.querySelector("span").innerHTML = smallText;
-				message.setAttribute("open", "");
-				if (!theEnd) {
-					button.focus();
-				}
-			};
+        const diagonal1 = ["a1", "b2", "c3", "d4", "e5"];
+        const diagonal2 = ["a5", "b4", "c3", "d2", "e1"];
 
-			const hideMessage = () => {
-				const message = document.querySelector("bingo-message-wrapper");
-				message.removeAttribute("open");
-			};
+        if (allMarked.length === 25) {
+          showMessage("end of the line", "there's no more bingos", true);
+        } else if (
+          ids.filter((id) => id.startsWith(lastMarkedId[0])).length === 5 ||
+          ids.filter((id) => id.endsWith(lastMarkedId[1])).length === 5 ||
+          (diagonal1.every((id) => ids.includes(id)) &&
+            diagonal1.includes(lastMarkedId)) ||
+          (diagonal2.every((id) => ids.includes(id)) &&
+            diagonal2.includes(lastMarkedId))
+        ) {
+          if (!firstBingo) {
+            firstBingo = true;
+            showMessage("you got a bingo", "i hope you didn't cheat...", false);
+          } else {
+            showMessage("another bingo", "i hope you didn't cheat...", false);
+          }
+        }
+      };
 
-			const checkWin = (space) => {
-				const allMarked = document.querySelectorAll('[aria-pressed="true"]');
-				const lastMarkedId = space.getAttribute("id");
-				let ids = [];
-				let win = false;
-				allMarked.forEach((elem) => ids.push(elem.getAttribute("id")));
+      const addMarker = (event) => {
+        const space = event.target;
 
-				const starters = ["a", "b", "c", "d", "e"];
-				const enders = ["1", "2", "3", "4", "5"];
+        if (space.getAttribute("aria-pressed") === "false") {
+          space.setAttribute("aria-pressed", "true");
+          const marker = document.createElement("div");
+          marker.classList.add("marker");
+          space.append(marker);
+          checkWin(space);
+        }
+      };
 
-				const diagonal1 = ["a1", "b2", "c3", "d4", "e5"];
-				const diagonal2 = ["a5", "b4", "c3", "d2", "e1"];
-
-				if (allMarked.length === 25) {
-					showMessage("end of the line", "there's no more bingos", true);
-				} else if (
-					ids.filter((id) => id.startsWith(lastMarkedId[0])).length === 5 ||
-					ids.filter((id) => id.endsWith(lastMarkedId[1])).length === 5 ||
-					(diagonal1.every((id) => ids.includes(id)) &&
-						diagonal1.includes(lastMarkedId)) ||
-					(diagonal2.every((id) => ids.includes(id)) &&
-						diagonal2.includes(lastMarkedId))
-				) {
-					if (!firstBingo) {
-						firstBingo = true;
-						showMessage("you got a bingo", "i hope you didn't cheat...", false);
-					} else {
-						showMessage("another bingo", "i hope you didn't cheat...", false);
-					}
-				}
-			};
-
-			const addMarker = (event) => {
-				const space = event.target;
-
-				if (space.getAttribute("aria-pressed") === "false") {
-					space.setAttribute("aria-pressed", "true");
-					const marker = document.createElement("div");
-					marker.classList.add("marker");
-					space.append(marker);
-					checkWin(space);
-				}
-			};
-
-			buttons.forEach((button) => {
-				iconIndex = Math.floor(Math.random() * icons.length);
-				button.innerHTML = icons[iconIndex];
-				icons.splice(iconIndex, 1);
-				button.addEventListener("click", (event) => {
-					addMarker(event);
-				});
-			});
-		</script>
-	</body>
+      buttons.forEach((button) => {
+        iconIndex = Math.floor(Math.random() * icons.length);
+        button.innerHTML = icons[iconIndex];
+        icons.splice(iconIndex, 1);
+        button.addEventListener("click", (event) => {
+          addMarker(event);
+        });
+      });
+    </script>
+  </body>
 </html>

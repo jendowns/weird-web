@@ -1,640 +1,604 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<title>ode to blinkies</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Jen Downs" />
-		<meta name="description" content="weird web october 2025 - blink" />
-		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
-		<link
-			rel="preload"
-			as="fetch"
-			href="https://octothorp.es/?uri=https://weird.jen.dev/blink"
-		/>
-		<link rel="octo:octothorpes" href="weirdweboctober" />
-		<link rel="octo:octothorpes" href="Blink" />
-		<style>
-			/*
+  <head>
+    <title>ode to blinkies</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jen Downs" />
+    <meta name="description" content="weird web october 2025 - blink" />
+    <link rel="icon" href="./favicon.jpg" type="image/jpg" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird.jen.dev/blink"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Blink" />
+    <style>
+      /*
 			  The FontStruction “MS Sans Serif”
 			  (https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
 			  under a Creative Commons Attribution Share Alike license
 			  (http://creativecommons.org/licenses/by-sa/3.0/).
 			*/
-			@font-face {
-				font-family: "MS Serif";
-				src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
-			:root {
-				--text-color: #282a36;
-				--font:
-					"MS Serif", "Lucida Console", Monaco, -apple-system,
-					BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-				--noise: url(data:image/png;base64,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);
-			}
-			*,
-			*:before,
-			*:after {
-				box-sizing: border-box;
-			}
-			html {
-				font-size: 16px;
-			}
-			body {
-				background-color: #9bd0f7;
-				background-image: url("./images/bliss.webp");
-				background-size: cover;
-				color: var(--text-color);
-				font-family: var(--font);
-				scrollbar-gutter: stable;
-			}
-			html,
-			body {
-				display: grid;
-			}
-			site-container {
-				display: grid;
-				place-items: center;
-				gap: 16px;
-				margin: 0 auto;
-				z-index: 99;
-				width: 100%;
-			}
-			html,
-			body,
-			p {
-				margin: 0;
-			}
+      @font-face {
+        font-family: "MS Serif";
+        src: url("./fonts/ms_sans_serif/ms_sans_serif.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      :root {
+        --text-color: #282a36;
+        --font: "MS Serif", "Lucida Console", Monaco, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        --noise: url(data:image/png;base64,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);
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        background-color: #9bd0f7;
+        background-image: url("./images/bliss.webp");
+        background-size: cover;
+        color: var(--text-color);
+        font-family: var(--font);
+        scrollbar-gutter: stable;
+      }
+      html,
+      body {
+        display: grid;
+      }
+      site-container {
+        display: grid;
+        place-items: center;
+        gap: 16px;
+        margin: 0 auto;
+        z-index: 99;
+        width: 100%;
+      }
+      html,
+      body,
+      p {
+        margin: 0;
+      }
 
-			a,
-			a:visited {
-				color: rgb(54, 0, 116);
-				font-weight: 400;
-			}
-			main {
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-				width: 100%;
-				max-width: 640px;
-				padding: 1rem 1rem 2rem 1rem;
-			}
-			footer {
-				display: flex;
-				flex-direction: column;
-				gap: 12px;
-			}
-			h1 {
-				font-size: 3rem;
-				text-align: center;
-				text-shadow: 1px 1px #d7eeff;
-				margin-bottom: 1rem;
-				padding: 0;
-			}
-			freeze-blinkies {
-				padding: 0.5rem;
-				background-color: #ece9d8;
-				border: 1px dotted #333;
-				display: flex;
-				gap: 8px;
-			}
-			noise-image {
-				background: var(--noise);
-				pointer-events: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				overflow: hidden;
-			}
-			window-frame {
-				box-shadow:
-					inset -1px -1px #00138c,
-					inset 1px 1px #0831d9,
-					inset -2px -2px #001ea0,
-					inset 2px 2px #00138c,
-					inset -3px -3px #003bda,
-					inset 3px 3px #0855dd;
-				border-top-left-radius: 8px;
-				border-top-right-radius: 8px;
-				flex-shrink: 0;
-				display: flex;
-				width: 100%;
-				max-width: 400px;
-				background: #ece9d8;
-			}
+      a,
+      a:visited {
+        color: rgb(54, 0, 116);
+        font-weight: 400;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        max-width: 640px;
+        padding: 1rem 1rem 2rem 1rem;
+      }
+      footer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        text-shadow: 1px 1px #d7eeff;
+        margin-bottom: 1rem;
+        padding: 0;
+      }
+      freeze-blinkies {
+        padding: 0.5rem;
+        background-color: #ece9d8;
+        border: 1px dotted #333;
+        display: flex;
+        gap: 8px;
+      }
+      noise-image {
+        background: var(--noise);
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+      }
+      window-frame {
+        box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9,
+          inset -2px -2px #001ea0, inset 2px 2px #00138c,
+          inset -3px -3px #003bda, inset 3px 3px #0855dd;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        flex-shrink: 0;
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        background: #ece9d8;
+      }
+      window-frame:first-of-type {
+        align-self: center;
+        max-width: 540px;
+      }
+      window-frame:last-of-type {
+        align-self: flex-start;
+      }
+      window-frame:nth-of-type(2) {
+        align-self: flex-end;
+      }
+      img {
+        width: 150px;
+        height: 20px;
+      }
+      da-blinkies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+      }
+      window-inner-frame {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      window-header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(
+          180deg,
+          #0997ff,
+          #0053ee 8%,
+          #0050ee 40%,
+          #06f 88%,
+          #06f 93%,
+          #005bff 95%,
+          #003dd7 96%,
+          #003dd7
+        );
+        padding: 8px;
+        border-top: 1px solid #0831d9;
+        border-left: 1px solid #0831d9;
+        border-right: 1px solid #001ea0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 7px;
+        text-shadow: 1px 1px #0f1089;
+        height: auto;
+      }
+      window-header {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+      window-contents {
+        height: auto;
+        padding: 0.7rem;
+        line-height: 1.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+      }
+      window-text {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      fake-button {
+        background: #e76f54;
+        border: 1px solid white;
+        border-radius: 4px;
+        display: grid;
+        place-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        box-shadow: -2px -2px inset #bf3b18, 2px 2px inset #f0a795;
+      }
+      fake-alert {
+        display: grid;
+        place-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: #e80f00;
+        box-shadow: -2px -2px inset #bf3b18, 2px 2px inset #f0a795;
+        border-radius: 100%;
+        flex-shrink: 0;
+      }
+      fake-ok-button {
+        border: 1px solid #003c74;
+        background: linear-gradient(180deg, #fff, #ecebe5 86%, #d8d0c4);
+        box-shadow: none;
+        border-radius: 3px;
+      }
+      .fake-button-link {
+        color: inherit;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        display: block;
+        min-width: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 26px;
+        font-family: var(--font);
+        font-size: 12px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .fake-button-link,
+      .fake-button-link:visited {
+        color: var(--text-color);
+      }
+      .fake-button-link:hover {
+        box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889,
+          inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+      }
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: normal;
+      }
+      @media (width <= 610px) {
+        main {
+          width: 100%;
+          height: auto;
+        }
+        window-frame {
+          position: relative;
+          top: auto !important;
+          left: auto !important;
+          right: auto !important;
+        }
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        padding: 6px;
+        background-color: #9bd0f7;
+        display: flex;
+        justify-content: space-between;
+        text-decoration-style: wavy;
+        font-size: 0.8rem;
+        color: currentColor;
+        align-items: center;
+        border-bottom: 1px dotted #044b7f;
+        width: 100%;
+        z-index: 99999;
+      }
+      nav a {
+        display: flex;
+        gap: 4px;
+        align-self: center;
+        align-items: center;
+        text-decoration-style: wavy;
+      }
+    </style>
+  </head>
+  <body>
+    <site-container>
+      <nav aria-label="site navigation">
+        <a
+          href="https://weird.jen.dev/suboptimal"
+          aria-label="suboptimal (previous theme day)"
+        >
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+          >
+            <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+            <path
+              fill="currentColor"
+              d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+            />
+          </svg>
+          suboptimal
+        </a>
+        <a href="https://weird.jen.dev/">weird web october</a>
+        <a
+          href="https://weird.jen.dev/warning"
+          aria-label="warning (next theme day)"
+        >
+          warning
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+          >
+            <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+            <path
+              fill="currentColor"
+              d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+            />
+          </svg>
+        </a>
+      </nav>
+      <h1>ode to blinkies</h1>
+      <freeze-blinkies>
+        <input id="freeze" type="checkbox" />
+        <label for="freeze">freeze all blinkies</label>
+      </freeze-blinkies>
+      <main>
+        <window-frame>
+          <window-inner-frame>
+            <window-header-wrapper>
+              <window-header><h2>da blinkies</h2></window-header>
+              <fake-button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="white"
+                    d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
+                  ></path>
+                </svg>
+              </fake-button>
+            </window-header-wrapper>
+            <window-contents>
+              <p>
+                ever try to distill your essence into a collection of blinking
+                images?
+              </p>
+              <da-blinkies>
+                <img
+                  src="./images/blinkies/goldenage.gif"
+                  alt="gray blinkie with animated text that shows an old Windows OS logo, followed by the text 'Windows 9x/2000/XP. The Golden Age.'"
+                />
+                <img
+                  src="./images/blinkies/y2k-compliant.gif"
+                  alt="pink blinkie that says 'Y2k Compliant'"
+                />
+                <img
+                  src="./images/blinkies/fruit.gif"
+                  alt="Animal Crossing theme blinkie featuring Tangy the Cat with flashing text that reads 'FRUIT 4 THE FRUIT GOD"
+                />
+                <img
+                  src="./images/blinkies/eevee.gif"
+                  alt="Light pink blinkie that says 'EEVEE' with a cute picture of the pokemon, Eevee"
+                />
+                <img
+                  src="./images/blinkies/n64.gif"
+                  alt="gray blink with blue and red text that reads 'NINTENDO 64' followed by the 3D N64 logo"
+                />
+                <img
+                  src="./images/blinkies/playstation.gif"
+                  alt="'Playstation girl' blinkie followed by the playstation logo"
+                />
+                <img
+                  src="./images/blinkies/pretty.gif"
+                  alt="Blinkie with a glittery nature scene and a rainbow"
+                />
+                <img
+                  src="./images/blinkies/dream.gif"
+                  alt="'I dream in pixels' blinkie"
+                />
+                <img
+                  src="./images/blinkies/forest.gif"
+                  width="150"
+                  height="20"
+                  alt="Green blinkie reads 'Forest Walker'"
+                />
+                <img
+                  src="./images/blinkies/katebush.gif"
+                  alt="Picture of Kate Bush and her name on a blinkie"
+                />
+                <img
+                  src="./images/blinkies/needcoffee.gif"
+                  alt="Blinkie with a picture of coffee and the text 'I NEED Coffee'"
+                />
+                <img
+                  src="./images/blinkies/bookworm.gif"
+                  alt="light green blinkie that says 'Bookworm'"
+                />
+                <img
+                  src="./images/blinkies/sailormoon.gif"
+                  width="150"
+                  height="20"
+                  alt="Rainbow text blinkie with pixel images of Sailor Moon and text that says the same."
+                />
+                <img
+                  src="./images/blinkies/believe.gif"
+                  alt="blinkie that says 'believe in yourself'"
+                />
+                <img
+                  src="./images/blinkies/dolphins.gif"
+                  alt="blue blinkie with a little pixel dolphin that says 'I love dophins'"
+                />
+                <img
+                  src="./images/blinkies/yeehaw.gif"
+                  alt="sad cowboy cat meme blinkie with the text 'yeehaw...'"
+                />
+                <img
+                  src="./images/blinkies/online.gif"
+                  alt="small blinkie text says 'i'm online bitch'"
+                />
+                <img
+                  src="./images/blinkies/html.gif"
+                  alt="'bury me in html' blinkie"
+                />
+                <img
+                  src="./images/blinkies/orb.gif"
+                  alt="animated blinkie with close up of a wizard's orb that says 'let me look into my orb'"
+                />
+                <img
+                  src="./images/blinkies/cd.gif"
+                  alt="'cd lover' blinkie with pictures of cds"
+                />
+                <img
+                  src="./images/blinkies/sotired.gif"
+                  alt="small text blinkie: 'so tired'"
+                />
+              </da-blinkies>
+            </window-contents>
+          </window-inner-frame>
+        </window-frame>
+        <window-frame>
+          <window-inner-frame>
+            <window-header-wrapper>
+              <window-header>
+                <h2>An unexpected error occurred</h2>
+              </window-header>
+              <fake-button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="white"
+                    d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
+                  ></path>
+                </svg>
+              </fake-button>
+            </window-header-wrapper>
+            <window-contents>
+              <fake-alert
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="white"
+                    d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
+                  ></path>
+                </svg>
+              </fake-alert>
+              <window-text>
+                <em>
+                  A single Field which I have looked upon,<br />
+                  Both of them speak of something that is gone:<br />
+                  The Pansy at my feet<br />
+                  Doth the same tale repeat:<br />
+                  Whither is fled the visionary gleam?<br />
+                  Where is it now, the glory and the dream?
+                </em>
+                <fake-ok-button style="align-self: end"
+                  ><a
+                    class="fake-button-link"
+                    href="https://en.wikisource.org/wiki/Poems,_in_Two_Volumes_(Wordsworth,_1807)/Volume_2/Ode:_Intimations_of_Immortality_from_Recollections_of_Early_Childhood"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="UMM... YOU OK? Read the rest of this poem. (opens new tab)"
+                    >UMM... YOU OK?</a
+                  ></fake-ok-button
+                >
+              </window-text>
+            </window-contents>
+          </window-inner-frame>
+        </window-frame>
+        <window-frame>
+          <window-inner-frame>
+            <window-header-wrapper>
+              <window-header><h2>so long ~</h2></window-header>
+              <fake-button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="white"
+                    d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
+                  ></path>
+                </svg>
+              </fake-button>
+            </window-header-wrapper>
+            <window-contents
+              ><footer>
+                <p>
+                  Today's theme, Blink, is dedicated to the silly little
+                  <a
+                    href="https://en.wiktionary.org/wiki/blinkie"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="blinkie wiktionary (opens new window)"
+                    >blinkie</a
+                  >.
+                </p>
+                <small>
+                  Blinkie sources:
+                  <a
+                    href="https://blinkies.cafe/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="1. blinkies cafe (opens new window)"
+                    >1</a
+                  >,
+                  <a
+                    href="https://cinni.net/?z=/web"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="2. Cinni's web goodies (opens new window)"
+                    >2</a
+                  >
+                </small>
+                <p>
+                  <img
+                    src="./images/blinkies/halloween.gif"
+                    alt="Blinkie with skulls that says 'Happy Halloween!"
+                  />
+                </p>
+              </footer>
+            </window-contents>
+          </window-inner-frame>
+        </window-frame>
+      </main>
+    </site-container>
 
-			window-frame:first-of-type {
-				align-self: center;
-				max-width: 540px;
-			}
-			window-frame:last-of-type {
-				align-self: flex-start;
-			}
-			window-frame:nth-of-type(2) {
-				align-self: flex-end;
-			}
-			img {
-				width: 150px;
-				height: 20px;
-			}
-			da-blinkies {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 6px;
-				justify-content: center;
-			}
+    <noise-image></noise-image>
 
-			window-inner-frame {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-			}
+    <script>
+      const freeze = document.getElementById("freeze");
+      const blinkies = document.querySelectorAll("img");
 
-			window-header-wrapper {
-				display: flex;
-				justify-content: space-between;
-				background: linear-gradient(
-					180deg,
-					#0997ff,
-					#0053ee 8%,
-					#0050ee 40%,
-					#06f 88%,
-					#06f 93%,
-					#005bff 95%,
-					#003dd7 96%,
-					#003dd7
-				);
-				padding: 8px;
-				border-top: 1px solid #0831d9;
-				border-left: 1px solid #0831d9;
-				border-right: 1px solid #001ea0;
-				border-top-left-radius: 8px;
-				border-top-right-radius: 7px;
-				text-shadow: 1px 1px #0f1089;
-				height: auto;
-			}
+      freezeBlinkies = (element) => {
+        if (element.checked) {
+          blinkies.forEach((blinkie) => {
+            const src = blinkie.getAttribute("src").replace("gif", "png");
+            blinkie.setAttribute("src", src);
+          });
+        } else {
+          blinkies.forEach((blinkie) => {
+            const src = blinkie.getAttribute("src").replace("png", "gif");
+            blinkie.setAttribute("src", src);
+          });
+        }
+      };
 
-			window-header {
-				flex-direction: row;
-				justify-content: space-between;
-				height: auto;
-				display: flex;
-				align-items: center;
-				color: white;
-			}
+      freeze.addEventListener("change", (event) => {
+        freezeBlinkies(event.target);
+      });
 
-			window-contents {
-				height: auto;
-				padding: 0.7rem;
-				line-height: 1.5rem;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				gap: 12px;
-			}
-
-			window-text {
-				flex-grow: 1;
-			}
-
-			fake-button {
-				background: #e76f54;
-				border: 1px solid white;
-				border-radius: 4px;
-				display: grid;
-				place-content: center;
-				width: 24px;
-				height: 24px;
-				border-radius: 3px;
-				box-shadow:
-					-2px -2px inset #bf3b18,
-					2px 2px inset #f0a795;
-			}
-
-			fake-alert {
-				display: grid;
-				place-content: center;
-				width: 24px;
-				height: 24px;
-				background-color: #e80f00;
-				box-shadow:
-					-2px -2px inset #bf3b18,
-					2px 2px inset #f0a795;
-				border-radius: 100%;
-				flex-shrink: 0;
-			}
-
-			fake-ok-button {
-				border: 1px solid #003c74;
-				background: linear-gradient(180deg, #fff, #ecebe5 86%, #d8d0c4);
-				box-shadow: none;
-				border-radius: 3px;
-			}
-
-			.fake-button-link {
-				color: inherit;
-				text-decoration: none;
-				width: 100%;
-				height: 100%;
-				display: block;
-				min-width: 100px;
-				padding-left: 20px;
-				padding-right: 20px;
-				height: 26px;
-				font-family: var(--font);
-				font-size: 12px;
-				text-align: center;
-				flex-shrink: 0;
-			}
-
-			.fake-button-link,
-			.fake-button-link:visited {
-				color: var(--text-color);
-			}
-
-			.fake-button-link:hover {
-				box-shadow:
-					inset -1px 1px #fff0cf,
-					inset 1px 2px #fdd889,
-					inset -2px 2px #fbc761,
-					inset 2px -2px #e5a01a;
-			}
-
-			h2 {
-				margin: 0;
-				padding: 0;
-				font-size: 16px;
-				font-weight: normal;
-			}
-
-			@media (width <= 610px) {
-				main {
-					width: 100%;
-					height: auto;
-				}
-				window-frame {
-					position: relative;
-					top: auto !important;
-					left: auto !important;
-					right: auto !important;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<site-container>
-			<nav
-				style="
-					position: sticky;
-					top: 0;
-					left: 0;
-					right: 0;
-					height: 36px;
-					padding: 6px;
-					background-color: #9bd0f7;
-					display: flex;
-					justify-content: space-between;
-					text-decoration-style: wavy;
-					font-size: 0.8rem;
-					color: currentColor;
-					align-items: center;
-					border-bottom: 1px dotted #044b7f;
-					width: 100%;
-					z-index: 99999;
-				"
-				aria-label="site navigation"
-			>
-				<a
-					style="
-						display: flex;
-						gap: 4px;
-						align-self: center;
-						align-items: center;
-						text-decoration-style: wavy;
-					"
-					href="https://weird.jen.dev/suboptimal"
-					aria-label="suboptimal (previous theme day)"
-				>
-					<svg
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						width="12"
-						height="12"
-						viewBox="0 0 24 24"
-					>
-						<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-						<path
-							fill="currentColor"
-							d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
-						/></svg
-					>suboptimal
-				</a>
-
-				<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
-					>weird web october</a
-				>
-
-				<a
-					style="
-						display: flex;
-						gap: 4px;
-						align-self: center;
-						align-items: center;
-						text-decoration-style: wavy;
-					"
-					href="https://weird.jen.dev/warning"
-					aria-label="warning (next theme day)"
-					>warning<svg
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						width="12"
-						height="12"
-						viewBox="0 0 24 24"
-					>
-						<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-						<path
-							fill="currentColor"
-							d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
-						/></svg
-				></a>
-			</nav>
-			<h1>ode to blinkies</h1>
-			<freeze-blinkies
-				><input id="freeze" type="checkbox" /><label for="freeze"
-					>freeze all blinkies</label
-				></freeze-blinkies
-			>
-			<main>
-				<window-frame>
-					<window-inner-frame>
-						<window-header-wrapper>
-							<window-header><h2>da blinkies</h2></window-header>
-							<fake-button>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										fill="white"
-										d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
-									></path>
-								</svg>
-							</fake-button>
-						</window-header-wrapper>
-						<window-contents>
-							<p>
-								ever try to distill your essence into a collection of blinking
-								images?
-							</p>
-							<da-blinkies>
-								<img
-									src="./images/blinkies/goldenage.gif"
-									alt="gray blinkie with animated text that shows an old Windows OS logo, followed by the text 'Windows 9x/2000/XP. The Golden Age.'"
-								/>
-								<img
-									src="./images/blinkies/y2k-compliant.gif"
-									alt="pink blinkie that says 'Y2k Compliant'"
-								/>
-								<img
-									src="./images/blinkies/fruit.gif"
-									alt="Animal Crossing theme blinkie featuring Tangy the Cat with flashing text that reads 'FRUIT 4 THE FRUIT GOD"
-								/>
-								<img
-									src="./images/blinkies/eevee.gif"
-									alt="Light pink blinkie that says 'EEVEE' with a cute picture of the pokemon, Eevee"
-								/>
-								<img
-									src="./images/blinkies/n64.gif"
-									alt="gray blink with blue and red text that reads 'NINTENDO 64' followed by the 3D N64 logo"
-								/>
-								<img
-									src="./images/blinkies/playstation.gif"
-									alt="'Playstation girl' blinkie followed by the playstation logo"
-								/>
-								<img
-									src="./images/blinkies/pretty.gif"
-									alt="Blinkie with a glittery nature scene and a rainbow"
-								/>
-								<img
-									src="./images/blinkies/dream.gif"
-									alt="'I dream in pixels' blinkie"
-								/>
-								<img
-									src="./images/blinkies/forest.gif"
-									width="150"
-									height="20"
-									alt="Green blinkie reads 'Forest Walker'"
-								/>
-								<img
-									src="./images/blinkies/katebush.gif"
-									alt="Picture of Kate Bush and her name on a blinkie"
-								/>
-								<img
-									src="./images/blinkies/needcoffee.gif"
-									alt="Blinkie with a picture of coffee and the text 'I NEED Coffee'"
-								/>
-								<img
-									src="./images/blinkies/bookworm.gif"
-									alt="light green blinkie that says 'Bookworm'"
-								/>
-								<img
-									src="./images/blinkies/sailormoon.gif"
-									width="150"
-									height="20"
-									alt="Rainbow text blinkie with pixel images of Sailor Moon and text that says the same."
-								/>
-								<img
-									src="./images/blinkies/believe.gif"
-									alt="blinkie that says 'believe in yourself'"
-								/>
-								<img
-									src="./images/blinkies/dolphins.gif"
-									alt="blue blinkie with a little pixel dolphin that says 'I love dophins'"
-								/>
-								<img
-									src="./images/blinkies/yeehaw.gif"
-									alt="sad cowboy cat meme blinkie with the text 'yeehaw...'"
-								/>
-								<img
-									src="./images/blinkies/online.gif"
-									alt="small blinkie text says 'i'm online bitch'"
-								/>
-								<img
-									src="./images/blinkies/html.gif"
-									alt="'bury me in html' blinkie"
-								/>
-								<img
-									src="./images/blinkies/orb.gif"
-									alt="animated blinkie with close up of a wizard's orb that says 'let me look into my orb'"
-								/>
-								<img
-									src="./images/blinkies/cd.gif"
-									alt="'cd lover' blinkie with pictures of cds"
-								/>
-								<img
-									src="./images/blinkies/sotired.gif"
-									alt="small text blinkie: 'so tired'"
-								/>
-							</da-blinkies>
-						</window-contents>
-					</window-inner-frame>
-				</window-frame>
-				<window-frame>
-					<window-inner-frame>
-						<window-header-wrapper>
-							<window-header>
-								<h2>An unexpected error occurred</h2>
-							</window-header>
-							<fake-button>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										fill="white"
-										d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
-									></path>
-								</svg>
-							</fake-button>
-						</window-header-wrapper>
-						<window-contents
-							style="display: flex; flex-direction: row; gap: 12px"
-						>
-							<fake-alert
-								><svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										fill="white"
-										d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
-									></path></svg
-							></fake-alert>
-							<window-text
-								style="display: flex; flex-direction: column; gap: 12px"
-							>
-								<em>
-									A single Field which I have looked upon,<br />
-									Both of them speak of something that is gone:<br />
-									The Pansy at my feet<br />
-									Doth the same tale repeat:<br />
-									Whither is fled the visionary gleam?<br />
-									Where is it now, the glory and the dream?
-								</em>
-								<fake-ok-button style="align-self: end"
-									><a
-										class="fake-button-link"
-										href="https://en.wikisource.org/wiki/Poems,_in_Two_Volumes_(Wordsworth,_1807)/Volume_2/Ode:_Intimations_of_Immortality_from_Recollections_of_Early_Childhood"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="UMM... YOU OK? Read the rest of this poem. (opens new tab)"
-										>UMM... YOU OK?</a
-									></fake-ok-button
-								>
-							</window-text>
-						</window-contents>
-					</window-inner-frame>
-				</window-frame>
-				<window-frame>
-					<window-inner-frame>
-						<window-header-wrapper>
-							<window-header><h2>so long ~</h2></window-header>
-							<fake-button>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										fill="white"
-										d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"
-									></path>
-								</svg>
-							</fake-button>
-						</window-header-wrapper>
-						<window-contents
-							><footer>
-								<p>
-									Today's theme, Blink, is dedicated to the silly little
-									<a
-										href="https://en.wiktionary.org/wiki/blinkie"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="blinkie wiktionary (opens new window)"
-										>blinkie</a
-									>.
-								</p>
-								<small>
-									Blinkie sources:
-									<a
-										href="https://blinkies.cafe/"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="1. blinkies cafe (opens new window)"
-										>1</a
-									>,
-									<a
-										href="https://cinni.net/?z=/web"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="2. Cinni's web goodies (opens new window)"
-										>2</a
-									>
-								</small>
-								<p>
-									<img
-										src="./images/blinkies/halloween.gif"
-										alt="Blinkie with skulls that says 'Happy Halloween!"
-									/>
-								</p>
-							</footer>
-						</window-contents>
-					</window-inner-frame>
-				</window-frame>
-			</main>
-		</site-container>
-
-		<noise-image></noise-image>
-
-		<script>
-			const freeze = document.getElementById("freeze");
-			const blinkies = document.querySelectorAll("img");
-
-			freezeBlinkies = (element) => {
-				if (element.checked) {
-					blinkies.forEach((blinkie) => {
-						const src = blinkie.getAttribute("src").replace("gif", "png");
-						blinkie.setAttribute("src", src);
-					});
-				} else {
-					blinkies.forEach((blinkie) => {
-						const src = blinkie.getAttribute("src").replace("png", "gif");
-						blinkie.setAttribute("src", src);
-					});
-				}
-			};
-
-			freeze.addEventListener("change", (event) => {
-				freezeBlinkies(event.target);
-			});
-
-			freezeBlinkies(freeze);
-		</script>
-	</body>
+      freezeBlinkies(freeze);
+    </script>
+  </body>
 </html>

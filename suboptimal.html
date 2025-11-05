@@ -1,265 +1,259 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<title>suboptimal subscript subtext</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Jen Downs" />
-		<meta name="description" content="weird web october 2025 - suboptimal" />
-		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
-		<link
-			rel="preload"
-			as="fetch"
-			href="https://octothorp.es/?uri=https://weird.jen.dev/suboptimal"
-		/>
-		<link rel="octo:octothorpes" href="weirdweboctober" />
-		<link rel="octo:octothorpes" href="Sub-optimal" />
-		<style>
-			@font-face {
-				font-family: "fell";
-				src: url("./fonts/fell.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
-			:root {
-				--font: "fell", serif;
-			}
-			*,
-			*:before,
-			*:after {
-				box-sizing: border-box;
-			}
-			html {
-				font-size: 16px;
-			}
-			body {
-				background-color: #111;
-				background-image: url("https://jen.dev/assets/images/stars-cinni.gif");
-				background-repeat: repeat;
-				color: white;
-				font-family: var(--font);
-				scrollbar-gutter: stable;
-			}
-			html,
-			body {
-				width: 100%;
-				height: 100%;
-				padding: 0;
-				margin: 0;
-			}
-			main {
-				display: grid;
-				place-items: center;
-				align-content: start;
-				gap: 1rem;
-				width: 100%;
-				padding: 3rem 1rem 4rem 1rem;
-			}
-			a,
-			a:visited {
-				color: #f7df87;
-				text-decoration-style: wavy;
-				font-weight: 400;
-			}
-			h1 {
-				margin: 0;
-				text-align: center;
-			}
-			site-container {
-				display: flex;
-				align-self: start;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				margin: 0 auto;
-				gap: 3rem;
-				font-size: 1.75rem;
-				line-height: 2rem;
-				max-width: 900px;
-				width: 100%;
-			}
-			span {
-				position: relative;
-				z-index: 99;
-			}
-			sub {
-				position: absolute;
-				z-index: 22;
-				width: 100%;
-				min-width: 150px;
-				font-size: 0.8rem;
-				line-height: 1.1rem;
-				bottom: -30px;
-				left: -10px;
-				font-style: italic;
-				height: 100%;
-				color: rgb(213, 208, 231);
-			}
-			img {
-				height: 224.95px;
-				width: 300px;
-				border: 1px solid white;
-			}
-			quote-wrapper {
-				display: inline-block;
-				text-align: center;
-				line-height: 3.5rem;
-			}
-			author-wrapper {
-				text-align: right;
-				display: flex;
-				gap: 1rem;
-				align-self: end;
-			}
+  <head>
+    <title>suboptimal subscript subtext</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jen Downs" />
+    <meta name="description" content="weird web october 2025 - suboptimal" />
+    <link rel="icon" href="./favicon.jpg" type="image/jpg" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird.jen.dev/suboptimal"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Sub-optimal" />
+    <style>
+      @font-face {
+        font-family: "fell";
+        src: url("./fonts/fell.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      :root {
+        --font: "fell", serif;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        background-color: #111;
+        background-image: url("https://jen.dev/assets/images/stars-cinni.gif");
+        background-repeat: repeat;
+        color: white;
+        font-family: var(--font);
+        scrollbar-gutter: stable;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      main {
+        display: grid;
+        place-items: center;
+        align-content: start;
+        gap: 1rem;
+        width: 100%;
+        padding: 3rem 1rem 4rem 1rem;
+      }
+      a,
+      a:visited {
+        color: #f7df87;
+        text-decoration-style: wavy;
+        font-weight: 400;
+      }
+      h1 {
+        margin: 0;
+        text-align: center;
+      }
+      site-container {
+        display: flex;
+        align-self: start;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        gap: 3rem;
+        font-size: 1.75rem;
+        line-height: 2rem;
+        max-width: 900px;
+        width: 100%;
+      }
+      span {
+        position: relative;
+        z-index: 99;
+      }
+      sub {
+        position: absolute;
+        z-index: 22;
+        width: 100%;
+        min-width: 150px;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        bottom: -30px;
+        left: -10px;
+        font-style: italic;
+        height: 100%;
+        color: rgb(213, 208, 231);
+      }
+      img {
+        height: 224.95px;
+        width: 300px;
+        border: 1px solid white;
+      }
+      quote-wrapper {
+        display: inline-block;
+        text-align: center;
+        line-height: 3.5rem;
+      }
+      author-wrapper {
+        text-align: right;
+        display: flex;
+        gap: 1rem;
+        align-self: end;
+      }
 
-			image-wrapper {
-				border-radius: 100%;
-				width: 100px;
-				height: 100px;
-				background-image: url("./images/garth.jpg");
-				background-size: cover;
-				background-position: center bottom;
-				border: 1px solid white;
-			}
-			.static {
-				display: none;
-			}
-			.animated {
-				display: block;
-			}
-			@media (prefers-reduced-motion: reduce) {
-				body {
-					background-image: url("https://jen.dev/assets/images/stars-cinni_static.webp");
-				}
-				.static {
-					display: block;
-				}
-				.animated {
-					display: none;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<nav
-			style="
-				position: sticky;
-				top: 0;
-				left: 0;
-				right: 0;
-				height: 36px;
-				padding: 6px;
-				display: flex;
-				justify-content: space-between;
-				text-decoration-style: wavy;
-				font-size: 0.8rem;
-				color: currentColor;
-				align-items: center;
-				width: 100%;
-				z-index: 99999;
-			"
-			aria-label="site navigation"
-		>
-			<a
-				style="
-					display: flex;
-					gap: 4px;
-					align-self: center;
-					align-items: center;
-					text-decoration-style: wavy;
-				"
-				href="https://weird.jen.dev/solids"
-				aria-label="solids (previous theme day)"
-			>
-				<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
-					/></svg
-				>solids
-			</a>
-			<a style="text-decoration-style: wavy" href="https://weird.jen.dev/"
-				>weird web october</a
-			>
-			<a
-				style="
-					display: flex;
-					gap: 4px;
-					align-self: center;
-					align-items: center;
-					text-decoration-style: wavy;
-				"
-				href="https://weird.jen.dev/blink"
-				aria-label="blink (next theme day)"
-				>blink<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
-					/></svg
-			></a>
-		</nav>
-		<main>
-			<h1><em>suboptimal subtext subscript</em></h1>
-			<site-container>
-				<img
-					class="animated"
-					src="./images/darkplace.webp"
-					alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
-				/>
-				<img
-					class="static"
-					src="./images/darkplace.jpg"
-					alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
-				/>
-				<quote-wrapper>
-					<span
-						>“I know
-						<span><span>writers</span><sub>(re: talentless hacks)</sub></span>
-						who use
-						<span><span>subtext</span>,<sub>(poor fools)</sub></span></span
-					>
-					<span>
-						and they're all
-						<span
-							><span>cowards<sub>(COWARDS!!)</sub></span></span
-						>"
-					</span>
-				</quote-wrapper>
-				<author-wrapper>
-					<span>
-						-
-						<span>Garth Marenghi</span>
-						<sub
-							>(author, dreamweaver, <em>visionary</em>... plus actor, staring
-							in the critically acclaimed & aptly-named
-							<a
-								href="https://www.rollingstone.co.uk/tv/garth-marenghi-terrortome-darkplace-matthew-holness-interview-24223/"
-								target="_blank"
-								rel="noopener noreferrer"
-								>Garth Marenghi's Darkplace</a
-							>)</sub
-						>
-					</span>
-					<image-wrapper
-						role="img"
-						aria-label="portrait of Garth Marenghi"
-					></image-wrapper>
-				</author-wrapper>
-			</site-container>
-		</main>
-	</body>
+      image-wrapper {
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        background-image: url("./images/garth.jpg");
+        background-size: cover;
+        background-position: center bottom;
+        border: 1px solid white;
+      }
+      .static {
+        display: none;
+      }
+      .animated {
+        display: block;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body {
+          background-image: url("https://jen.dev/assets/images/stars-cinni_static.webp");
+        }
+        .static {
+          display: block;
+        }
+        .animated {
+          display: none;
+        }
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        padding: 6px;
+        display: flex;
+        justify-content: space-between;
+        text-decoration-style: wavy;
+        font-size: 0.8rem;
+        color: currentColor;
+        align-items: center;
+        width: 100%;
+        z-index: 99999;
+      }
+      nav a {
+        display: flex;
+        gap: 4px;
+        align-self: center;
+        align-items: center;
+        text-decoration-style: wavy;
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="site navigation">
+      <a
+        href="https://weird.jen.dev/solids"
+        aria-label="solids (previous theme day)"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+          />
+        </svg>
+        solids
+      </a>
+      <a href="https://weird.jen.dev/"> weird web october </a>
+      <a href="https://weird.jen.dev/blink" aria-label="blink (next theme day)"
+        >blink<svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+          />
+        </svg>
+      </a>
+    </nav>
+    <main>
+      <h1>
+        <em>suboptimal subtext subscript</em>
+      </h1>
+      <site-container>
+        <img
+          class="animated"
+          src="./images/darkplace.webp"
+          alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
+        />
+        <img
+          class="static"
+          src="./images/darkplace.jpg"
+          alt="animated clip of Garth Marenghi typing his magnum opus, his desk flying through space. he rips the page from the typewriter and flings it to the side."
+        />
+        <quote-wrapper>
+          <span>
+            “I know
+            <span>
+              <span>writers</span>
+              <sub>(re: talentless hacks)</sub>
+            </span>
+            who use
+            <span> <span>subtext</span>,<sub>(poor fools)</sub> </span>
+          </span>
+          <span>
+            and they're all
+            <span
+              ><span>cowards<sub>(COWARDS!!)</sub></span></span
+            >"
+          </span>
+        </quote-wrapper>
+        <author-wrapper>
+          <span>
+            -
+            <span>Garth Marenghi</span>
+            <sub
+              >(author, dreamweaver, <em>visionary</em>... plus actor, staring
+              in the critically acclaimed & aptly-named
+              <a
+                href="https://www.rollingstone.co.uk/tv/garth-marenghi-terrortome-darkplace-matthew-holness-interview-24223/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garth Marenghi's Darkplace</a
+              >)</sub
+            >
+          </span>
+          <image-wrapper
+            role="img"
+            aria-label="portrait of Garth Marenghi"
+          ></image-wrapper>
+        </author-wrapper>
+      </site-container>
+    </main>
+  </body>
 </html>
