@@ -1,347 +1,351 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<title>Gummi Bear Bounce</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Jen Downs" />
-		<meta name="description" content="weird web october 2025 - bounce" />
-		<link rel="icon" href="./favicon.jpg" type="image/jpg" />
-		<link
-			rel="preload"
-			as="fetch"
-			href="https://octothorp.es/?uri=https://weird.jen.dev/bounce"
-		/>
-		<link rel="octo:octothorpes" href="weirdweboctober" />
-		<link rel="octo:octothorpes" href="Bounce" />
-		<style>
-			@font-face {
-				font-family: "comic relief";
-				src: url("./fonts/ComicRelief-Regular.woff2") format("woff2");
-				font-weight: normal;
-				font-display: swap;
-			}
-			@font-face {
-				font-family: "comic relief";
-				src: url("./fonts/ComicRelief-Bold.woff2") format("woff2");
-				font-weight: bold;
-				font-display: swap;
-			}
-			:root {
-				--text-color: #222222;
-				--font: "comic relief", sans-serif;
-			}
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-				overscroll-behavior: none;
-			}
-			html {
-				font-size: 16px;
-			}
-			body {
-				background-color: orange;
-				background: radial-gradient(white, #ecbd6c);
-				color: var(--text-color);
-				font-family: var(--font);
-				align-content: start;
-				font-weight: 700;
-				font-stretch: 100%;
-			}
-			body {
-				display: grid;
-				height: 100%;
-			}
-			html,
-			body,
-			p,
-			h1 {
-				margin: 0;
-				padding: 0;
-			}
-			h1 {
-				font-size: 2.5rem;
-				margin-top: 2rem;
-				animation: bounce 2s infinite;
-				text-shadow: 2px 2px orange;
-			}
-			h1,
-			.texteffect {
-				filter: url(#creepytext);
-			}
-			curse-text {
-				text-shadow: 1px 1px orange;
-				font-size: 1.5rem;
-				display: flex;
-				gap: 1rem;
-				filter: url(#creepytext);
-			}
-			a,
-			a:visited {
-				color: rgb(91, 0, 51);
-				text-shadow: 1px 1px pink;
-				text-decoration-style: wavy;
-				font-weight: 400;
-			}
-			main {
-				display: grid;
-				place-items: center;
-				align-content: start;
-				gap: 1rem;
-				margin: 0 auto;
-				z-index: 99;
-				width: 100%;
-				overflow: hidden;
-				padding-bottom: 3rem;
-			}
-			nav {
-				height: 36px;
-				padding: 6px;
-				display: flex;
-				justify-content: space-between;
-				text-decoration-style: wavy;
-				font-size: 0.8rem;
-				color: currentColor;
-				align-items: center;
-				width: 100%;
-				z-index: 99999;
-			}
-			nav a {
-				display: flex;
-				gap: 4px;
-				align-self: center;
-				align-items: center;
-				text-decoration-style: wavy;
-			}
-			img {
-				width: 100%;
-				height: auto;
-				display: flex;
-			}
-			h1,
-			site-container {
-				z-index: 99;
-			}
-			site-container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 2rem;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				max-width: 600px;
-				padding: 1rem;
-			}
-			p {
-				font-size: 1.1rem;
-				line-height: 1.5rem;
-			}
-			.hidden {
-				position: absolute;
-				width: 0;
-				height: 0;
-			}
-			@keyframes bounce {
-				0% {
-					transform: translateY(0%);
-				}
+  <head>
+    <title>Gummi Bear Bounce</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jen Downs" />
+    <meta name="description" content="weird web october 2025 - bounce" />
+    <link rel="icon" href="./favicon.jpg" type="image/jpg" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird.jen.dev/bounce"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Bounce" />
+    <style>
+      @font-face {
+        font-family: "comic relief";
+        src: url("./fonts/ComicRelief-Regular.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "comic relief";
+        src: url("./fonts/ComicRelief-Bold.woff2") format("woff2");
+        font-weight: bold;
+        font-display: swap;
+      }
+      :root {
+        --text-color: #222222;
+        --font: "comic relief", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overscroll-behavior: none;
+      }
+      html {
+        font-size: 16px;
+        background-color: orange;
+        height: 100%;
+      }
+      body {
+        background-color: orange;
+        background: radial-gradient(white, #ecbd6c);
+        color: var(--text-color);
+        font-family: var(--font);
+        align-content: start;
+        font-weight: 700;
+        font-stretch: 100%;
+        display: grid;
+        height: 100%;
+      }
+      html,
+      body,
+      p,
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        animation: bounce 2s infinite;
+        text-shadow: 2px 2px orange;
+      }
+      h1,
+      .texteffect {
+        filter: url(#creepytext);
+      }
+      curse-text {
+        text-shadow: 1px 1px orange;
+        font-size: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        filter: url(#creepytext);
+      }
+      a,
+      a:visited {
+        color: rgb(91, 0, 51);
+        text-shadow: 1px 1px pink;
+        text-decoration-style: wavy;
+        font-weight: 400;
+      }
+      main {
+        display: grid;
+        place-items: center;
+        align-content: start;
+        gap: 1rem;
+        margin: 0 auto;
+        z-index: 99;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 3rem;
+      }
+      nav {
+        height: 36px;
+        padding: 6px;
+        display: flex;
+        justify-content: space-between;
+        text-decoration-style: wavy;
+        font-size: 0.8rem;
+        color: currentColor;
+        align-items: center;
+        width: 100%;
+        z-index: 99999;
+      }
+      nav a {
+        display: flex;
+        gap: 4px;
+        align-self: center;
+        align-items: center;
+        text-decoration-style: wavy;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: flex;
+      }
+      h1,
+      site-container {
+        z-index: 99;
+      }
+      site-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 600px;
+        padding: 1rem;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+      .hidden {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      @keyframes bounce {
+        0% {
+          transform: translateY(0%);
+        }
 
-				15% {
-					transform: translateY(-25%);
-				}
+        15% {
+          transform: translateY(-25%);
+        }
 
-				30% {
-					transform: translateY(20%);
-				}
+        30% {
+          transform: translateY(20%);
+        }
 
-				45% {
-					transform: translateY(-15%);
-				}
+        45% {
+          transform: translateY(-15%);
+        }
 
-				60% {
-					transform: translateY(10%);
-				}
+        60% {
+          transform: translateY(10%);
+        }
 
-				75% {
-					transform: translateY(-5%);
-				}
+        75% {
+          transform: translateY(-5%);
+        }
 
-				100% {
-					transform: translateY(2%);
-				}
-			}
-			iframe {
-				height: 315px;
-				width: 560px;
-				display: block;
-				border: 3px dotted orange;
-			}
-			frame-wrapper {
-				display: flex;
-				position: relative;
-			}
-			.cubbi {
-				position: absolute;
-				bottom: -40px;
-				left: -70px;
-				width: 130px;
-				z-index: 999;
-			}
-			.sunni {
-				position: absolute;
-				bottom: -40px;
-				right: -50px;
-				width: 90px;
-				z-index: 999;
-			}
-			@media (width <= 700px) {
-				iframe {
-					width: 100%;
-					height: 100%;
-				}
-				.cubbi {
-					width: 80px;
-					left: -40px;
-				}
-				.sunni {
-					width: 50px;
-					right: -30px;
-				}
-			}
-			@media (prefers-reduced-motion: reduce) {
-				h1 {
-					animation: none;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<nav aria-label="site navigation">
-			<a
-				href="https://weird.jen.dev/unicode"
-				aria-label="unicode (previous theme day)"
-			>
-				<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
-					/></svg
-				>unicode
-			</a>
-			<a href="https://weird.jen.dev/">weird web october</a>
-			<a
-				style="
-					display: flex;
-					gap: 4px;
-					align-self: center;
-					align-items: center;
-					text-decoration-style: wavy;
-				"
-				href="https://weird.jen.dev/hidden"
-				aria-label="hidden (next theme day)"
-				>hidden<svg
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
-					<path
-						fill="currentColor"
-						d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
-					/></svg
-			></a>
-		</nav>
+        100% {
+          transform: translateY(2%);
+        }
+      }
+      iframe {
+        height: 315px;
+        width: 560px;
+        display: block;
+        border: 3px dotted orange;
+      }
+      frame-wrapper {
+        display: flex;
+        position: relative;
+      }
+      .cubbi {
+        position: absolute;
+        bottom: -40px;
+        left: -70px;
+        width: 130px;
+        z-index: 999;
+      }
+      .sunni {
+        position: absolute;
+        bottom: -40px;
+        right: -50px;
+        width: 90px;
+        z-index: 999;
+      }
+      @media (width <= 700px) {
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+        .cubbi {
+          width: 80px;
+          left: -40px;
+        }
+        .sunni {
+          width: 50px;
+          right: -30px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        h1 {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="site navigation">
+      <a
+        href="https://weird.jen.dev/unicode"
+        aria-label="unicode (previous theme day)"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
+          />
+        </svg>
+        unicode
+      </a>
+      <a href="https://weird.jen.dev/">weird web october</a>
+      <a
+        style="
+          display: flex;
+          gap: 4px;
+          align-self: center;
+          align-items: center;
+          text-decoration-style: wavy;
+        "
+        href="https://weird.jen.dev/hidden"
+        aria-label="hidden (next theme day)"
+        >hidden<svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ -->
+          <path
+            fill="currentColor"
+            d="M23 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1H1v-4h15V9h-1V8h-1V7h-1V6h-1V5h-1V4h-1V3h1V2h1V1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"
+          />
+        </svg>
+      </a>
+    </nav>
 
-		<main>
-			<h1>Bounce</h1>
-			<br />
-			<site-container>
-				<p>
-					from time to time, i remember the
-					<a
-						href="https://en.wikipedia.org/wiki/Adventures_of_the_Gummi_Bears"
-						aria-label="Gummi Bears on wikipedia (opens a new tab)"
-						target="_blank"
-						rel="noopener noreferrer"
-						>Gummi Bears</a
-					>
-					theme song exists & it gets stuck in my head for <em>days</em>.
-				</p>
-				<curse-text>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="32"
-						height="32"
-						viewBox="0 0 32 32"
-						aria-hidden="true"
-						class="skull"
-					>
-						<!-- Icon from Pixel free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
-						<path
-							fill="currentColor"
-							d="M23.615 8.38v3.05h1.53V8.38h1.52V6.85h1.52V5.33h3.05V2.28h-1.52V.76h-3.05v3.05h-1.52v1.52h-1.53v1.52h-3.04v1.53zm3.05 6.09h1.52v6.1h-1.52Zm-1.52 6.1h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 12.19h-1.52v4.57h1.52v-1.53h1.53v1.53h1.52v3.05h3.05v-1.53h1.52v-3.05h-3.05v-1.52h-1.52v-1.52h-1.52v-1.53h-1.53zm-4.57-6.1h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52zm0 7.62h-1.52v3.05h-3.05v-3.05h-1.52v3.05h-3.05v1.52h12.19v-1.52h-3.05zm-4.57-6.1h3.05v1.53h-3.05Zm-4.57-1.52h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52z"
-						/>
-						<path
-							fill="currentColor"
-							d="M11.425 5.33h9.15v1.52h-9.15Zm-6.09 18.29v1.52h-1.53v1.52H.765v3.05h1.52v1.53h3.05v-3.05h1.52v-1.53h1.53v1.53h1.52v-4.57h-1.52v-1.53h-1.53v1.53zm3.05-15.24h3.04V6.85h-3.04V5.33h-1.53V3.81h-1.52V.76h-3.05v1.52H.765v3.05h3.04v1.52h1.53v1.53h1.52v3.05h1.53zm-3.05 12.19h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 3.04h1.53v6.1h-1.53Z"
-						/></svg
-					><span>NOW I PASS THE CURSE ON TO YOU</span
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="32"
-						height="32"
-						viewBox="0 0 32 32"
-						aria-hidden="true"
-						class="skull"
-					>
-						<!-- Icon from Pixel free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
-						<path
-							fill="currentColor"
-							d="M23.615 8.38v3.05h1.53V8.38h1.52V6.85h1.52V5.33h3.05V2.28h-1.52V.76h-3.05v3.05h-1.52v1.52h-1.53v1.52h-3.04v1.53zm3.05 6.09h1.52v6.1h-1.52Zm-1.52 6.1h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 12.19h-1.52v4.57h1.52v-1.53h1.53v1.53h1.52v3.05h3.05v-1.53h1.52v-3.05h-3.05v-1.52h-1.52v-1.52h-1.52v-1.53h-1.53zm-4.57-6.1h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52zm0 7.62h-1.52v3.05h-3.05v-3.05h-1.52v3.05h-3.05v1.52h12.19v-1.52h-3.05zm-4.57-6.1h3.05v1.53h-3.05Zm-4.57-1.52h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52z"
-						/>
-						<path
-							fill="currentColor"
-							d="M11.425 5.33h9.15v1.52h-9.15Zm-6.09 18.29v1.52h-1.53v1.52H.765v3.05h1.52v1.53h3.05v-3.05h1.52v-1.53h1.53v1.53h1.52v-4.57h-1.52v-1.53h-1.53v1.53zm3.05-15.24h3.04V6.85h-3.04V5.33h-1.53V3.81h-1.52V.76h-3.05v1.52H.765v3.05h3.04v1.52h1.53v1.53h1.52v3.05h1.53zm-3.05 12.19h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 3.04h1.53v6.1h-1.53Z"
-						/>
-					</svg>
-				</curse-text>
-				<frame-wrapper
-					><img class="cubbi" src="./images/cubbi.png" alt="" /><iframe
-						src="https://www.youtube-nocookie.com/embed/77wNujaN0x8?si=MCPfyWU_ji1Fl8ns"
-						title="Youtube video player: Gummi Bears Theme Song"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin"
-						allowfullscreen
-					></iframe>
-					<img class="sunni" src="./images/sunni.png" alt=""
-				/></frame-wrapper>
-				<p class="texteffect">
-					"GUUUUMMMMMI BEAAAAARS!<br />bouncing here and there and
-					EVERYWHEEERREEE<br />high adventure that's beyond compare!<br />they
-					are the gummi bears"
-				</p></site-container
-			>
-			<svg class="hidden" aria-hidden="true">
-				<filter id="creepytext">
-					<feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
-					<feDisplacementMap
-						in="SourceGraphic"
-						in2="turbulence"
-						scale="12"
-					></feDisplacementMap>
-				</filter>
-			</svg>
-		</main>
-	</body>
+    <main>
+      <h1>Bounce</h1>
+      <br />
+      <site-container>
+        <p>
+          from time to time, i remember the
+          <a
+            href="https://en.wikipedia.org/wiki/Adventures_of_the_Gummi_Bears"
+            aria-label="Gummi Bears on wikipedia (opens a new tab)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gummi Bears
+          </a>
+          theme song exists & it gets stuck in my head for <em>days</em>.
+        </p>
+        <curse-text>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+            class="skull"
+          >
+            <!-- Icon from Pixel free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+            <path
+              fill="currentColor"
+              d="M23.615 8.38v3.05h1.53V8.38h1.52V6.85h1.52V5.33h3.05V2.28h-1.52V.76h-3.05v3.05h-1.52v1.52h-1.53v1.52h-3.04v1.53zm3.05 6.09h1.52v6.1h-1.52Zm-1.52 6.1h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 12.19h-1.52v4.57h1.52v-1.53h1.53v1.53h1.52v3.05h3.05v-1.53h1.52v-3.05h-3.05v-1.52h-1.52v-1.52h-1.52v-1.53h-1.53zm-4.57-6.1h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52zm0 7.62h-1.52v3.05h-3.05v-3.05h-1.52v3.05h-3.05v1.52h12.19v-1.52h-3.05zm-4.57-6.1h3.05v1.53h-3.05Zm-4.57-1.52h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52z"
+            />
+            <path
+              fill="currentColor"
+              d="M11.425 5.33h9.15v1.52h-9.15Zm-6.09 18.29v1.52h-1.53v1.52H.765v3.05h1.52v1.53h3.05v-3.05h1.52v-1.53h1.53v1.53h1.52v-4.57h-1.52v-1.53h-1.53v1.53zm3.05-15.24h3.04V6.85h-3.04V5.33h-1.53V3.81h-1.52V.76h-3.05v1.52H.765v3.05h3.04v1.52h1.53v1.53h1.52v3.05h1.53zm-3.05 12.19h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 3.04h1.53v6.1h-1.53Z"
+            />
+          </svg>
+          <span>NOW I PASS THE CURSE ON TO YOU</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+            class="skull"
+          >
+            <!-- Icon from Pixel free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+            <path
+              fill="currentColor"
+              d="M23.615 8.38v3.05h1.53V8.38h1.52V6.85h1.52V5.33h3.05V2.28h-1.52V.76h-3.05v3.05h-1.52v1.52h-1.53v1.52h-3.04v1.53zm3.05 6.09h1.52v6.1h-1.52Zm-1.52 6.1h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 12.19h-1.52v4.57h1.52v-1.53h1.53v1.53h1.52v3.05h3.05v-1.53h1.52v-3.05h-3.05v-1.52h-1.52v-1.52h-1.52v-1.53h-1.53zm-4.57-6.1h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52zm0 7.62h-1.52v3.05h-3.05v-3.05h-1.52v3.05h-3.05v1.52h12.19v-1.52h-3.05zm-4.57-6.1h3.05v1.53h-3.05Zm-4.57-1.52h3.05V16h1.52v-3.05h-1.52v-1.52h-3.05v1.52h-1.52V16h1.52z"
+            />
+            <path
+              fill="currentColor"
+              d="M11.425 5.33h9.15v1.52h-9.15Zm-6.09 18.29v1.52h-1.53v1.52H.765v3.05h1.52v1.53h3.05v-3.05h1.52v-1.53h1.53v1.53h1.52v-4.57h-1.52v-1.53h-1.53v1.53zm3.05-15.24h3.04V6.85h-3.04V5.33h-1.53V3.81h-1.52V.76h-3.05v1.52H.765v3.05h3.04v1.52h1.53v1.53h1.52v3.05h1.53zm-3.05 12.19h1.52v1.52h-1.52Zm0-9.14h1.52v3.04h-1.52Zm-1.53 3.04h1.53v6.1h-1.53Z"
+            />
+          </svg>
+        </curse-text>
+        <frame-wrapper
+          ><img class="cubbi" src="./images/cubbi.png" alt="" /><iframe
+            src="https://www.youtube-nocookie.com/embed/77wNujaN0x8?si=MCPfyWU_ji1Fl8ns"
+            title="Youtube video player: Gummi Bears Theme Song"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <img class="sunni" src="./images/sunni.png" alt=""
+        /></frame-wrapper>
+        <p class="texteffect">
+          "GUUUUMMMMMI BEAAAAARS!<br />bouncing here and there and
+          EVERYWHEEERREEE<br />high adventure that's beyond compare!<br />they
+          are the gummi bears"
+        </p></site-container
+      >
+      <svg class="hidden" aria-hidden="true">
+        <filter id="creepytext">
+          <feTurbulence baseFrequency="0.004" numOctaves="12"></feTurbulence>
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="turbulence"
+            scale="12"
+          ></feDisplacementMap>
+        </filter>
+      </svg>
+    </main>
+  </body>
 </html>
